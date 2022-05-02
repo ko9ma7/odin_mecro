@@ -1,2 +1,2 @@
 # odin_mecro
-kakao odin mecro
+kakao games odin mecro
