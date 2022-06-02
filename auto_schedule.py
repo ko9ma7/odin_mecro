@@ -56,10 +56,13 @@ def main_back():
     sleep(1)
     if odin[0].isActive == True:
         back_click = pyautogui.locateOnScreen('image\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
-        pyautogui.click(back_click)
+        if back_click is not None:
+            pyautogui.click(back_click)
+
     elif odin[1].isActive == True:
         back_click = pyautogui.locateOnScreen('image\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
-        pyautogui.click(back_click)
+        if back_click is not None:
+            pyautogui.click(back_click)
 
 # 뒤로가기 버튼 클릭
 def previous_back():
@@ -611,16 +614,18 @@ def party_dg_step1(dg_course):
     sleep(2)
     if odin[0].isActive == True:
         p_dg = pyautogui.locateOnScreen('image\party_dg_on.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        print('파티던전 탭 확인: ', p_dg)
         if p_dg is None:
             print("파티던전 탭 선택안됨")
             pyautogui.click(p_dg)
         sleep(2)
         # 무료 입장 체크 (가능 = 1반환, 불가능 = 0반환)
         free_check = pyautogui.locateOnScreen('image\party_dg_free_check.jpg', confidence=0.8, region=(374, 442, 124, 26)) 
-        if free_check is not None:
+        print('무료 입장 체크', free_check)
+        if free_check:
             check_value = 0
-            back_click = pyautogui.locateOnScreen('image\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
-            pyautogui.click(back_click)
+            print('무료 입장 모두 소진함')
+            main_back()
             # 무료 입장횟수 없음 - 다시 안들어오게 없다고 디비 저장 코딩하면 됨
         else:
             check_value = 1
@@ -643,10 +648,10 @@ def party_dg_step1(dg_course):
             pyautogui.click(p_dg)
         sleep(2)
         free_check = pyautogui.locateOnScreen('image\party_dg_free_check.jpg', confidence=0.8, region=(1334, 442, 124, 26)) 
-        if free_check is not None:
+        if free_check:
             check_value = 0
-            back_click = pyautogui.locateOnScreen('image\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
-            pyautogui.click(back_click)
+            print('무료 입장 모두 소진함')
+            main_back()
             # 무료 입장횟수 없음 - 다시 안들어오게 없다고 디비 저장 코딩하면 됨
         else:
             check_value = 1
@@ -666,45 +671,245 @@ def party_dg_step1(dg_course):
     
 # 파티던전 입장 2단계
 # df_level : 보통 - 1, 어려움 - 2, 매우 어려움 - 3, 극악 - 4
-# 무조건 비공개 파티로 체크됨
-def party_dg_step2(dg_level, op):
+# 무조건 비공개 파티로 체크되고 솔로 플레이됨
+def party_dg_step2(dg_level):
+    print('2단계 시작')
     sleep(1)
     if odin[0].isActive == True:
         p_dg = pyautogui.locateOnScreen('image\party_dg_step2_check.jpg', confidence=0.8, region=(15, 280, 100, 50)) 
         if p_dg is None:
             print("파티던전 2단계 화면 아님")
+            check_value = 0
             sleep(1)
             main_back() 
         else:
             if dg_level == 1:
                 pyautogui.click(49, 303)
                 sleep(2)
-                pyautogui.click(25, 333)
             elif dg_level == 2:
                 pyautogui.click(113, 303)
                 sleep(2)
-                pyautogui.click(25, 333)
             elif dg_level == 3:
                 pyautogui.click(169, 303)
                 sleep(2)
-                pyautogui.click(25, 333)
             elif dg_level == 4:
                 pyautogui.click(236, 303)
                 sleep(2)
-                pyautogui.click(25, 333)
-        sleep(2)
-        pyautogui.click(899, 497)
-        sleep(2)
-        pyautogui.click(529, 331)
-        
-        
+            p_private_check = pyautogui.locateOnScreen('image\party_private_check.jpg', confidence=0.8, region=(0, 300, 80, 70)) 
+            print('비공개 파티 체크 여부 : ', p_private_check)
+            if p_private_check is None:
+                pyautogui.click(26, 333) # 비공개 파티 체크
+                sleep(2)
+            make_party = pyautogui.locateOnScreen('image\make_party_dg.jpg', confidence=0.8, region=(800, 440, 160, 70)) 
+            print('파티생성 버튼 여부', make_party)
+            if make_party:
+                pyautogui.click(899, 497) # 파티 생성
+                sleep(2)
+                pyautogui.click(529, 331) # 팝업창 확인 클릭
+                main_back() # 파티생성 후 메인으로 돌아가기
+                sleep(2)
+                party_dg_start = pyautogui.locateOnScreen('image\party_dg_start.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+                if party_dg_start:
+                    pyautogui.click(party_dg_start) # 파티던전 시작
+                    sleep(2)
+                    p_member = pyautogui.locateOnScreen('image\party_member_confirm.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+                    if p_member:
+                        pyautogui.click(530, 330) # 파티정원 확인창 확인 클릭
+                    sleep(10)
+                    pyautogui.press('g') #오토시작
+                else: # 파티던전 시작하기 버튼이 없을 경우
+                    main_back()
+                    confirm_party = pyautogui.locateOnScreen('image\out_party.jpg', confidence=0.8, region=(900, 70, 50, 160))  # 파티 생성 여부 확인
+                    if confirm_party:
+                        check_value = 0 # 파티 생성되었는데도 버튼이 안보이므로 0 리턴
+                    else:
+                        main_party_tab = pyautogui.locateOnScreen('image\main_party_tab.jpg', confidence=0.8, region=(900, 70, 50, 160)) 
+                        if main_party_tab:
+                            pyautogui.click(main_party_tab) # 파티탭 클릭
+                            party_dg_start = pyautogui.locateOnScreen('image\party_dg_start.jpg', confidence=0.8, region=(0, 0, 960, 540))
+                            if party_dg_start:
+                                pyautogui.click(party_dg_start) # 파티던전 시작
+                                sleep(2)
+                                p_member = pyautogui.locateOnScreen('image\party_member_confirm.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+                                if p_member:
+                                    pyautogui.click(530, 330) # 파티정원 확인창 확인 클릭
+                                sleep(10)
+                                pyautogui.press('g') #오토시작
+                            else:
+                                check_value = 0
+                        else:
+                            main_back()
+                            check_value = 0 # 파티탭 찾을 수 없음 0리턴
+            elif make_party is None:
+                cancel_party = pyautogui.locateOnScreen('image\cancel_party.jpg', confidence=0.8, region=(800, 440, 160, 70))  # 파티 생성 여부 확인
+                if cancel_party:
+                    main_back() # 이미 파티 생성 중이라 메인화면으로 이동
+                    sleep(2)
+                    confirm_party = pyautogui.locateOnScreen('image\out_party.jpg', confidence=0.8, region=(900, 70, 50, 160))  # 파티 생성 여부 확인
+                    print("파티 생성 여부 확인 : ", confirm_party)
+                    if confirm_party:
+                        party_dg_start = pyautogui.locateOnScreen('image\party_dg_start.jpg', confidence=0.8, region=(0, 0, 960, 540))
+                        if party_dg_start:
+                            pyautogui.click(party_dg_start) # 파티던전 시작
+                            sleep(2)
+                            p_member = pyautogui.locateOnScreen('image\party_member_confirm.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+                            if p_member:
+                                pyautogui.click(530, 330) # 파티정원 확인창 확인 클릭
+                            sleep(10)
+                            pyautogui.press('g') #오토시작
+                            print('파티던전 시작')
+                            check_value = 1
+                        else:
+                            check_value = 0                            
+                    else:
+                        main_party_tab = pyautogui.locateOnScreen('image\main_party_tab.jpg', confidence=0.8, region=(900, 70, 50, 160)) 
+                        sleep(2)
+                        if main_party_tab:
+                            print('파티 탭 클릭')
+                            pyautogui.click(main_party_tab) # 파티탭 클릭
+                            sleep(2)
+                            party_dg_start = pyautogui.locateOnScreen('image\party_dg_start.jpg', confidence=0.8, region=(0, 0, 960, 540))
+                            if party_dg_start:
+                                pyautogui.click(party_dg_start) # 파티던전 시작
+                                sleep(2)
+                                p_member = pyautogui.locateOnScreen('image\party_member_confirm.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+                                if p_member:
+                                    pyautogui.click(530, 330) # 파티정원 확인창 확인 클릭
+                                sleep(10)
+                                pyautogui.press('g') #오토시작
+                                check_value = 1
+                            else:
+                                check_value = 0
+                        else:
+                            main_back()
+                            check_value = 0 # 파티탭 찾을 수 없음 0리턴
+                else:
+                    check_value = 0
+            else:
+                print('파티생성 버튼 오류')
+                check_value = 0
+    elif odin[1].isActive == True:
+        p_dg = pyautogui.locateOnScreen('image\party_dg_step2_check.jpg', confidence=0.8, region=(975, 280, 100, 50)) 
+        if p_dg is None:
+            print("파티던전 2단계 화면 아님")
+            check_value = 0
+            sleep(1)
+            main_back() 
+        else:
+            if dg_level == 1:
+                pyautogui.click(1009, 303)
+                sleep(2)
+            elif dg_level == 2:
+                pyautogui.click(1073, 303)
+                sleep(2)
+            elif dg_level == 3:
+                pyautogui.click(1129, 303)
+                sleep(2)
+            elif dg_level == 4:
+                pyautogui.click(1196, 303)
+                sleep(2)
+            p_private_check = pyautogui.locateOnScreen('image\party_private_check.jpg', confidence=0.8, region=(960, 300, 80, 70)) 
+            print('비공개 파티 체크 여부 : ', p_private_check)
+            if p_private_check is None:
+                pyautogui.click(986, 333) # 비공개 파티 체크
+                sleep(2)
+            make_party = pyautogui.locateOnScreen('image\make_party_dg.jpg', confidence=0.8, region=(1760, 440, 160, 70)) 
+            print('파티생성 버튼 여부', make_party)
+            if make_party:
+                pyautogui.click(1859, 497) # 파티 생성
+                sleep(2)
+                pyautogui.click(1489, 331) # 팝업창 확인 클릭
+                main_back() # 파티생성 후 메인으로 돌아가기
+                sleep(2)
+                party_dg_start = pyautogui.locateOnScreen('image\party_dg_start.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+                if party_dg_start:
+                    pyautogui.click(party_dg_start) # 파티던전 시작
+                    sleep(2)
+                    p_member = pyautogui.locateOnScreen('image\party_member_confirm.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+                    if p_member:
+                        pyautogui.click(1490, 330) # 파티정원 확인창 확인 클릭
+                    sleep(10)
+                    pyautogui.press('g') #오토시작
+                else: # 파티던전 시작하기 버튼이 없을 경우
+                    main_back()
+                    confirm_party = pyautogui.locateOnScreen('image\out_party.jpg', confidence=0.8, region=(1860, 70, 50, 160))  # 파티 생성 여부 확인
+                    if confirm_party:
+                        check_value = 0 # 파티 생성되었는데도 버튼이 안보이므로 0 리턴
+                    else:
+                        main_party_tab = pyautogui.locateOnScreen('image\main_party_tab.jpg', confidence=0.8, region=(1860, 70, 50, 160)) 
+                        if main_party_tab:
+                            pyautogui.click(main_party_tab) # 파티탭 클릭
+                            party_dg_start = pyautogui.locateOnScreen('image\party_dg_start.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                            if party_dg_start:
+                                pyautogui.click(party_dg_start) # 파티던전 시작
+                                sleep(2)
+                                p_member = pyautogui.locateOnScreen('image\party_member_confirm.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+                                if p_member:
+                                    pyautogui.click(1490, 330) # 파티정원 확인창 확인 클릭
+                                sleep(10)
+                                pyautogui.press('g') #오토시작
+                            else:
+                                check_value = 0
+                        else:
+                            main_back()
+                            check_value = 0 # 파티탭 찾을 수 없음 0리턴
+            elif make_party is None:
+                cancel_party = pyautogui.locateOnScreen('image\cancel_party.jpg', confidence=0.8, region=(1760, 440, 160, 70))  # 파티 생성 여부 확인
+                if cancel_party:
+                    main_back() # 이미 파티 생성 중이라 메인화면으로 이동
+                    sleep(2)
+                    confirm_party = pyautogui.locateOnScreen('image\out_party.jpg', confidence=0.8, region=(1860, 70, 50, 160))  # 파티 생성 여부 확인
+                    print("파티 생성 여부 확인 : ", confirm_party)
+                    if confirm_party:
+                        party_dg_start = pyautogui.locateOnScreen('image\party_dg_start.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                        if party_dg_start:
+                            pyautogui.click(party_dg_start) # 파티던전 시작
+                            sleep(2)
+                            p_member = pyautogui.locateOnScreen('image\party_member_confirm.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+                            if p_member:
+                                pyautogui.click(1490, 330) # 파티정원 확인창 확인 클릭
+                            sleep(10)
+                            pyautogui.press('g') #오토시작
+                            print('파티던전 시작')
+                            check_value = 1
+                        else:
+                            check_value = 0                            
+                    else:
+                        main_party_tab = pyautogui.locateOnScreen('image\main_party_tab.jpg', confidence=0.8, region=(1860, 70, 50, 160)) 
+                        sleep(2)
+                        if main_party_tab:
+                            print('파티 탭 클릭')
+                            pyautogui.click(main_party_tab) # 파티탭 클릭
+                            sleep(2)
+                            party_dg_start = pyautogui.locateOnScreen('image\party_dg_start.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                            if party_dg_start:
+                                pyautogui.click(party_dg_start) # 파티던전 시작
+                                sleep(2)
+                                p_member = pyautogui.locateOnScreen('image\party_member_confirm.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+                                if p_member:
+                                    pyautogui.click(1490, 330) # 파티정원 확인창 확인 클릭
+                                sleep(10)
+                                pyautogui.press('g') #오토시작
+                                check_value = 1
+                            else:
+                                check_value = 0
+                        else:
+                            main_back()
+                            check_value = 0 # 파티탭 찾을 수 없음 0리턴
+                else:
+                    check_value = 0
+            else:
+                print('파티생성 버튼 오류')
+                check_value = 0
     return check_value
 
 
 get_mecro()
 active_mecro_2()
-test = party_dg_step1(2)
-print('check_value : ', test)
+test_1 = party_dg_step1(2)
+print('step_1 check_value : ', test_1)
+test_2 = party_dg_step2(1)
+print('step_2 check_value : ', test_2)
 # disable_sleep_mode()
 # dg_step1()
 # dg_step2(4, 5)
