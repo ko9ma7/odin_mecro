@@ -74,26 +74,20 @@ def previous_back():
         back_click = pyautogui.locateOnScreen('image\previous_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         pyautogui.click(back_click)
 
-# 정예던전 입장 1단계
-def dg_step1():
+# 정예던전 입장
+# chioce_dg : 1 - 이벤트 던전, 2 - 공허의 유적, 3 - 난쟁이 비밀통로, 4 - 지하감옥
+# chioce_level : 1단계, 2단계, 3단계, 4단계 ~~~ (층 또는 단계 숫자로 입력)
+# 던전 입장 가능한지 체크 안됨 - 추후 개발할까?
+def elite_dg_entrance(chioce_dg, choice_level):
     sleep(1)
-    pyautogui.press('F8')
-    sleep(2)
+    main_back()
     if odin[0].isActive == True:
+        sleep(1)
+        pyautogui.press('F8')
+        sleep(2)
         e_dg = pyautogui.locateOnScreen('image\elite_dg.jpg', confidence=0.8, region=(0, 0, 960, 540))
         print(e_dg)
         pyautogui.click(e_dg)
-    elif odin[1].isActive == True:
-        e_dg = pyautogui.locateOnScreen('image\elite_dg.jpg', confidence=0.8, region=(960, 0, 960, 540))
-        print(e_dg)
-        pyautogui.click(e_dg)
-
-# 정예던전 입장 2단계 (던전 초이스)
-# chioce_dg : 1 - 이벤트 던전, 2 - 공허의 유적, 3 - 난쟁이 비밀통로, 4 - 지하감옥
-# chioce_level : 1단계, 2단계, 3단계, 4단계 ~~~ (층 또는 단계 숫자로 입력)
-def dg_step2(chioce_dg, choice_level):
-    sleep(1)
-    if odin[0].isActive == True:
         if chioce_dg == 1:
             e_dg = pyautogui.locateOnScreen('image\event_dg.jpg', confidence=0.8, region=(0, 0, 960, 540))
             sleep(1)
@@ -336,6 +330,12 @@ def dg_step2(chioce_dg, choice_level):
                 sleep(10)
                 pyautogui.press('g')
     elif odin[1].isActive == True:
+        sleep(1)
+        pyautogui.press('F8')
+        sleep(2)
+        e_dg = pyautogui.locateOnScreen('image\elite_dg.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        print(e_dg)
+        pyautogui.click(e_dg)
         if chioce_dg == 1:
             e_dg = pyautogui.locateOnScreen('image\event_dg.jpg', confidence=0.8, region=(960, 0, 960, 540))
             sleep(1)
@@ -351,31 +351,31 @@ def dg_step2(chioce_dg, choice_level):
             if choice_level == 1:
                 pyautogui.click(1081, 92)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 2:
-                pyautogui.click(112, 129)
+                pyautogui.click(1072, 129)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 3:
-                pyautogui.click(111, 181)
+                pyautogui.click(1072, 181)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 4:
-                pyautogui.click(111, 222)
+                pyautogui.click(1072, 222)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
@@ -392,65 +392,65 @@ def dg_step2(chioce_dg, choice_level):
             pyautogui.click(e_dg)
             sleep(1)
             if choice_level == 1:
-                pyautogui.click(120, 93)
+                pyautogui.click(1072, 93)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 2:
-                pyautogui.click(112, 129)
+                pyautogui.click(1072, 129)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 3:
-                pyautogui.click(111, 181)
+                pyautogui.click(1072, 181)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 4:
-                pyautogui.click(111, 222)
+                pyautogui.click(1072, 222)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 5:
-                pyautogui.click(117, 258)
+                pyautogui.click(1072, 258)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 6:
-                pyautogui.click(127, 304)
+                pyautogui.click(1072, 304)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 7:
-                pyautogui.click(103, 344)
+                pyautogui.click(1072, 344)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 8:
-                pyautogui.click(110, 389)
+                pyautogui.click(1072, 389)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
@@ -467,65 +467,65 @@ def dg_step2(chioce_dg, choice_level):
             pyautogui.click(e_dg)
             sleep(1)
             if choice_level == 1:
-                pyautogui.click(120, 93)
+                pyautogui.click(1072, 93)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 2:
-                pyautogui.click(112, 129)
+                pyautogui.click(1072, 129)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 3:
-                pyautogui.click(111, 181)
+                pyautogui.click(1072, 181)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 4:
-                pyautogui.click(111, 222)
+                pyautogui.click(1072, 222)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 5:
-                pyautogui.click(117, 258)
+                pyautogui.click(1072, 258)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 6:
-                pyautogui.click(127, 304)
+                pyautogui.click(1072, 304)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 7:
-                pyautogui.click(103, 344)
+                pyautogui.click(1072, 344)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
             if choice_level == 8:
-                pyautogui.click(110, 389)
+                pyautogui.click(1072, 389)
                 sleep(2)
-                pyautogui.click(880, 482)
+                pyautogui.click(1840, 482)
                 sleep(20)
                 pyautogui.press('F5')
                 sleep(10)
@@ -605,14 +605,18 @@ def dg_step2(chioce_dg, choice_level):
                 pyautogui.press('F5')
                 sleep(10)
                 pyautogui.press('g')
-
-# 파티던전 입장 1단계
-# 맹독의뱀둥지 - 1, 잊혀진거인의동굴 - 2, 난쟁이왕가의무덤 - 3
-def party_dg_step1(dg_course):
+    
+# 파티던전 입장 
+# dg_course : 맹독의뱀둥지 - 1, 잊혀진거인의동굴 - 2, 난쟁이왕가의무덤 - 3    
+# df_level : 보통 - 1, 어려움 - 2, 매우 어려움 - 3, 극악 - 4
+# 무조건 비공개 파티로 체크되고 솔로 플레이됨
+def party_dg_entrance(dg_course, dg_level):
     sleep(1)
-    pyautogui.press('F8')
-    sleep(2)
+    main_back()
     if odin[0].isActive == True:
+        sleep(1)
+        pyautogui.press('F8')
+        sleep(2)
         p_dg = pyautogui.locateOnScreen('image\party_dg_on.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         print('파티던전 탭 확인: ', p_dg)
         if p_dg is None:
@@ -641,43 +645,11 @@ def party_dg_step1(dg_course):
                 course_dg = pyautogui.locateOnScreen('image\party_step_3.jpg', confidence=0.8, region=(0, 0, 960, 540))
                 print(course_dg)
                 pyautogui.click(course_dg)
-    elif odin[1].isActive == True:
-        p_dg = pyautogui.locateOnScreen('image\party_dg_on.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
-        if p_dg is None:
-            print("파티던전 탭 선택안됨")
-            pyautogui.click(p_dg)
         sleep(2)
-        free_check = pyautogui.locateOnScreen('image\party_dg_free_check.jpg', confidence=0.8, region=(1334, 442, 124, 26)) 
-        if free_check:
-            check_value = 0
-            print('무료 입장 모두 소진함')
-            main_back()
-            # 무료 입장횟수 없음 - 다시 안들어오게 없다고 디비 저장 코딩하면 됨
-        else:
-            check_value = 1
-            if dg_course == 1:
-                course_dg = pyautogui.locateOnScreen('image\party_step_1.jpg', confidence=0.8, region=(960, 0, 960, 540))
-                print(course_dg)
-                pyautogui.click(course_dg)
-            if dg_course == 2:
-                course_dg = pyautogui.locateOnScreen('image\party_step_2.jpg', confidence=0.8, region=(960, 0, 960, 540))
-                print(course_dg)
-                pyautogui.click(course_dg)
-            if dg_course == 3:
-                course_dg = pyautogui.locateOnScreen('image\party_step_3.jpg', confidence=0.8, region=(960, 0, 960, 540))
-                print(course_dg)
-                pyautogui.click(course_dg)
-    return check_value
-    
-# 파티던전 입장 2단계
-# df_level : 보통 - 1, 어려움 - 2, 매우 어려움 - 3, 극악 - 4
-# 무조건 비공개 파티로 체크되고 솔로 플레이됨
-def party_dg_step2(dg_level):
-    print('2단계 시작')
-    sleep(1)
-    if odin[0].isActive == True:
-        p_dg = pyautogui.locateOnScreen('image\party_dg_step2_check.jpg', confidence=0.8, region=(15, 280, 100, 50)) 
-        if p_dg is None:
+        # 파티찾기 화면
+        p_dg_2 = pyautogui.locateOnScreen('image\party_dg_step2_check.jpg', confidence=0.8, region=(15, 280, 100, 50)) 
+        print(p_dg_2)
+        if p_dg_2 is None:
             print("파티던전 2단계 화면 아님")
             check_value = 0
             sleep(1)
@@ -789,8 +761,38 @@ def party_dg_step2(dg_level):
                 print('파티생성 버튼 오류')
                 check_value = 0
     elif odin[1].isActive == True:
-        p_dg = pyautogui.locateOnScreen('image\party_dg_step2_check.jpg', confidence=0.8, region=(975, 280, 100, 50)) 
+        sleep(1)
+        pyautogui.press('F8')
+        sleep(2)
+        p_dg = pyautogui.locateOnScreen('image\party_dg_on.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         if p_dg is None:
+            print("파티던전 탭 선택안됨")
+            pyautogui.click(p_dg)
+        sleep(2)
+        free_check = pyautogui.locateOnScreen('image\party_dg_free_check.jpg', confidence=0.8, region=(1334, 442, 124, 26)) 
+        if free_check:
+            check_value = 0
+            print('무료 입장 모두 소진함')
+            main_back()
+            # 무료 입장횟수 없음 - 다시 안들어오게 없다고 디비 저장 코딩하면 됨
+        else:
+            check_value = 1
+            if dg_course == 1:
+                course_dg = pyautogui.locateOnScreen('image\party_step_1.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                print(course_dg)
+                pyautogui.click(course_dg)
+            if dg_course == 2:
+                course_dg = pyautogui.locateOnScreen('image\party_step_2.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                print(course_dg)
+                pyautogui.click(course_dg)
+            if dg_course == 3:
+                course_dg = pyautogui.locateOnScreen('image\party_step_3.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                print(course_dg)
+                pyautogui.click(course_dg)
+        sleep(2)
+        # 파티찾기 화면
+        p_dg_2 = pyautogui.locateOnScreen('image\party_dg_step2_check.jpg', confidence=0.8, region=(975, 280, 100, 50)) 
+        if p_dg_2 is None:
             print("파티던전 2단계 화면 아님")
             check_value = 0
             sleep(1)
@@ -903,21 +905,105 @@ def party_dg_step2(dg_level):
                 check_value = 0
     return check_value
 
+# 마을의뢰 
+# 고급 및 최고급 의뢰만 진행하며, 골드로만 갱신함
+def town_request():
+    sleep(1)
+    main_back()
+
+    # 완료 퀘스트 확인
+    def town_request_complete_confirm():
+        sleep(1)
+        if odin[0].isActive == True:
+            # 변동 이미지라서 3번 체크로 유무 확인
+            trc_confirm = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(0, 100, 50, 50))
+            if check_atr is None:
+                sleep(0.5)
+                check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(0, 100, 50, 50))
+            if check_atr is None:
+                sleep(0.5)
+                check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(0, 100, 50, 50))
+            print('완료 퀘스트 있음')
+        elif odin[1].isActive == True:
+            # 변동 이미지라서 3번 체크로 유무 확인
+            trc_confirm = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(960, 100, 50, 50))
+            if check_atr is None:
+                sleep(0.5)
+                check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(960, 100, 50, 50))
+            if check_atr is None:
+                sleep(0.5)
+                check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(960, 100, 50, 50))
+            print('완료 퀘스트 있음')
+        return trc_confirm
+    
+    # 수락 및 완료한 마을 의뢰 확인 (1:미드가르드, 2:요툰하임, 3:니다벨리르, 4:알브하임)
+    # 메인 퀘스트로 도달한 지역에 따라 마을의뢰 총 개수가 다름
+    def town_request_all_confirm(map):
+        sleep(1)
+        if odin[0].isActive == True:
+            if map == 1:
+                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_1.jpg', confidence=0.9, region=(150, 450, 50, 30))
+            elif map == 2:
+                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_2.jpg', confidence=0.9, region=(150, 450, 50, 30))
+            elif map == 3:
+                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_3.jpg', confidence=0.9, region=(150, 450, 50, 30))
+            elif map == 4:
+                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_4.jpg', confidence=0.9, region=(150, 450, 50, 30))
+        elif odin[1].isActive == True:
+            if map == 1:
+                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_1.jpg', confidence=0.9, region=(1110, 450, 50, 30))
+            elif map == 2:
+                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_2.jpg', confidence=0.9, region=(1110, 450, 50, 30))
+            elif map == 3:
+                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_3.jpg', confidence=0.9, region=(1110, 450, 50, 30))
+            elif map == 4:
+                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_4.jpg', confidence=0.9, region=(1110, 450, 50, 30))                
+        return tra_confirm
+
+    # 퀘스트 난이도 확인 (상급, 최상급만 선택)
+    def town_request_level_confirm():
+        sleep(1)
+        if odin[0].isActive == True:
+            #상급, 최상급 퀘스트만 선택
+            trl_confirm_q2 = pyautogui.locateOnScreen('image\\town_request_q2.jpg', confidence=0.9, region=(230, 100, 60, 60))
+            trl_confirm_q3 = pyautogui.locateOnScreen('image\\town_request_q3.jpg', confidence=0.9, region=(230, 100, 60, 60))
+            trl_ok = pyautogui.locateOnScreen('image\\town_request_ok.jpg', confidence=0.9, region=(820, 470, 140, 50))
+            if trl_confirm_q2 or trl_confirm_q3:
+                print('상급 또는 최상급 퀘스트 존재 - 수락하기 클릭')
+                pyautogui.click(trl_ok)
+                sleep(3)
+        elif odin[1].isActive == True:
+            #상급, 최상급 퀘스트만 선택
+            trl_confirm_q2 = pyautogui.locateOnScreen('image\\town_request_q2.jpg', confidence=0.9, region=(1190, 100, 60, 60))
+            trl_confirm_q3 = pyautogui.locateOnScreen('image\\town_request_q3.jpg', confidence=0.9, region=(1190, 100, 60, 60))
+            trl_ok = pyautogui.locateOnScreen('image\\town_request_ok.jpg', confidence=0.9, region=(1780, 470, 140, 50))
+            if trl_confirm_q2 or trl_confirm_q3:
+                print('상급 또는 최상급 퀘스트 존재 - 수락하기 클릭')
+                pyautogui.click(trl_ok)
+                sleep(3)
+        
+    # town_request 메소드 메인
+    # if odin[0].isActive == True:
+    # elif odin[1].isActive == True:
 
 get_mecro()
 active_mecro_2()
-test_1 = party_dg_step1(2)
-print('step_1 check_value : ', test_1)
-test_2 = party_dg_step2(1)
-print('step_2 check_value : ', test_2)
-# disable_sleep_mode()
-# dg_step1()
-# dg_step2(4, 5)
+disable_sleep_mode()
+# elite_dg_entrance(4, 5)
+# party_dg_entrance(2, 1)
+town_request()
+
 # active_mecro_2()
 # disable_sleep_mode()
-# dg_step1()
-# dg_step2(4, 5)
+# party_dg_entrance(2, 1)
+# elite_dg_entrance(4, 5)
 
+# test_1 = party_dg_step1(2)
+# print('step_1 check_value : ', test_1)
+# test_2 = party_dg_step2(1)
+# print('step_2 check_value : ', test_2)
+# active_mecro_2()
+# disable_sleep_mode()
 
 
 
