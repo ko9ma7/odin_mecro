@@ -905,93 +905,405 @@ def party_dg_entrance(dg_course, dg_level):
                 check_value = 0
     return check_value
 
-# 마을의뢰 
-# 고급 및 최고급 의뢰만 진행하며, 골드로만 갱신함
+# 마을의뢰 - 고급 및 최고급 의뢰만 진행하며, 골드로만 갱신함
 def town_request():
     sleep(1)
-    main_back()
+    pyautogui.press('j')
+    sleep(1)
+    # 전체 의뢰 완료 여부 확인 - 전체개수 및 수락함 의뢰 있는지 여부
+    # 전체개수 full & 수락함 의뢰 없으면 마을의뢰 종료
+    # 완료 전이면 0을 리턴, 완료했다면 1을 리턴
+    def town_request_all_complete():
+        sleep(1)
+        if odin[0].isActive == True:
+            all_complete_map1 = pyautogui.locateOnScreen('image\\town_request_all_complete_check_1.jpg', region=(150, 450, 50, 40))
+            all_complete_map2 = pyautogui.locateOnScreen('image\\town_request_all_complete_check_2.jpg', region=(150, 450, 50, 40))
+            all_complete_map3 = pyautogui.locateOnScreen('image\\town_request_all_complete_check_3.jpg', region=(150, 450, 50, 40))
+            all_complete_map4 = pyautogui.locateOnScreen('image\\town_request_all_complete_check_4.jpg', region=(150, 450, 50, 40))
+            print(all_complete_map1, all_complete_map2, all_complete_map3, all_complete_map4)
+            if all_complete_map1 or all_complete_map2 or all_complete_map3 or all_complete_map4:
+                # 리스트 가장 아래 의뢰 시작 - 지상 이동
+                pyautogui.moveTo(120, 430)
+                pyautogui.dragTo(120, 100, 3, button='left')
+                sleep(1)
+                already_ok = pyautogui.locateOnScreen('image\\town_request_already_ok.jpg', confidence=0.9, region=(170, 150, 70, 310))
+                if already_ok:
+                    pyautogui.click(already_ok)
+                    sleep(1)
+                    go_onfoot = pyautogui.locateOnScreen('image\\town_request_onfoot.jpg', confidence=0.9, region=(580, 470, 200, 50))
+                    pyautogui.click(go_onfoot)
+                else:
+                    print('일일 의뢰 완료 또는 오류 발생')
+                    main_back()
+                return 1
+            else:
+                return 0
+        elif odin[1].isActive == True:
+            all_complete_map1 = pyautogui.locateOnScreen('image\\town_request_all_complete_check_1.jpg', region=(1110, 450, 50, 40))
+            all_complete_map2 = pyautogui.locateOnScreen('image\\town_request_all_complete_check_2.jpg', region=(1110, 450, 50, 40))
+            all_complete_map3 = pyautogui.locateOnScreen('image\\town_request_all_complete_check_3.jpg', region=(1110, 450, 50, 40))
+            all_complete_map4 = pyautogui.locateOnScreen('image\\town_request_all_complete_check_4.jpg', region=(1110, 450, 50, 40))
+            print(all_complete_map1, all_complete_map2, all_complete_map3, all_complete_map4)
+            if all_complete_map1 or all_complete_map2 or all_complete_map3 or all_complete_map4:
+                # 리스트 가장 아래 의뢰 시작 - 지상 이동
+                pyautogui.moveTo(1080, 430)
+                pyautogui.dragTo(1080, 100, 3, button='left')
+                sleep(1)
+                already_ok = pyautogui.locateOnScreen('image\\town_request_already_ok.jpg', confidence=0.9, region=(1130, 150, 70, 310))
+                if already_ok:
+                    pyautogui.click(already_ok)
+                    sleep(1)
+                    go_onfoot = pyautogui.locateOnScreen('image\\town_request_onfoot.jpg', confidence=0.9, region=(1540, 470, 200, 50))
+                    pyautogui.click(go_onfoot)
+                else:
+                    print('일일 의뢰 완료 또는 오류 발생')
+                    main_back()
+                return 1
+            else:
+                return 0
 
-    # 완료 퀘스트 확인
-    def town_request_complete_confirm():
+    # 완료 퀘스트 확인 및 보상 수령
+    def town_request_complete_ckeck():
+        print('완료 퀘스트 및 보상 수령 시작')
         sleep(1)
         if odin[0].isActive == True:
             # 변동 이미지라서 3번 체크로 유무 확인
-            trc_confirm = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(0, 100, 50, 50))
-            if check_atr is None:
-                sleep(0.5)
+            while True:
                 check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(0, 100, 50, 50))
-            if check_atr is None:
-                sleep(0.5)
-                check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(0, 100, 50, 50))
-            print('완료 퀘스트 있음')
+                if check_atr is None:
+                    sleep(0.5)
+                    check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(0, 100, 50, 50))
+                if check_atr is None:
+                    sleep(0.5)
+                    check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(0, 100, 50, 50))
+                sleep(1)
+                if check_atr:
+                    print('완료 퀘스트 있음')
+                    click_reward = pyautogui.locateOnScreen('image\\town_request_reward.jpg', confidence=0.9, region=(810, 470, 150, 50))
+                    pyautogui.click(click_reward)
+                    sleep(4)
+                    click_randaom = pyautogui.locateOnScreen('image\\town_request_reward_random.jpg', confidence=0.9, region=(450, 310, 60, 50))
+                    pyautogui.click(click_randaom)
+                    sleep(3)
+                    pyautogui.click(470, 440)
+                    sleep(2)
+                else:
+                    break
+
         elif odin[1].isActive == True:
             # 변동 이미지라서 3번 체크로 유무 확인
-            trc_confirm = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(960, 100, 50, 50))
-            if check_atr is None:
-                sleep(0.5)
+            while True:
                 check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(960, 100, 50, 50))
-            if check_atr is None:
-                sleep(0.5)
-                check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(960, 100, 50, 50))
-            print('완료 퀘스트 있음')
-        return trc_confirm
-    
-    # 수락 및 완료한 마을 의뢰 확인 (1:미드가르드, 2:요툰하임, 3:니다벨리르, 4:알브하임)
-    # 메인 퀘스트로 도달한 지역에 따라 마을의뢰 총 개수가 다름
-    def town_request_all_confirm(map):
-        sleep(1)
-        if odin[0].isActive == True:
-            if map == 1:
-                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_1.jpg', confidence=0.9, region=(150, 450, 50, 30))
-            elif map == 2:
-                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_2.jpg', confidence=0.9, region=(150, 450, 50, 30))
-            elif map == 3:
-                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_3.jpg', confidence=0.9, region=(150, 450, 50, 30))
-            elif map == 4:
-                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_4.jpg', confidence=0.9, region=(150, 450, 50, 30))
-        elif odin[1].isActive == True:
-            if map == 1:
-                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_1.jpg', confidence=0.9, region=(1110, 450, 50, 30))
-            elif map == 2:
-                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_2.jpg', confidence=0.9, region=(1110, 450, 50, 30))
-            elif map == 3:
-                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_3.jpg', confidence=0.9, region=(1110, 450, 50, 30))
-            elif map == 4:
-                tra_confirm = pyautogui.locateOnScreen('image\\town_request_all_complete_check_4.jpg', confidence=0.9, region=(1110, 450, 50, 30))                
-        return tra_confirm
+                if check_atr is None:
+                    sleep(0.5)
+                    check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(960, 100, 50, 50))
+                if check_atr is None:
+                    sleep(0.5)
+                    check_atr = pyautogui.locateOnScreen('image\\town_request_complete_click.jpg', confidence=0.9, region=(960, 100, 50, 50))
+                sleep(1)
+                if check_atr:
+                    print('완료 퀘스트 있음')
+                    click_reward = pyautogui.locateOnScreen('image\\town_request_reward.jpg', confidence=0.9, region=(1770, 470, 150, 50))
+                    pyautogui.click(click_reward)
+                    sleep(4)
+                    click_randaom = pyautogui.locateOnScreen('image\\town_request_reward_random.jpg', confidence=0.9, region=(1410, 310, 60, 50))
+                    pyautogui.click(click_randaom)
+                    sleep(3)
+                    pyautogui.click(1430, 440)
+                    sleep(2)
+                else:
+                    break
+        print('완료 퀘스트 및 보상 수령 완료!!!')
 
-    # 퀘스트 난이도 확인 (상급, 최상급만 선택)
+
+    # 퀘스트 난이도 확인 및 의뢰수락 (상급, 최상급만 선택)
     def town_request_level_confirm():
+        print('퀘스트 난이도 확인 및 의뢰수락(골드의뢰만 수락함)')
         sleep(1)
         if odin[0].isActive == True:
             #상급, 최상급 퀘스트만 선택
-            trl_confirm_q2 = pyautogui.locateOnScreen('image\\town_request_q2.jpg', confidence=0.9, region=(230, 100, 60, 60))
-            trl_confirm_q3 = pyautogui.locateOnScreen('image\\town_request_q3.jpg', confidence=0.9, region=(230, 100, 60, 60))
-            trl_ok = pyautogui.locateOnScreen('image\\town_request_ok.jpg', confidence=0.9, region=(820, 470, 140, 50))
-            if trl_confirm_q2 or trl_confirm_q3:
-                print('상급 또는 최상급 퀘스트 존재 - 수락하기 클릭')
-                pyautogui.click(trl_ok)
-                sleep(3)
+            while True:
+                trl_confirm_q1 = pyautogui.locateOnScreen('image\\town_request_q1.jpg', confidence=0.9, region=(230, 100, 60, 60))
+                trl_confirm_q2 = pyautogui.locateOnScreen('image\\town_request_q2.jpg', confidence=0.9, region=(230, 100, 60, 60))
+                trl_confirm_q3 = pyautogui.locateOnScreen('image\\town_request_q3.jpg', confidence=0.9, region=(230, 100, 60, 60))
+                trl_ok = pyautogui.locateOnScreen('image\\town_request_ok.jpg', confidence=0.9, region=(820, 470, 140, 50))
+                trl_max = pyautogui.locateOnScreen('image\\town_request_deal_max.jpg', confidence=0.9, region=(910, 60, 60, 40))
+                trl_refresh = pyautogui.locateOnScreen('image\\town_request_gold_click.jpg', confidence=0.9, region=(130, 460, 70, 70))
+                # 완료 퀘스트 체크
+                town_request_all_complete()
+                # 진행 중인 의뢰가 가득일 경우 out   
+                if trl_max:
+                    break
+                elif trl_confirm_q2 or trl_confirm_q3:
+                    print('상급 또는 최상급 퀘스트 존재 - 수락하기 클릭')
+                    pyautogui.click(trl_ok)
+                    sleep(5)
+                elif trl_refresh:
+                    print('상급, 최상급 마을의뢰 없음 - 골드 초기화 실행')
+                    pyautogui.click(trl_refresh)
+                    sleep(5)
+                    trl_gold_ok = pyautogui.locateOnScreen('image\\town_request_confirm.jpg', confidence=0.9, region=(460, 310, 170, 70)) 
+                    pyautogui.click(trl_gold_ok)
+                    sleep(2)
+                # 골드 갱신이 없다면 보통 의뢰 수락
+                elif trl_refresh is None:
+                    pyautogui.click(trl_ok)
+                    sleep(5)
+            # 리스트 가장 아래 의뢰 시작 - 지상 이동
+            pyautogui.moveTo(120, 430)
+            pyautogui.dragTo(120, 100, 3, button='left')
+            sleep(2)
+            already_ok = pyautogui.locateOnScreen('image\\town_request_already_ok.jpg', confidence=0.9, region=(170, 150, 70, 310))
+            if already_ok:
+                pyautogui.click(already_ok)
+                sleep(1)
+                go_onfoot = pyautogui.locateOnScreen('image\\town_request_onfoot.jpg', confidence=0.9, region=(580, 470, 200, 50))
+                sleep(1)
+                pyautogui.click(go_onfoot)
+            else:
+                print('수락한 퀘스트 없거나 오류발생')
+                main_back()
         elif odin[1].isActive == True:
             #상급, 최상급 퀘스트만 선택
-            trl_confirm_q2 = pyautogui.locateOnScreen('image\\town_request_q2.jpg', confidence=0.9, region=(1190, 100, 60, 60))
-            trl_confirm_q3 = pyautogui.locateOnScreen('image\\town_request_q3.jpg', confidence=0.9, region=(1190, 100, 60, 60))
-            trl_ok = pyautogui.locateOnScreen('image\\town_request_ok.jpg', confidence=0.9, region=(1780, 470, 140, 50))
-            if trl_confirm_q2 or trl_confirm_q3:
-                print('상급 또는 최상급 퀘스트 존재 - 수락하기 클릭')
-                pyautogui.click(trl_ok)
-                sleep(3)
+            while True:
+                trl_confirm_q1 = pyautogui.locateOnScreen('image\\town_request_q1.jpg', confidence=0.9, region=(1190, 100, 60, 60))
+                trl_confirm_q2 = pyautogui.locateOnScreen('image\\town_request_q2.jpg', confidence=0.9, region=(1190, 100, 60, 60))
+                trl_confirm_q3 = pyautogui.locateOnScreen('image\\town_request_q3.jpg', confidence=0.9, region=(1190, 100, 60, 60))
+                trl_ok = pyautogui.locateOnScreen('image\\town_request_ok.jpg', confidence=0.9, region=(1780, 470, 140, 50))
+                trl_max = pyautogui.locateOnScreen('image\\town_request_deal_max.jpg', confidence=0.9, region=(1870, 60, 60, 40))
+                trl_refresh = pyautogui.locateOnScreen('image\\town_request_gold_click.jpg', confidence=0.9, region=(1090, 460, 70, 70))
+                # 완료 퀘스트 체크
+                town_request_all_complete()
+                # 진행 중인 의뢰가 가득일 경우 out                
+                if trl_max:
+                    break
+                elif trl_confirm_q2 or trl_confirm_q3:
+                    print('상급 또는 최상급 퀘스트 존재 - 수락하기 클릭')
+                    pyautogui.click(trl_ok)
+                    sleep(5)
+                elif trl_refresh:
+                    print('상급, 최상급 마을의뢰 없음 - 골드 초기화 실행')
+                    pyautogui.click(trl_refresh)
+                    sleep(5)
+                    trl_gold_ok = pyautogui.locateOnScreen('image\\town_request_confirm.jpg', confidence=0.9, region=(1420, 310, 170, 70)) 
+                    pyautogui.click(trl_gold_ok)
+                    sleep(2)
+                # 골드 갱신이 없다면 보통 의뢰 수락
+                elif trl_refresh is None:
+                    pyautogui.click(trl_ok)
+                    sleep(5)
+            # 리스트 가장 아래 의뢰 시작 - 지상 이동
+            pyautogui.moveTo(1080, 430)
+            pyautogui.dragTo(1080, 100, 3, button='left')
+            sleep(2)
+            already_ok = pyautogui.locateOnScreen('image\\town_request_already_ok.jpg', confidence=0.9, region=(1130, 150, 70, 310))
+            if already_ok:
+                pyautogui.click(already_ok)
+                sleep(1)
+                go_onfoot = pyautogui.locateOnScreen('image\\town_request_onfoot.jpg', confidence=0.9, region=(1540, 470, 200, 50))
+                sleep(1)
+                pyautogui.click(go_onfoot)
+            else:
+                print('수락한 퀘스트 없거나 오류발생')
+                main_back()
+        print('퀘스트 난이도 확인 및 의뢰수락 완료!!!!')
+
         
-    # town_request 메소드 메인
-    # if odin[0].isActive == True:
-    # elif odin[1].isActive == True:
+    town_request_complete_ckeck()
+    all_clear = town_request_all_complete()
+    if all_clear == 0:
+        town_request_complete_ckeck()
+        sleep(1)
+        town_request_level_confirm()
+    elif all_clear == 1:
+        print('마을 의뢰 완료!')
+
+# 마을 귀환 > 포션 구입 > 저장된 사냥터 이동
+def get_potion():
+    sleep(1)
+    # # hp 체크 - 멀티 스레딩 또는 while문을 빠져나오는 방법을 강구해야 함 그리고 간헐적 에러가 발생하기에 우선 사용 안함
+    # def check_hp():
+    #     while True:
+    #         sleep(5)
+    #         # 거의 hp 30% 정도일때 귀환함 (좌표의 RGB로 체크)
+    #         try:
+    #             x_1, y_1 = pyautogui.position(78, 46)
+    #             r_1,g_1,b_1 = pyautogui.pixel(x_1, y_1)
+    #             print('ODIN1 hp 체크중....', r_1)
+    #         except:
+    #             x_1, y_1 = pyautogui.position(78, 46)
+    #             r_1,g_1,b_1 = pyautogui.pixel(x_1, y_1)
+    #             print('ODIN1 hp 체크중....', r_1)
+    #         if r_1 < 40:
+    #             odin[0].activate()
+    #             break
+    #         try:
+    #             x_2, y_2 = pyautogui.position(1038, 46)
+    #             r_2, g_2, b_2 = pyautogui.pixel(x_2, y_2)
+    #             print('ODIN2 hp 체크중....', r_2)
+    #         except:
+    #             x_2, y_2 = pyautogui.position(1038, 46)
+    #             r_2, g_2, b_2 = pyautogui.pixel(x_2, y_2)
+    #             print('ODIN2 hp 체크중....', r_2)
+    #         if r_2 < 40:
+    #             odin[1].activate()
+    #             breakooooo
+    #         if pyautogui.press('o'):
+    #             break
+
+    # 물약 사러 귀환
+    def go_town():
+        sleep(1)
+        if odin[0].isActive == True:
+            main_back()
+            sleep(2)
+            pyautogui.click(22, 203)
+            sleep(2)
+            gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(450, 290, 180, 80))
+            if gotown_click:
+                print('물약 사러 마을로 갑니다~!')
+                pyautogui.click(gotown_click)
+                sleep(15)
+                pyautogui.press('4')
+                sleep(15)
+                pyautogui.click(120, 130) # 대형물약
+                sleep(3)
+                pyautogui.click(547, 313) # 최대
+                sleep(3)
+                pyautogui.click(530, 388) # 구매하기
+                sleep(3)
+                main_back()
+                sleep(3)
+                pyautogui.click(19, 138) # 저장된 장소
+                sleep(3)
+                pyautogui.click(211, 184) # 이동
+                sleep(10)
+                pyautogui.press('g')
+            else: 
+                print('마을 가는 확인창 찾을 수 없음')
+                main_back()
+        elif odin[1].isActive == True:
+            main_back()
+            sleep(2)
+            pyautogui.click(982, 203)
+            sleep(2)
+            gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(1410, 290, 180, 80))
+            if gotown_click:
+                print('물약 사러 마을로 갑니다~!')
+                pyautogui.click(gotown_click)
+                sleep(10)
+                pyautogui.press('4')
+                sleep(10)
+                pyautogui.click(1080, 130) # 대형물약
+                sleep(3)
+                pyautogui.click(1507, 313) # 최대
+                sleep(3)
+                pyautogui.click(1490, 388) # 구매하기
+                sleep(3)
+                main_back()
+                sleep(3)
+                pyautogui.click(979, 138) # 저장된 장소
+                sleep(3)
+                pyautogui.click(1171, 184) # 이동
+                sleep(10)
+                pyautogui.press('g')
+            else: 
+                print('마을 가는 확인창 찾을 수 없음')
+                main_back()
+
+# 부활하기
+def resurrection():
+    sleep(1)
+    if odin[0].isActive == True:
+        # 빨간색이 껌벅거려서 3번 체크함
+        make_res = pyautogui.locateOnScreen('image\\resurrection.jpg', confidence=0.8, region=(477, 423, 150, 50))
+        sleep(1)
+        make_res = pyautogui.locateOnScreen('image\\resurrection.jpg', confidence=0.8, region=(477, 423, 150, 50))
+        sleep(1)
+        make_res = pyautogui.locateOnScreen('image\\resurrection.jpg', confidence=0.8, region=(477, 423, 150, 50))
+        if make_res:
+            print('죽었습니다. 부활합니다.')
+            pyautogui.click(make_res)
+            sleep(15)
+            pyautogui.click(213, 47) # 상단 부활하기 체크
+            sleep(3)
+            pyautogui.click(337, 188) # 리스트에 사망 클릭 (첫번째)
+            sleep(3)
+            pyautogui.click(536, 400) # 무료 복구 클릭
+            sleep(3)
+            pyautogui.press('4')
+            sleep(15)
+            pyautogui.click(120, 130) # 대형물약
+            sleep(3)
+            pyautogui.click(547, 313) # 최대
+            sleep(3)
+            pyautogui.click(530, 388) # 구매하기
+            sleep(3)
+            main_back()
+            sleep(3)
+            pyautogui.click(19, 138) # 저장된 장소
+            sleep(3)
+            pyautogui.click(211, 184) # 이동
+            sleep(10)
+            pyautogui.press('g')
+            return 0
+        else: 
+            print('죽지 않음 패스')
+            main_back()
+            return 1
+    elif odin[1].isActive == True:
+        # 빨간색이 껌벅거려서 3번 체크함
+        make_res = pyautogui.locateOnScreen('image\\resurrection.jpg', confidence=0.8, region=(1437, 423, 150, 50))
+        sleep(1)
+        make_res = pyautogui.locateOnScreen('image\\resurrection.jpg', confidence=0.8, region=(1437, 423, 150, 50))
+        sleep(1)
+        make_res = pyautogui.locateOnScreen('image\\resurrection.jpg', confidence=0.8, region=(1437, 423, 150, 50))
+        if make_res:
+            print('죽었습니다. 부활합니다.')
+            pyautogui.click(make_res)
+            sleep(15)
+            pyautogui.click(1173, 47) # 상단 부활하기 체크
+            sleep(3)
+            pyautogui.click(1297, 188) # 리스트에 사망 클릭 (첫번째)
+            sleep(3)
+            pyautogui.click(1496, 400) # 무료 복구 클릭
+            sleep(3)
+            pyautogui.press('4')
+            sleep(15)
+            pyautogui.click(1080, 130) # 대형물약
+            sleep(3)
+            pyautogui.click(1507, 313) # 최대
+            sleep(3)
+            pyautogui.click(1490, 388) # 구매하기
+            sleep(3)
+            main_back()
+            sleep(3)
+            pyautogui.click(979, 138) # 저장된 장소
+            sleep(3)
+            pyautogui.click(1171, 184) # 이동
+            sleep(10)
+            pyautogui.press('g')
+            return 0
+        else: 
+            print('죽지 않음 패스')
+            main_back()
+            return 1
 
 get_mecro()
+active_mecro_1()
+disable_sleep_mode()
+# elite_dg_entrance(4, 5)
+# party_dg_entrance(2, 1)
+town_request()
+# resurrection()
+
+sleep(2)
 active_mecro_2()
 disable_sleep_mode()
 # elite_dg_entrance(4, 5)
 # party_dg_entrance(2, 1)
 town_request()
+# resurrection()
 
 # active_mecro_2()
 # disable_sleep_mode()
@@ -1004,12 +1316,3 @@ town_request()
 # print('step_2 check_value : ', test_2)
 # active_mecro_2()
 # disable_sleep_mode()
-
-
-
-
-    
-    
-    
-
-
