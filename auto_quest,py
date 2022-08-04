@@ -85,6 +85,7 @@ def play_quest():
         quest_confirm = pyautogui.locateOnScreen('image\\quest_confirm.jpg', confidence=0.8, region=(465, 315, 130, 40))
         quset_skip = pyautogui.locateOnScreen('image\\quset_skip.jpg', confidence=0.8, region=(909, 40, 50, 30))
         quest_story_skip = pyautogui.locateOnScreen('image\\quest_story_skip.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        quest_reword_check = pyautogui.locateOnScreen('image\\quest_reword_check.jpg', confidence=0.8, region=(0, 0, 960, 540))
         
         if quest_go:
             pyautogui.click(quest_go)
@@ -100,7 +101,11 @@ def play_quest():
             sleep(1)  
         if quest_story_skip:
             pyautogui.click(quest_story_skip)
-            sleep(1)           
+            sleep(1)
+        if quest_reword_check:
+            pyautogui.click(quest_reword_check)
+            sleep(1)
+            
     elif odin[1].isActive == True:
         pyautogui.click(1875, 97)
         sleep(2)
@@ -109,6 +114,7 @@ def play_quest():
         quest_confirm = pyautogui.locateOnScreen('image\\quest_confirm.jpg', confidence=0.8, region=(1425, 315, 130, 40))
         quset_skip = pyautogui.locateOnScreen('image\\quset_skip.jpg', confidence=0.8, region=(1869, 40, 50, 30))
         quest_story_skip = pyautogui.locateOnScreen('image\\quest_story_skip.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        quest_reword_check = pyautogui.locateOnScreen('image\\quest_reword_check.jpg', confidence=0.8, region=(960, 0, 960, 540))
         
         if quest_go:
             pyautogui.click(quest_go)
@@ -125,6 +131,9 @@ def play_quest():
         if quest_story_skip:
             pyautogui.click(quest_story_skip)
             sleep(1)   
+        if quest_reword_check:
+            pyautogui.click(quest_reword_check)
+            sleep(1)        
 
 get_mecro()
 while True:
