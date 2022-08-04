@@ -1116,7 +1116,7 @@ def town_request():
         sleep(1)
         town_request_level_confirm()
     elif all_clear == 1:
-        print('마을 의뢰 완료!')
+        print('마을 의뢰 완료! >>>>>> ', all_clear)
 
 # 마을 귀환 > 포션 구입 > 저장된 사냥터 이동
 def get_potion():

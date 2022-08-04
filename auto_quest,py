@@ -127,12 +127,24 @@ def play_quest():
             sleep(1)   
 
 get_mecro()
-while True:
-    active_mecro_1()
-    sleep(1)
-    play_quest()
-    sleep(2)
-    active_mecro_2()
-    sleep(1)
-    play_quest()
-    sleep(2)
+try:
+    while True:
+        active_mecro_1()
+        sleep(1)
+        play_quest()
+        sleep(2)
+        active_mecro_2()
+        sleep(1)
+        play_quest()
+        sleep(2)
+except:
+    sleep(60)
+    while True:
+        active_mecro_1()
+        sleep(1)
+        play_quest()
+        sleep(2)
+        active_mecro_2()
+        sleep(1)
+        play_quest()
+        sleep(2)
