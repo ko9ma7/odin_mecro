@@ -127,8 +127,8 @@ def play_quest():
             sleep(1)   
 
 get_mecro()
-try:
-    while True:
+while True:
+    try:
         active_mecro_1()
         sleep(1)
         play_quest()
@@ -137,9 +137,8 @@ try:
         sleep(1)
         play_quest()
         sleep(2)
-except:
-    sleep(60)
-    while True:
+    except:
+        sleep(60)
         active_mecro_1()
         sleep(1)
         play_quest()
