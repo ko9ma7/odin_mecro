@@ -39,13 +39,13 @@ def active_mecro_2():
 def disable_sleep_mode():
     sleep(1)
     if odin[0].isActive == True:
-        sleep_mode = pyautogui.locateOnScreen('image\disable_sleep_mode.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(0, 0, 960, 540))
         print(sleep_mode , '절전모드 아님')
         if sleep_mode is not None:
             pyautogui.moveTo(480, 270)
             pyautogui.dragTo(680, 270, 1, button='left')
     elif odin[1].isActive == True:
-        sleep_mode = pyautogui.locateOnScreen('image\disable_sleep_mode.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(960, 0, 960, 540))
         print(sleep_mode , '절전모드 아님')
         if sleep_mode is not None:
             pyautogui.moveTo(1440, 270)
@@ -55,12 +55,12 @@ def disable_sleep_mode():
 def main_back():
     sleep(1)
     if odin[0].isActive == True:
-        back_click = pyautogui.locateOnScreen('image\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         if back_click is not None:
             pyautogui.click(back_click)
 
     elif odin[1].isActive == True:
-        back_click = pyautogui.locateOnScreen('image\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         if back_click is not None:
             pyautogui.click(back_click)
 
@@ -68,10 +68,10 @@ def main_back():
 def previous_back():
     sleep(1)
     if odin[0].isActive == True:
-        back_click = pyautogui.locateOnScreen('image\previous_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        back_click = pyautogui.locateOnScreen('image\\previous_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         pyautogui.click(back_click)
     elif odin[1].isActive == True:
-        back_click = pyautogui.locateOnScreen('image\previous_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        back_click = pyautogui.locateOnScreen('image\\previous_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         pyautogui.click(back_click)
 
 # 퀘스트 진행
@@ -86,7 +86,14 @@ def play_quest():
         quset_skip = pyautogui.locateOnScreen('image\\quset_skip.jpg', confidence=0.8, region=(909, 40, 50, 30))
         quest_story_skip = pyautogui.locateOnScreen('image\\quest_story_skip.jpg', confidence=0.8, region=(0, 0, 960, 540))
         quest_reword_check = pyautogui.locateOnScreen('image\\quest_reword_check.jpg', confidence=0.8, region=(0, 0, 960, 540))
-        
+        resurrection = pyautogui.locateOnScreen('image\\resurrection.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        resurrection_click = pyautogui.locateOnScreen('image\\resurrection_click.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        exit_click = pyautogui.locateOnScreen('image\\click_x.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        get_potion = pyautogui.locateOnScreen('image\\get_potion.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        quest_status = pyautogui.locateOnScreen('image\\quest_status.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+
         if quest_go:
             pyautogui.click(quest_go)
             sleep(1)
@@ -105,7 +112,43 @@ def play_quest():
         if quest_reword_check:
             pyautogui.click(quest_reword_check)
             sleep(1)
-            
+        if resurrection:
+            pyautogui.click(resurrection)
+            sleep(1)
+        if resurrection_click:
+            pyautogui.click(resurrection_click)
+            sleep(2)
+            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(0, 0, 960, 540))
+            sleep(1)
+            pyautogui.click(resurrection_check)
+            sleep(1)
+            pyautogui.click(538, 401) # 무료복구
+        if exit_click:
+            pyautogui.click(exit_click)
+            sleep(1)
+        if sleep_mode:
+            disable_sleep_mode()
+            sleep(1)
+        if back_click:
+            pyautogui.click(back_click)
+            sleep(1)
+        if get_potion:
+            pyautogui.click(22, 203)
+            sleep(1)
+            pyautogui.click(531, 331)
+            sleep(10)
+            pyautogui.press('4')
+            sleep(15)
+            pyautogui.click(120, 130) # 대형물약
+            sleep(3)
+            pyautogui.click(547, 313) # 최대
+            sleep(3)
+            pyautogui.click(530, 388) # 구매하기
+            sleep(3)
+        if quest_status is None:
+            pyautogui.click(937, 103)
+            sleep(1)
+
     elif odin[1].isActive == True:
         pyautogui.click(1875, 97)
         sleep(2)
@@ -115,6 +158,13 @@ def play_quest():
         quset_skip = pyautogui.locateOnScreen('image\\quset_skip.jpg', confidence=0.8, region=(1869, 40, 50, 30))
         quest_story_skip = pyautogui.locateOnScreen('image\\quest_story_skip.jpg', confidence=0.8, region=(960, 0, 960, 540))
         quest_reword_check = pyautogui.locateOnScreen('image\\quest_reword_check.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        resurrection = pyautogui.locateOnScreen('image\\resurrection.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        resurrection_click = pyautogui.locateOnScreen('image\\resurrection_click.jpg', confidence=0.8, region=(960, 0, 960, 540))    
+        exit_click = pyautogui.locateOnScreen('image\\click_x.jpg', confidence=0.8, region=(960, 0, 960, 540))    
+        sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        get_potion = pyautogui.locateOnScreen('image\\get_potion.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        quest_status = pyautogui.locateOnScreen('image\\quest_status.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         
         if quest_go:
             pyautogui.click(quest_go)
@@ -133,7 +183,43 @@ def play_quest():
             sleep(1)   
         if quest_reword_check:
             pyautogui.click(quest_reword_check)
-            sleep(1)        
+            sleep(1)
+        if resurrection:
+            pyautogui.click(resurrection)
+            sleep(1)
+        if resurrection_click:
+            pyautogui.click(resurrection_click)
+            sleep(2)
+            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(960, 0, 960, 540))
+            sleep(1)
+            pyautogui.click(resurrection_check)
+            sleep(1)
+            pyautogui.click(1498, 401) # 무료복구
+        if exit_click:
+            pyautogui.click(exit_click)
+            sleep(1)
+        if sleep_mode:
+            disable_sleep_mode()
+            sleep(1)
+        if back_click:
+            pyautogui.click(back_click)
+            sleep(1)
+        if get_potion:
+            pyautogui.click(982, 203)
+            sleep(1)
+            pyautogui.click(1491, 331)
+            sleep(10)
+            pyautogui.press('4')
+            sleep(15)
+            pyautogui.click(1080, 130) # 대형물약
+            sleep(3)
+            pyautogui.click(1507, 313) # 최대
+            sleep(3)
+            pyautogui.click(1490, 388) # 구매하기
+            sleep(3)
+        if quest_status is None:
+            pyautogui.click(1897, 103)
+            sleep(1)
 
 get_mecro()
 while True:
