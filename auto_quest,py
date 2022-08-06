@@ -97,25 +97,25 @@ def play_quest():
 
         if quest_go:
             pyautogui.click(quest_go)
-            sleep(1)
+            sleep(2)
         if free_go:
             pyautogui.click(free_go)
-            sleep(1)
+            sleep(2)
         if quset_skip:
             pyautogui.click(quset_skip)
-            sleep(1)    
+            sleep(2)    
         if quest_confirm:
             pyautogui.click(quest_confirm)
-            sleep(1)  
+            sleep(2)  
         if quest_story_skip:
             pyautogui.click(quest_story_skip)
-            sleep(1)
+            sleep(2)
         if quest_reword_check:
             pyautogui.click(quest_reword_check)
-            sleep(1)
+            sleep(2)
         if resurrection:
             pyautogui.click(resurrection)
-            sleep(1)
+            sleep(2)
         if resurrection_click:
             pyautogui.click(resurrection_click)
             sleep(2)
@@ -124,26 +124,27 @@ def play_quest():
             pyautogui.click(538, 401) # 무료복구
         if exit_click:
             pyautogui.click(exit_click)
-            sleep(1)
+            sleep(2)
         if sleep_mode:
             disable_sleep_mode()
-            sleep(1)
+            sleep(2)
         if back_click:
             pyautogui.click(back_click)
-            sleep(1)
+            sleep(2)
         if get_potion or get_potion_2:
             pyautogui.click(22, 203)
-            sleep(1)
+            sleep(2)
             pyautogui.click(531, 331)
-            sleep(10)
-            pyautogui.press('4')
             sleep(15)
+            pyautogui.press('4')
+            sleep(20)
             pyautogui.click(120, 130) # 맨 위 물약
             sleep(3)
             pyautogui.click(547, 313) # 최대
             sleep(3)
             pyautogui.click(530, 388) # 구매하기
             sleep(3)
+            main_back()
         if quest_status is None:
             pyautogui.click(937, 103)
             sleep(1)
@@ -168,25 +169,25 @@ def play_quest():
         
         if quest_go:
             pyautogui.click(quest_go)
-            sleep(1)
+            sleep(2)
         if free_go:
             pyautogui.click(free_go)
-            sleep(1)
+            sleep(2)
         if quset_skip:
             pyautogui.click(quset_skip)
-            sleep(1)    
+            sleep(2)    
         if quest_confirm:
             pyautogui.click(quest_confirm)
-            sleep(1)    
+            sleep(2)    
         if quest_story_skip:
             pyautogui.click(quest_story_skip)
-            sleep(1)   
+            sleep(2)   
         if quest_reword_check:
             pyautogui.click(quest_reword_check)
-            sleep(1)
+            sleep(2)
         if resurrection:
             pyautogui.click(resurrection)
-            sleep(1)
+            sleep(2)
         if resurrection_click:
             pyautogui.click(resurrection_click)
             sleep(2)
@@ -195,26 +196,27 @@ def play_quest():
             pyautogui.click(1498, 401) # 무료복구
         if exit_click:
             pyautogui.click(exit_click)
-            sleep(1)
+            sleep(2)
         if sleep_mode:
             disable_sleep_mode()
-            sleep(1)
+            sleep(2)
         if back_click:
             pyautogui.click(back_click)
-            sleep(1)
+            sleep(2)
         if get_potion or get_potion_2:
             pyautogui.click(982, 203)
-            sleep(1)
+            sleep(2)
             pyautogui.click(1491, 331)
-            sleep(10)
-            pyautogui.press('4')
             sleep(15)
+            pyautogui.press('4')
+            sleep(20)
             pyautogui.click(1080, 130) # 맨 위 물약
             sleep(3)
             pyautogui.click(1507, 313) # 최대
             sleep(3)
             pyautogui.click(1490, 388) # 구매하기
             sleep(3)
+            main_back()
         if quest_status is None:
             pyautogui.click(1897, 103)
             sleep(1)
