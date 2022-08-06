@@ -867,9 +867,9 @@ def town_request():
         if odin[0].isActive == True:
             #상급, 최상급 퀘스트만 선택
             while True:
-                level_1 = pyautogui.locateOnScreen('image\\town_request\\level_1.jpg', confidence=0.9, region=(230, 100, 60, 60))
-                level_2 = pyautogui.locateOnScreen('image\\town_request\\level_2.jpg', confidence=0.9, region=(230, 100, 60, 60))
-                level_3 = pyautogui.locateOnScreen('image\\town_request\\level_3.jpg', confidence=0.9, region=(230, 100, 60, 60))
+                level_1 = pyautogui.locateOnScreen('image\\town_request\\level_1.jpg', confidence=0.8, region=(230, 100, 60, 60))
+                level_2 = pyautogui.locateOnScreen('image\\town_request\\level_2.jpg', confidence=0.8, region=(230, 100, 60, 60))
+                level_3 = pyautogui.locateOnScreen('image\\town_request\\level_3.jpg', confidence=0.8, region=(230, 100, 60, 60))
                 gold_change = pyautogui.locateOnScreen('image\\town_request\\gold_change.jpg', confidence=0.9, region=(130, 460, 70, 70))
                 if level_1 or level_2 or level_3:
                     if level_2 or level_3:
@@ -884,14 +884,14 @@ def town_request():
                         else:
                             pyautogui.click(891, 496)
                             sleep(1)
-                    max_request = pyautogui.locateOnScreen('image\\town_request\\max_request.jpg', confidence=0.9, region=(0, 0, 960, 540))
-                    no_more_request = pyautogui.locateOnScreen('image\\town_request\\no_more_request.jpg', confidence=0.9, region=(0, 0, 960, 540))
+                    max_request = pyautogui.locateOnScreen('image\\town_request\\max_request.jpg', confidence=0.8, region=(0, 0, 960, 540))
+                    no_more_request = pyautogui.locateOnScreen('image\\town_request\\no_more_request.jpg', confidence=0.8, region=(0, 0, 960, 540))
                     if  no_more_request:
                         print('오딘1 - 마을 의뢰 가득참')
                         pyautogui.moveTo(120, 430)
                         pyautogui.dragTo(120, 100, 3, button='left')
                         sleep(2)
-                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(170, 150, 70, 310))
+                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.8, region=(170, 150, 70, 310))
                         if request_ok:
                             pyautogui.click(request_ok)
                             sleep(1)
@@ -909,7 +909,7 @@ def town_request():
                         pyautogui.moveTo(120, 430)
                         pyautogui.dragTo(120, 100, 3, button='left')
                         sleep(2)
-                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(170, 150, 70, 310))
+                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.8, region=(170, 150, 70, 310))
                         if request_ok:
                             pyautogui.click(request_ok)
                             sleep(1)
@@ -931,10 +931,10 @@ def town_request():
         elif odin[1].isActive == True:
             #상급, 최상급 퀘스트만 선택
             while True:
-                level_1 = pyautogui.locateOnScreen('image\\town_request\\level_1.jpg', confidence=0.9, region=(1190, 100, 60, 60))
-                level_2 = pyautogui.locateOnScreen('image\\town_request\\level_2.jpg', confidence=0.9, region=(1190, 100, 60, 60))
-                level_3 = pyautogui.locateOnScreen('image\\town_request\\level_3.jpg', confidence=0.9, region=(1190, 100, 60, 60))
-                gold_change = pyautogui.locateOnScreen('image\\town_request\\gold_change.jpg', confidence=0.9, region=(1090, 460, 70, 70))
+                level_1 = pyautogui.locateOnScreen('image\\town_request\\level_1.jpg', confidence=0.8, region=(1190, 100, 60, 60))
+                level_2 = pyautogui.locateOnScreen('image\\town_request\\level_2.jpg', confidence=0.8, region=(1190, 100, 60, 60))
+                level_3 = pyautogui.locateOnScreen('image\\town_request\\level_3.jpg', confidence=0.8, region=(1190, 100, 60, 60))
+                gold_change = pyautogui.locateOnScreen('image\\town_request\\gold_change.jpg', confidence=0.8, region=(1090, 460, 70, 70))
                 if level_1 or level_2 or level_3:
                     if level_2 or level_3:
                         pyautogui.click(1851, 496)
@@ -948,14 +948,14 @@ def town_request():
                         else:
                             pyautogui.click(1851, 496)
                             sleep(1)
-                    max_request = pyautogui.locateOnScreen('image\\town_request\\max_request.jpg', confidence=0.9, region=(960, 0, 960, 540))
-                    no_more_request = pyautogui.locateOnScreen('image\\town_request\\no_more_request.jpg', confidence=0.9, region=(960, 0, 960, 540))
+                    max_request = pyautogui.locateOnScreen('image\\town_request\\max_request.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                    no_more_request = pyautogui.locateOnScreen('image\\town_request\\no_more_request.jpg', confidence=0.8, region=(960, 0, 960, 540))
                     if  no_more_request:
                         print('오딘2 - 마을 의뢰 가득참')
                         pyautogui.moveTo(1080, 430)
                         pyautogui.dragTo(1080, 100, 3, button='left')
                         sleep(2)
-                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(1130, 150, 70, 310))
+                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.8, region=(1130, 150, 70, 310))
                         if request_ok:
                             pyautogui.click(request_ok)
                             sleep(1)
@@ -973,7 +973,7 @@ def town_request():
                         pyautogui.moveTo(1080, 430)
                         pyautogui.dragTo(1080, 100, 3, button='left')
                         sleep(2)
-                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(1130, 150, 70, 310))
+                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.8, region=(1130, 150, 70, 310))
                         if request_ok:
                             pyautogui.click(request_ok)
                             sleep(1)
