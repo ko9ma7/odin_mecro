@@ -103,11 +103,11 @@ def go_town():
             print('물약 사러 마을로 갑니다~!')
             sleep(2)
             pyautogui.click(gotown_click)
-            sleep(15)
+            sleep(20)
         else: 
             print('마을이거나 귀환 불가 지역')
         pyautogui.press('4')
-        sleep(15)
+        sleep(20)
         pyautogui.click(120, 130) # 대형물약
         sleep(3)
         pyautogui.click(547, 313) # 최대
@@ -125,11 +125,11 @@ def go_town():
             print('물약 사러 마을로 갑니다~!')
             sleep(2)
             pyautogui.click(gotown_click)
-            sleep(15)
+            sleep(20)
         else: 
             print('마을이거나 귀환 불가 지역')
         pyautogui.press('4')
-        sleep(15)
+        sleep(20)
         pyautogui.click(1080, 130) # 대형물약
         sleep(3)
         pyautogui.click(1507, 313) # 최대
@@ -298,7 +298,7 @@ def char_change(ch_num):
             pyautogui.click(915, 344)
             sleep(2)
         pyautogui.click(877, 484)
-        sleep(7)                    
+        sleep(20)                    
     elif odin[1].isActive == True:
         pyautogui.press('o')
         sleep(2)
@@ -322,7 +322,7 @@ def char_change(ch_num):
             pyautogui.click(1875, 344)
             sleep(2)
         pyautogui.click(1837, 484)
-        sleep(15)
+        sleep(20)
 
 # 파티던전 입장 
 # dg_course : 맹독의뱀둥지 - 1, 잊혀진거인의동굴 - 2, 난쟁이왕가의무덤 - 3    
