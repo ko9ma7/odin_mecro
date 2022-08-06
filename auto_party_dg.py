@@ -55,9 +55,13 @@ def disable_sleep_mode():
 def main_back():
     sleep(1)
     if odin[0].isActive == True:
-        back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
-        if back_click:
-            pyautogui.click(back_click)
+        main_back = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        if main_back:
+            pyautogui.click(main_back)
+            sleep(1)
+        main_back_nb = pyautogui.locateOnScreen('image\\main_back_nb.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        if main_back_nb:
+            pyautogui.click(main_back_nb)
             sleep(1)
         previous_back = pyautogui.locateOnScreen('image\\previous_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         if previous_back:
@@ -72,6 +76,10 @@ def main_back():
         back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         if back_click:
             pyautogui.click(back_click)
+            sleep(1)
+        main_back_nb = pyautogui.locateOnScreen('image\\main_back_nb.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        if main_back_nb:
+            pyautogui.click(main_back_nb)
             sleep(1)
         previous_back = pyautogui.locateOnScreen('image\\previous_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         if previous_back:

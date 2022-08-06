@@ -51,28 +51,45 @@ def disable_sleep_mode():
             pyautogui.moveTo(1440, 270)
             pyautogui.dragTo(1640, 270, 1, button='left')
 
-# 메인화면 백 버튼 클릭
+# 메인화면 돌아가기
 def main_back():
     sleep(1)
     if odin[0].isActive == True:
-        back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
-        if back_click is not None:
-            pyautogui.click(back_click)
+        main_back = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        if main_back:
+            pyautogui.click(main_back)
+            sleep(1)
+        main_back_nb = pyautogui.locateOnScreen('image\\main_back_nb.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        if main_back_nb:
+            pyautogui.click(main_back_nb)
+            sleep(1)
+        previous_back = pyautogui.locateOnScreen('image\\previous_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        if previous_back:
+            pyautogui.click(previous_back)
+            sleep(1)
+        click_x = pyautogui.locateOnScreen('image\\click_x.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        if click_x:
+            pyautogui.click(click_x)
+            sleep(1)
 
     elif odin[1].isActive == True:
         back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
-        if back_click is not None:
+        if back_click:
             pyautogui.click(back_click)
+            sleep(1)
+        main_back_nb = pyautogui.locateOnScreen('image\\main_back_nb.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        if main_back_nb:
+            pyautogui.click(main_back_nb)
+            sleep(1)
+        previous_back = pyautogui.locateOnScreen('image\\previous_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        if previous_back:
+            pyautogui.click(previous_back)
+            sleep(1)
+        click_x = pyautogui.locateOnScreen('image\\click_x.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        if click_x:
+            pyautogui.click(click_x)
+            sleep(1)
 
-# 뒤로가기 버튼 클릭
-def previous_back():
-    sleep(1)
-    if odin[0].isActive == True:
-        back_click = pyautogui.locateOnScreen('image\\previous_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
-        pyautogui.click(back_click)
-    elif odin[1].isActive == True:
-        back_click = pyautogui.locateOnScreen('image\\previous_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
-        pyautogui.click(back_click)
 
 # 퀘스트 진행
 def play_quest():
@@ -90,7 +107,8 @@ def play_quest():
         resurrection_click = pyautogui.locateOnScreen('image\\resurrection_click.jpg', confidence=0.8, region=(0, 0, 960, 540))
         exit_click = pyautogui.locateOnScreen('image\\click_x.jpg', confidence=0.8, region=(0, 0, 960, 540))
         sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(0, 0, 960, 540))
-        back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        main_back = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        main_back_nb = pyautogui.locateOnScreen('image\\main_back_nb.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         get_potion = pyautogui.locateOnScreen('image\\get_potion.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         get_potion_2 = pyautogui.locateOnScreen('image\\get_potion_2.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         quest_status = pyautogui.locateOnScreen('image\\quest_status.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
@@ -128,8 +146,11 @@ def play_quest():
         if sleep_mode:
             disable_sleep_mode()
             sleep(2)
-        if back_click:
-            pyautogui.click(back_click)
+        if main_back:
+            pyautogui.click(main_back)
+            sleep(2)
+        if main_back_nb:
+            pyautogui.click(main_back_nb)
             sleep(2)
         if get_potion or get_potion_2:
             pyautogui.click(22, 203)
@@ -162,7 +183,8 @@ def play_quest():
         resurrection_click = pyautogui.locateOnScreen('image\\resurrection_click.jpg', confidence=0.8, region=(960, 0, 960, 540))    
         exit_click = pyautogui.locateOnScreen('image\\click_x.jpg', confidence=0.8, region=(960, 0, 960, 540))    
         sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(960, 0, 960, 540))
-        back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        main_back = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        main_back_nb = pyautogui.locateOnScreen('image\\main_back_nb.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         get_potion = pyautogui.locateOnScreen('image\\get_potion.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         get_potion_2 = pyautogui.locateOnScreen('image\\get_potion_2.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         quest_status = pyautogui.locateOnScreen('image\\quest_status.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
@@ -200,8 +222,11 @@ def play_quest():
         if sleep_mode:
             disable_sleep_mode()
             sleep(2)
-        if back_click:
-            pyautogui.click(back_click)
+        if main_back:
+            pyautogui.click(main_back)
+            sleep(2)
+        if main_back_nb:
+            pyautogui.click(main_back_nb)
             sleep(2)
         if get_potion or get_potion_2:
             pyautogui.click(982, 203)
