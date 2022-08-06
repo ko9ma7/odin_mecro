@@ -92,6 +92,7 @@ def play_quest():
         sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(0, 0, 960, 540))
         back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         get_potion = pyautogui.locateOnScreen('image\\get_potion.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        get_potion_2 = pyautogui.locateOnScreen('image\\get_potion_2.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         quest_status = pyautogui.locateOnScreen('image\\quest_status.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
 
         if quest_go:
@@ -130,14 +131,14 @@ def play_quest():
         if back_click:
             pyautogui.click(back_click)
             sleep(1)
-        if get_potion:
+        if get_potion or get_potion_2:
             pyautogui.click(22, 203)
             sleep(1)
             pyautogui.click(531, 331)
             sleep(10)
             pyautogui.press('4')
             sleep(15)
-            pyautogui.click(120, 130) # 대형물약
+            pyautogui.click(120, 130) # 맨 위 물약
             sleep(3)
             pyautogui.click(547, 313) # 최대
             sleep(3)
@@ -162,6 +163,7 @@ def play_quest():
         sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(960, 0, 960, 540))
         back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         get_potion = pyautogui.locateOnScreen('image\\get_potion.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        get_potion_2 = pyautogui.locateOnScreen('image\\get_potion_2.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         quest_status = pyautogui.locateOnScreen('image\\quest_status.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         
         if quest_go:
@@ -200,14 +202,14 @@ def play_quest():
         if back_click:
             pyautogui.click(back_click)
             sleep(1)
-        if get_potion:
+        if get_potion or get_potion_2:
             pyautogui.click(982, 203)
             sleep(1)
             pyautogui.click(1491, 331)
             sleep(10)
             pyautogui.press('4')
             sleep(15)
-            pyautogui.click(1080, 130) # 대형물약
+            pyautogui.click(1080, 130) # 맨 위 물약
             sleep(3)
             pyautogui.click(1507, 313) # 최대
             sleep(3)
