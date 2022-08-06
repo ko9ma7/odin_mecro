@@ -82,6 +82,167 @@ def main_back():
             pyautogui.click(click_x)
             sleep(1)
 
+# 물약 구매
+def go_town():
+    sleep(1)
+    if odin[0].isActive == True:
+        main_back()
+        sleep(2)
+        pyautogui.click(22, 203)
+        sleep(2)
+        gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        if gotown_click:
+            print('물약 사러 마을로 갑니다~!')
+            sleep(2)
+            pyautogui.click(gotown_click)
+            sleep(15)
+        else: 
+            print('마을이거나 귀환 불가 지역')
+        pyautogui.press('4')
+        sleep(15)
+        pyautogui.click(120, 130) # 대형물약
+        sleep(3)
+        pyautogui.click(547, 313) # 최대
+        sleep(3)
+        pyautogui.click(530, 388) # 구매하기
+        sleep(3)
+        main_back()
+    elif odin[1].isActive == True:
+        main_back()
+        sleep(2)
+        pyautogui.click(982, 203)
+        sleep(2)
+        gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        if gotown_click:
+            print('물약 사러 마을로 갑니다~!')
+            sleep(2)
+            pyautogui.click(gotown_click)
+            sleep(15)
+        else: 
+            print('마을이거나 귀환 불가 지역')
+        pyautogui.press('4')
+        sleep(15)
+        pyautogui.click(1080, 130) # 대형물약
+        sleep(3)
+        pyautogui.click(1507, 313) # 최대
+        sleep(3)
+        pyautogui.click(1490, 388) # 구매하기
+        sleep(3)
+        main_back()
+
+# 자동 사냥 켜기
+def auto_play():
+    sleep(1)
+    main_back()
+    if odin[0].isActive == True:
+        auto_1 = pyautogui.locateOnScreen('image\\auto_play\\auto_1.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_2 = pyautogui.locateOnScreen('image\\auto_play\\auto_2.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_3 = pyautogui.locateOnScreen('image\\auto_play\\auto_3.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_4 = pyautogui.locateOnScreen('image\\auto_play\\auto_4.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_5 = pyautogui.locateOnScreen('image\\auto_play\\auto_5.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_6 = pyautogui.locateOnScreen('image\\auto_play\\auto_6.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(0, 0, 960, 540))
+
+        print(auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8)
+        if auto_1:
+            pyautogui.click(auto_1)
+        if auto_2:
+            pyautogui.click(auto_2)
+        if auto_3:
+            pyautogui.click(auto_3)
+        if auto_4:
+            pyautogui.click(auto_4)
+        if auto_5:
+            pyautogui.click(auto_5)
+        if auto_6:
+            pyautogui.click(auto_6)
+        if auto_7:
+            pyautogui.click(auto_7)
+        if auto_8:
+            pyautogui.click(auto_8)
+
+    elif odin[1].isActive == True:
+        auto_1 = pyautogui.locateOnScreen('image\\auto_play\\auto_1.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_2 = pyautogui.locateOnScreen('image\\auto_play\\auto_2.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_3 = pyautogui.locateOnScreen('image\\auto_play\\auto_3.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_4 = pyautogui.locateOnScreen('image\\auto_play\\auto_4.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_5 = pyautogui.locateOnScreen('image\\auto_play\\auto_5.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_6 = pyautogui.locateOnScreen('image\\auto_play\\auto_6.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(960, 0, 960, 540))
+
+        print(auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8)
+        if auto_1:
+            pyautogui.click(auto_1)
+        if auto_2:
+            pyautogui.click(auto_2)
+        if auto_3:
+            pyautogui.click(auto_3)
+        if auto_4:
+            pyautogui.click(auto_4)
+        if auto_5:
+            pyautogui.click(auto_5)
+        if auto_6:
+            pyautogui.click(auto_6)
+        if auto_7:
+            pyautogui.click(auto_7)
+        if auto_8:
+            pyautogui.click(auto_8)
+
+# 캐릭터 변경 (1~5번)
+def char_change(ch_num):
+    sleep(1)
+    main_back()
+    if odin[0].isActive == True:
+        pyautogui.press('o')
+        sleep(2)
+        pyautogui.click(800, 395)
+        sleep(2)
+        pyautogui.click(528, 331)
+        sleep(5)
+        if ch_num == 1:
+            pyautogui.click(915, 89)
+            sleep(2)
+        if ch_num == 2:
+            pyautogui.click(915, 155)
+            sleep(2)
+        if ch_num == 3:
+            pyautogui.click(915, 219)
+            sleep(2)
+        if ch_num == 4:
+            pyautogui.click(915, 280)
+            sleep(2)
+        if ch_num == 5:
+            pyautogui.click(915, 344)
+            sleep(2)
+        pyautogui.click(877, 484)
+        sleep(7)                    
+    elif odin[1].isActive == True:
+        pyautogui.press('o')
+        sleep(2)
+        pyautogui.click(1760, 395)
+        sleep(2)
+        pyautogui.click(1488, 331)
+        sleep(5)
+        if ch_num == 1:
+            pyautogui.click(1875, 89)
+            sleep(2)
+        if ch_num == 2:
+            pyautogui.click(1875, 155)
+            sleep(2)
+        if ch_num == 3:
+            pyautogui.click(1875, 219)
+            sleep(2)
+        if ch_num == 4:
+            pyautogui.click(1875, 280)
+            sleep(2)
+        if ch_num == 5:
+            pyautogui.click(1875, 344)
+            sleep(2)
+        pyautogui.click(1837, 484)
+        sleep(15)
+
 # 정예던전 입장
 # chioce_dg : 1 - 이벤트 던전, 2 - 공허의 유적, 3 - 난쟁이 비밀통로, 4 - 지하감옥
 # chioce_level : 1단계, 2단계, 3단계, 4단계 ~~~ (층 또는 단계 숫자로 입력)
@@ -617,8 +778,9 @@ def elite_dg_entrance(chioce_dg, choice_level):
 # 마을의뢰 - 고급 및 최고급 의뢰만 진행하며, 골드로만 갱신함
 def town_request():
     sleep(1)
-    pyautogui.press('j')
+    main_back()
     sleep(1)
+    pyautogui.press('j')
 
     # 완료 퀘스트 확인 및 보상 수령
     def town_request_get_reward():
@@ -681,47 +843,63 @@ def town_request():
                 level_2 = pyautogui.locateOnScreen('image\\town_request\\level_2.jpg', confidence=0.9, region=(230, 100, 60, 60))
                 level_3 = pyautogui.locateOnScreen('image\\town_request\\level_3.jpg', confidence=0.9, region=(230, 100, 60, 60))
                 gold_change = pyautogui.locateOnScreen('image\\town_request\\gold_change.jpg', confidence=0.9, region=(130, 460, 70, 70))
-
-                if level_2 or level_3:
-                    pyautogui.click(891, 496)
-                    sleep(1)
-                if level_1:
-                    if gold_change:
-                        pyautogui.click(gold_change)
-                        sleep(1)
-                    else:
+                if level_1 or level_2 or level_3:
+                    if level_2 or level_3:
                         pyautogui.click(891, 496)
                         sleep(1)
-                max_request = pyautogui.locateOnScreen('image\\town_request\\max_request.jpg', confidence=0.9, region=(0, 0, 960, 540))
-                no_more_request = pyautogui.locateOnScreen('image\\town_request\\no_more_request.jpg', confidence=0.9, region=(0, 0, 960, 540))
-                if  no_more_request:
-                    print('오딘1 - 마을 의뢰 가득참')
-                    pyautogui.moveTo(120, 430)
-                    pyautogui.dragTo(120, 100, 3, button='left')
+                    if level_1:
+                        if gold_change:
+                            pyautogui.click(gold_change)
+                            sleep(2)
+                            pyautogui.click(535, 347)
+                            sleep(3)
+                        else:
+                            pyautogui.click(891, 496)
+                            sleep(1)
+                    max_request = pyautogui.locateOnScreen('image\\town_request\\max_request.jpg', confidence=0.9, region=(0, 0, 960, 540))
+                    no_more_request = pyautogui.locateOnScreen('image\\town_request\\no_more_request.jpg', confidence=0.9, region=(0, 0, 960, 540))
+                    if  no_more_request:
+                        print('오딘1 - 마을 의뢰 가득참')
+                        pyautogui.moveTo(120, 430)
+                        pyautogui.dragTo(120, 100, 3, button='left')
+                        sleep(2)
+                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(170, 150, 70, 310))
+                        if request_ok:
+                            pyautogui.click(request_ok)
+                            sleep(1)
+                            pyautogui.click(676, 496)
+                            sleep(3)
+                            auto_play()
+                            break
+                        else:
+                            main_back()
+                            sleep(3)
+                            auto_play()
+                            break
+                    if max_request:
+                        print('오딘1 - 하루 마을 의뢰 완료')
+                        pyautogui.moveTo(120, 430)
+                        pyautogui.dragTo(120, 100, 3, button='left')
+                        sleep(2)
+                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(170, 150, 70, 310))
+                        if request_ok:
+                            pyautogui.click(request_ok)
+                            sleep(1)
+                            pyautogui.click(676, 496)
+                            sleep(3)
+                            auto_play()
+                            break
+                        else:
+                            main_back()
+                            sleep(3)
+                            auto_play()
+                            break
+                else:
+                    # 의뢰 수령 중에 완료된 경우가 있는 경우
+                    pyautogui.click(475, 339)
+                    sleep(3)
+                    pyautogui.click(470, 440)
                     sleep(2)
-                    request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(170, 150, 70, 310))
-                    if already_ok:
-                        pyautogui.click(request_ok)
-                        sleep(1)
-                        pyautogui.click(676, 496)
-                        sleep(1)
-                    else:
-                        main_back()
-                if max_request:
-                    print('오딘1 - 하루 마을 의뢰 완료')
-                    pyautogui.moveTo(120, 430)
-                    pyautogui.dragTo(120, 100, 3, button='left')
-                    sleep(2)
-                    request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(170, 150, 70, 310))
-                    if already_ok:
-                        pyautogui.click(request_ok)
-                        sleep(1)
-                        pyautogui.click(676, 496)
-                        sleep(1)
-                        break
-                    else:
-                        main_back()
-                        break
         elif odin[1].isActive == True:
             #상급, 최상급 퀘스트만 선택
             while True:
@@ -729,49 +907,66 @@ def town_request():
                 level_2 = pyautogui.locateOnScreen('image\\town_request\\level_2.jpg', confidence=0.9, region=(1190, 100, 60, 60))
                 level_3 = pyautogui.locateOnScreen('image\\town_request\\level_3.jpg', confidence=0.9, region=(1190, 100, 60, 60))
                 gold_change = pyautogui.locateOnScreen('image\\town_request\\gold_change.jpg', confidence=0.9, region=(1090, 460, 70, 70))
-
-                if level_2 or level_3:
-                    pyautogui.click(1851, 496)
-                    sleep(1)
-                if level_1:
-                    if gold_change:
-                        pyautogui.click(gold_change)
-                        sleep(1)
-                    else:
+                if level_1 or level_2 or level_3:
+                    if level_2 or level_3:
                         pyautogui.click(1851, 496)
                         sleep(1)
-                max_request = pyautogui.locateOnScreen('image\\town_request\\max_request.jpg', confidence=0.9, region=(960, 0, 960, 540))
-                no_more_request = pyautogui.locateOnScreen('image\\town_request\\no_more_request.jpg', confidence=0.9, region=(960, 0, 960, 540))
-                if  no_more_request:
-                    print('오딘1 - 마을 의뢰 가득참')
-                    pyautogui.moveTo(1080, 430)
-                    pyautogui.dragTo(1080, 100, 3, button='left')
+                    if level_1:
+                        if gold_change:
+                            pyautogui.click(gold_change)
+                            sleep(2)
+                            pyautogui.click(1495, 347)
+                            sleep(3)
+                        else:
+                            pyautogui.click(1851, 496)
+                            sleep(1)
+                    max_request = pyautogui.locateOnScreen('image\\town_request\\max_request.jpg', confidence=0.9, region=(960, 0, 960, 540))
+                    no_more_request = pyautogui.locateOnScreen('image\\town_request\\no_more_request.jpg', confidence=0.9, region=(960, 0, 960, 540))
+                    if  no_more_request:
+                        print('오딘2 - 마을 의뢰 가득참')
+                        pyautogui.moveTo(1080, 430)
+                        pyautogui.dragTo(1080, 100, 3, button='left')
+                        sleep(2)
+                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(1130, 150, 70, 310))
+                        if request_ok:
+                            pyautogui.click(request_ok)
+                            sleep(1)
+                            pyautogui.click(1636, 496)
+                            sleep(3)
+                            auto_play()
+                            break
+                        else:
+                            main_back()
+                            sleep(3)
+                            auto_play()
+                            break
+                    if max_request:
+                        print('오딘2 - 하루 마을 의뢰 완료')
+                        pyautogui.moveTo(1080, 430)
+                        pyautogui.dragTo(1080, 100, 3, button='left')
+                        sleep(2)
+                        request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(1130, 150, 70, 310))
+                        if request_ok:
+                            pyautogui.click(request_ok)
+                            sleep(1)
+                            pyautogui.click(1636, 496)
+                            sleep(3)
+                            auto_play()
+                            break
+                        else:
+                            main_back()
+                            sleep(3)
+                            auto_play()
+                            break
+                else:
+                    # 의뢰 수령 중에 완료된 경우가 있는 경우
+                    pyautogui.click(1435, 339)
+                    sleep(3)
+                    pyautogui.click(1430, 440)
                     sleep(2)
-                    request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(1130, 150, 70, 310))
-                    if already_ok:
-                        pyautogui.click(request_ok)
-                        sleep(1)
-                        pyautogui.click(1636, 496)
-                        sleep(1)
-                    else:
-                        main_back()
-                if max_request:
-                    print('오딘1 - 하루 마을 의뢰 완료')
-                    pyautogui.moveTo(1080, 430)
-                    pyautogui.dragTo(1080, 100, 3, button='left')
-                    sleep(2)
-                    request_ok = pyautogui.locateOnScreen('image\\town_request\\request_ok.jpg', confidence=0.9, region=(1130, 150, 70, 310))
-                    if already_ok:
-                        pyautogui.click(request_ok)
-                        sleep(1)
-                        pyautogui.click(1636, 496)
-                        sleep(1)
-                        break
-                    else:
-                        main_back()
-                        break
 
     town_request_get_reward()
+    town_request_level_confirm()
 
 
 
@@ -779,11 +974,159 @@ get_mecro()
 
 active_mecro_1()
 disable_sleep_mode()
+char_change(1)
+go_town()
 town_request()
 sleep(2)
-
 active_mecro_2()
+disable_sleep_mode()
+char_change(1)
+go_town()
+town_request()
+sleep(1200)
+
+active_mecro_1()
 disable_sleep_mode()
 town_request()
 sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
 
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
+
+
+active_mecro_1()
+disable_sleep_mode()
+char_change(2)
+go_town()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+char_change(2)
+go_town()
+town_request()
+sleep(1200)
+
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
+
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
+
+
+active_mecro_1()
+disable_sleep_mode()
+char_change(3)
+go_town()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+char_change(3)
+go_town()
+town_request()
+sleep(1200)
+
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
+
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
+
+
+active_mecro_1()
+disable_sleep_mode()
+char_change(4)
+go_town()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+char_change(4)
+go_town()
+town_request()
+sleep(1200)
+
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
+
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
+
+
+active_mecro_1()
+disable_sleep_mode()
+char_change(5)
+go_town()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+char_change(5)
+go_town()
+town_request()
+sleep(1200)
+
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)
+
+active_mecro_1()
+disable_sleep_mode()
+town_request()
+sleep(2)
+active_mecro_2()
+disable_sleep_mode()
+town_request()
+sleep(1200)

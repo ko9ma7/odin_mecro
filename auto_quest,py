@@ -118,10 +118,8 @@ def play_quest():
         if resurrection_click:
             pyautogui.click(resurrection_click)
             sleep(2)
-            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(0, 0, 960, 540))
-            sleep(1)
-            pyautogui.click(resurrection_check)
-            sleep(1)
+            pyautogui.click(484, 185)
+            sleep(2)
             pyautogui.click(538, 401) # 무료복구
         if exit_click:
             pyautogui.click(exit_click)
@@ -190,10 +188,8 @@ def play_quest():
         if resurrection_click:
             pyautogui.click(resurrection_click)
             sleep(2)
-            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(960, 0, 960, 540))
-            sleep(1)
-            pyautogui.click(resurrection_check)
-            sleep(1)
+            pyautogui.click(1444, 185)
+            sleep(2)
             pyautogui.click(1498, 401) # 무료복구
         if exit_click:
             pyautogui.click(exit_click)

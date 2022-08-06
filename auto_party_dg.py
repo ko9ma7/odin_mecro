@@ -110,7 +110,7 @@ def go_town():
     elif odin[1].isActive == True:
         main_back()
         sleep(2)
-        pyautogui.click(22, 203)
+        pyautogui.click(982, 203)
         sleep(2)
         gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(960, 0, 960, 540))
         if gotown_click:
@@ -122,17 +122,18 @@ def go_town():
             print('마을이거나 귀환 불가 지역')
         pyautogui.press('4')
         sleep(15)
-        pyautogui.click(120, 130) # 대형물약
+        pyautogui.click(1080, 130) # 대형물약
         sleep(3)
-        pyautogui.click(547, 313) # 최대
+        pyautogui.click(1507, 313) # 최대
         sleep(3)
-        pyautogui.click(530, 388) # 구매하기
+        pyautogui.click(1490, 388) # 구매하기
         sleep(3)
         main_back()
 
 # 자동 사냥 켜기
 def auto_play():
     sleep(1)
+    main_back()
     if odin[0].isActive == True:
         auto_1 = pyautogui.locateOnScreen('image\\auto_play\\auto_1.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_2 = pyautogui.locateOnScreen('image\\auto_play\\auto_2.jpg', confidence=0.8, region=(0, 0, 960, 540))
@@ -265,6 +266,7 @@ def end_party():
 # 캐릭터 변경 (1~5번)
 def char_change(ch_num):
     sleep(1)
+    main_back()
     if odin[0].isActive == True:
         pyautogui.press('o')
         sleep(2)
