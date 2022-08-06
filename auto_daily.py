@@ -151,24 +151,31 @@ def auto_play():
         auto_6 = pyautogui.locateOnScreen('image\\auto_play\\auto_6.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(0, 0, 960, 540))
-
         print(auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8)
         if auto_1:
             pyautogui.click(auto_1)
-        if auto_2:
+            sleep(1)
+        elif auto_2:
             pyautogui.click(auto_2)
-        if auto_3:
+            sleep(1)
+        elif auto_3:
             pyautogui.click(auto_3)
-        if auto_4:
+            sleep(1)
+        elif auto_4:
             pyautogui.click(auto_4)
-        if auto_5:
+            sleep(1)            
+        elif auto_5:
             pyautogui.click(auto_5)
-        if auto_6:
+            sleep(1)
+        elif auto_6:
             pyautogui.click(auto_6)
-        if auto_7:
+            sleep(1)
+        elif auto_7:
             pyautogui.click(auto_7)
-        if auto_8:
+            sleep(1)
+        elif auto_8:
             pyautogui.click(auto_8)
+            sleep(1)
 
     elif odin[1].isActive == True:
         auto_1 = pyautogui.locateOnScreen('image\\auto_play\\auto_1.jpg', confidence=0.8, region=(960, 0, 960, 540))
@@ -179,24 +186,31 @@ def auto_play():
         auto_6 = pyautogui.locateOnScreen('image\\auto_play\\auto_6.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(960, 0, 960, 540))
-
         print(auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8)
         if auto_1:
             pyautogui.click(auto_1)
-        if auto_2:
+            sleep(1)
+        elif auto_2:
             pyautogui.click(auto_2)
-        if auto_3:
+            sleep(1)
+        elif auto_3:
             pyautogui.click(auto_3)
-        if auto_4:
+            sleep(1)
+        elif auto_4:
             pyautogui.click(auto_4)
-        if auto_5:
+            sleep(1)            
+        elif auto_5:
             pyautogui.click(auto_5)
-        if auto_6:
+            sleep(1)
+        elif auto_6:
             pyautogui.click(auto_6)
-        if auto_7:
+            sleep(1)
+        elif auto_7:
             pyautogui.click(auto_7)
-        if auto_8:
+            sleep(1)
+        elif auto_8:
             pyautogui.click(auto_8)
+            sleep(1)
 
 # 캐릭터 변경 (1~5번)
 def char_change(ch_num):
@@ -262,6 +276,12 @@ def elite_dg_entrance(chioce_dg, choice_level):
         sleep(1)
         pyautogui.press('F8')
         sleep(2)
+        pyautogui.click(175, 85)
+        sleep(2)
+
+
+
+
         e_dg = pyautogui.locateOnScreen('image\elite_dg.jpg', confidence=0.8, region=(0, 0, 960, 540))
         print(e_dg)
         pyautogui.click(e_dg)
@@ -991,16 +1011,7 @@ disable_sleep_mode()
 char_change(1)
 go_town()
 town_request()
-sleep(1200)
-
-active_mecro_1()
-disable_sleep_mode()
-town_request()
-sleep(2)
-active_mecro_2()
-disable_sleep_mode()
-town_request()
-sleep(1200)
+sleep(2500)
 
 active_mecro_1()
 disable_sleep_mode()
@@ -1023,16 +1034,7 @@ disable_sleep_mode()
 char_change(2)
 go_town()
 town_request()
-sleep(1200)
-
-active_mecro_1()
-disable_sleep_mode()
-town_request()
-sleep(2)
-active_mecro_2()
-disable_sleep_mode()
-town_request()
-sleep(1200)
+sleep(2500)
 
 active_mecro_1()
 disable_sleep_mode()
@@ -1055,16 +1057,7 @@ disable_sleep_mode()
 char_change(3)
 go_town()
 town_request()
-sleep(1200)
-
-active_mecro_1()
-disable_sleep_mode()
-town_request()
-sleep(2)
-active_mecro_2()
-disable_sleep_mode()
-town_request()
-sleep(1200)
+sleep(2500)
 
 active_mecro_1()
 disable_sleep_mode()
@@ -1087,16 +1080,7 @@ disable_sleep_mode()
 char_change(4)
 go_town()
 town_request()
-sleep(1200)
-
-active_mecro_1()
-disable_sleep_mode()
-town_request()
-sleep(2)
-active_mecro_2()
-disable_sleep_mode()
-town_request()
-sleep(1200)
+sleep(2500)
 
 active_mecro_1()
 disable_sleep_mode()
@@ -1119,16 +1103,7 @@ disable_sleep_mode()
 char_change(5)
 go_town()
 town_request()
-sleep(1200)
-
-active_mecro_1()
-disable_sleep_mode()
-town_request()
-sleep(2)
-active_mecro_2()
-disable_sleep_mode()
-town_request()
-sleep(1200)
+sleep(2500)
 
 active_mecro_1()
 disable_sleep_mode()

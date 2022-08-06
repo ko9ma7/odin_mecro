@@ -151,24 +151,31 @@ def auto_play():
         auto_6 = pyautogui.locateOnScreen('image\\auto_play\\auto_6.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(0, 0, 960, 540))
-
         print(auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8)
         if auto_1:
             pyautogui.click(auto_1)
-        if auto_2:
+            sleep(1)
+        elif auto_2:
             pyautogui.click(auto_2)
-        if auto_3:
+            sleep(1)
+        elif auto_3:
             pyautogui.click(auto_3)
-        if auto_4:
+            sleep(1)
+        elif auto_4:
             pyautogui.click(auto_4)
-        if auto_5:
+            sleep(1)            
+        elif auto_5:
             pyautogui.click(auto_5)
-        if auto_6:
+            sleep(1)
+        elif auto_6:
             pyautogui.click(auto_6)
-        if auto_7:
+            sleep(1)
+        elif auto_7:
             pyautogui.click(auto_7)
-        if auto_8:
+            sleep(1)
+        elif auto_8:
             pyautogui.click(auto_8)
+            sleep(1)
 
     elif odin[1].isActive == True:
         auto_1 = pyautogui.locateOnScreen('image\\auto_play\\auto_1.jpg', confidence=0.8, region=(960, 0, 960, 540))
@@ -179,24 +186,31 @@ def auto_play():
         auto_6 = pyautogui.locateOnScreen('image\\auto_play\\auto_6.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(960, 0, 960, 540))
-
         print(auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8)
         if auto_1:
             pyautogui.click(auto_1)
-        if auto_2:
+            sleep(1)
+        elif auto_2:
             pyautogui.click(auto_2)
-        if auto_3:
+            sleep(1)
+        elif auto_3:
             pyautogui.click(auto_3)
-        if auto_4:
+            sleep(1)
+        elif auto_4:
             pyautogui.click(auto_4)
-        if auto_5:
+            sleep(1)            
+        elif auto_5:
             pyautogui.click(auto_5)
-        if auto_6:
+            sleep(1)
+        elif auto_6:
             pyautogui.click(auto_6)
-        if auto_7:
+            sleep(1)
+        elif auto_7:
             pyautogui.click(auto_7)
-        if auto_8:
+            sleep(1)
+        elif auto_8:
             pyautogui.click(auto_8)
+            sleep(1)
 
 # 파티던전 끝낫는지 파악
 def end_party():
@@ -457,6 +471,15 @@ char_change(5)
 go_town()
 party_dg_entrance(1)
 
+# 1번 캐릭터로 복귀 후 첫번째 저장된 위치 사냥
+sleep(10)
+char_change(1)
+pyautogui.click(21, 137)
+sleep(2)
+pyautogui.click(213, 189)
+sleep(5)
+pyautogui.press('g')
+
 #########################################################
 
 active_mecro_2() # ODIN1 WINDOW
@@ -487,3 +510,12 @@ party_dg_entrance(1)
 char_change(5)
 go_town()
 party_dg_entrance(1)
+
+# 1번 캐릭터로 복귀 후 첫번째 저장된 위치 사냥
+sleep(10)
+char_change(1)
+pyautogui.click(981, 137)
+sleep(2)
+pyautogui.click(1173, 189)
+sleep(5)
+pyautogui.press('g')
