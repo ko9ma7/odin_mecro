@@ -222,7 +222,7 @@ def char_change(ch_num):
         pyautogui.click(800, 395)
         sleep(2)
         pyautogui.click(528, 331)
-        sleep(5)
+        sleep(20)
         if ch_num == 1:
             pyautogui.click(915, 89)
             sleep(2)
@@ -246,7 +246,7 @@ def char_change(ch_num):
         pyautogui.click(1760, 395)
         sleep(2)
         pyautogui.click(1488, 331)
-        sleep(5)
+        sleep(20)
         if ch_num == 1:
             pyautogui.click(1875, 89)
             sleep(2)
@@ -870,9 +870,12 @@ def town_request():
                 level_1 = pyautogui.locateOnScreen('image\\town_request\\level_1.jpg', confidence=0.8, region=(230, 100, 60, 60))
                 level_2 = pyautogui.locateOnScreen('image\\town_request\\level_2.jpg', confidence=0.8, region=(230, 100, 60, 60))
                 level_3 = pyautogui.locateOnScreen('image\\town_request\\level_3.jpg', confidence=0.8, region=(230, 100, 60, 60))
+                level_1_nb = pyautogui.locateOnScreen('image\\town_request\\level_1_nb.jpg', confidence=0.8, region=(230, 100, 60, 60))
+                level_2_nb = pyautogui.locateOnScreen('image\\town_request\\level_2_nb.jpg', confidence=0.8, region=(230, 100, 60, 60))
+                level_3_nb = pyautogui.locateOnScreen('image\\town_request\\level_3_nb.jpg', confidence=0.8, region=(230, 100, 60, 60))
                 gold_change = pyautogui.locateOnScreen('image\\town_request\\gold_change.jpg', confidence=0.9, region=(130, 460, 70, 70))
-                if level_1 or level_2 or level_3:
-                    if level_2 or level_3:
+                if level_1 or level_2 or level_3 or level_1_nb or level_2_nb or level_3_nb:
+                    if level_2 or level_3 or level_2_nb or level_3_nb:
                         pyautogui.click(891, 496)
                         sleep(1)
                     if level_1:
@@ -934,9 +937,12 @@ def town_request():
                 level_1 = pyautogui.locateOnScreen('image\\town_request\\level_1.jpg', confidence=0.8, region=(1190, 100, 60, 60))
                 level_2 = pyautogui.locateOnScreen('image\\town_request\\level_2.jpg', confidence=0.8, region=(1190, 100, 60, 60))
                 level_3 = pyautogui.locateOnScreen('image\\town_request\\level_3.jpg', confidence=0.8, region=(1190, 100, 60, 60))
+                level_1_nb = pyautogui.locateOnScreen('image\\town_request\\level_1_nb.jpg', confidence=0.8, region=(1190, 100, 60, 60))
+                level_2_nb = pyautogui.locateOnScreen('image\\town_request\\level_2_nb.jpg', confidence=0.8, region=(1190, 100, 60, 60))
+                level_3_nb = pyautogui.locateOnScreen('image\\town_request\\level_3_nb.jpg', confidence=0.8, region=(1190, 100, 60, 60))
                 gold_change = pyautogui.locateOnScreen('image\\town_request\\gold_change.jpg', confidence=0.8, region=(1090, 460, 70, 70))
-                if level_1 or level_2 or level_3:
-                    if level_2 or level_3:
+                if level_1 or level_2 or level_3 or level_1_nb or level_2_nb or level_3_nb:
+                    if level_2 or level_3 or level_2_nb or level_3_nb:
                         pyautogui.click(1851, 496)
                         sleep(1)
                     if level_1:
