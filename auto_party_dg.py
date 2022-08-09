@@ -514,18 +514,6 @@ party_dg_entrance(1)
 
 # 1번 캐릭터로 복귀 후 첫번째 저장된 위치 사냥
 sleep(10)
-active_mecro_1() # ODIN1 WINDOW
-main_back()
-char_change(1)
-pyautogui.click(981, 137)
-sleep(2)
-pyautogui.click(1173, 189)
-sleep(5)
-pyautogui.press('g')
-
-sleep(10)
-active_mecro_2() # ODIN2 WINDOW
-main_back()
 char_change(1)
 pyautogui.click(981, 137)
 sleep(2)
