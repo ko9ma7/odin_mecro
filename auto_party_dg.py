@@ -477,8 +477,9 @@ char_change(1)
 pyautogui.click(21, 137)
 sleep(2)
 pyautogui.click(213, 189)
-sleep(5)
+sleep(20)
 pyautogui.press('g')
+auto_play()
 
 #########################################################
 
@@ -517,5 +518,6 @@ char_change(1)
 pyautogui.click(981, 137)
 sleep(2)
 pyautogui.click(1173, 189)
-sleep(5)
+sleep(20)
 pyautogui.press('g')
+auto_play()
