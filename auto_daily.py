@@ -926,6 +926,7 @@ elite_dg_entrance(3, 5, 5)
 
 sleep(3660)
 
+<<<<<<< HEAD
 # 캐릭2번
 print('2번 캐릭터 시작')
 print('2번 캐릭터 첫번째 던전')
@@ -939,9 +940,23 @@ disable_sleep_mode()
 char_change(2)
 go_town()
 elite_dg_entrance(2, 3, 3)
+=======
+# # 캐릭2번
+# active_mecro_1()
+# disable_sleep_mode()
+# char_change(2)
+# go_town()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# char_change(2)
+# go_town()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 print('2번 캐릭터 두번째 던전')
 active_mecro_1()
 disable_sleep_mode()
@@ -949,9 +964,18 @@ elite_dg_entrance(2, 3, 3)
 active_mecro_2()
 disable_sleep_mode()
 elite_dg_entrance(2, 3, 3)
+=======
+# active_mecro_1()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 print('2번 캐릭터 세번째 던전')
 active_mecro_1()
 disable_sleep_mode()
@@ -959,9 +983,18 @@ elite_dg_entrance(2, 3, 3)
 active_mecro_2()
 disable_sleep_mode()
 elite_dg_entrance(2, 3, 3)
+=======
+# active_mecro_1()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 # 캐릭3번
 print('3번 캐릭터 시작')
 print('3번 캐릭터 첫번째 던전')
@@ -975,9 +1008,23 @@ disable_sleep_mode()
 char_change(3)
 go_town()
 elite_dg_entrance(2, 3, 3)
+=======
+# # 캐릭3번
+# active_mecro_1()
+# disable_sleep_mode()
+# char_change(3)
+# go_town()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# char_change(3)
+# go_town()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 print('3번 캐릭터 두번째 던전')
 active_mecro_1()
 disable_sleep_mode()
@@ -985,9 +1032,18 @@ elite_dg_entrance(2, 3, 3)
 active_mecro_2()
 disable_sleep_mode()
 elite_dg_entrance(2, 3, 3)
+=======
+# active_mecro_1()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 print('3번 캐릭터 세번째 던전')
 active_mecro_1()
 disable_sleep_mode()
@@ -995,9 +1051,18 @@ elite_dg_entrance(2, 3, 3)
 active_mecro_2()
 disable_sleep_mode()
 elite_dg_entrance(2, 3, 3)
+=======
+# active_mecro_1()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 # 캐릭4번
 print('4번 캐릭터 시작')
 print('4번 캐릭터 첫번째 던전')
@@ -1011,9 +1076,23 @@ disable_sleep_mode()
 char_change(4)
 go_town()
 elite_dg_entrance(1, 1, 1)
+=======
+# # 캐릭4번
+# active_mecro_1()
+# disable_sleep_mode()
+# char_change(4)
+# go_town()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# char_change(4)
+# go_town()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 print('4번 캐릭터 두번째 던전')
 active_mecro_1()
 disable_sleep_mode()
@@ -1021,9 +1100,18 @@ elite_dg_entrance(2, 3, 3)
 active_mecro_2()
 disable_sleep_mode()
 elite_dg_entrance(1, 1, 1)
+=======
+# active_mecro_1()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 print('4번 캐릭터 세번째 던전')
 active_mecro_1()
 disable_sleep_mode()
@@ -1031,9 +1119,18 @@ elite_dg_entrance(2, 3, 3)
 active_mecro_2()
 disable_sleep_mode()
 elite_dg_entrance(1, 1, 1)
+=======
+# active_mecro_1()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 # 캐릭5번
 print('5번 캐릭터 시작')
 print('5번 캐릭터 첫번째 던전')
@@ -1047,9 +1144,23 @@ disable_sleep_mode()
 char_change(5)
 go_town()
 elite_dg_entrance(1, 1, 1)
+=======
+# # 캐릭5번
+# active_mecro_1()
+# disable_sleep_mode()
+# char_change(5)
+# go_town()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# char_change(5)
+# go_town()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 print('5번 캐릭터 두번째 던전')
 active_mecro_1()
 disable_sleep_mode()
@@ -1057,9 +1168,18 @@ elite_dg_entrance(2, 3, 3)
 active_mecro_2()
 disable_sleep_mode()
 elite_dg_entrance(1, 1, 1)
+=======
+# active_mecro_1()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
+<<<<<<< HEAD
 print('5번 캐릭터 세번째 던전')
 active_mecro_1()
 disable_sleep_mode()
@@ -1067,8 +1187,16 @@ elite_dg_entrance(2, 3, 3)
 active_mecro_2()
 disable_sleep_mode()
 elite_dg_entrance(1, 1, 1)
+=======
+# active_mecro_1()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+# active_mecro_2()
+# disable_sleep_mode()
+# elite_dg_entrance(1, 1, 1)
+>>>>>>> b896cab7b78f8aba5fbbc32d1c33fc37d214361a
 
-sleep(3660)
+# sleep(3660)
 
 # 마을 의뢰 시작
 #캐릭1번 
@@ -1195,3 +1323,24 @@ active_mecro_2()
 disable_sleep_mode()
 town_request()
 sleep(1200)
+
+# 1번 캐릭터로 복귀 후 첫번째 저장된 위치 사냥
+sleep(10)
+active_mecro_1() # ODIN1 WINDOW
+main_back()
+char_change(1)
+pyautogui.click(981, 137)
+sleep(2)
+pyautogui.click(1173, 189)
+sleep(5)
+pyautogui.press('g')
+
+sleep(10)
+active_mecro_2() # ODIN2 WINDOW
+main_back()
+char_change(1)
+pyautogui.click(981, 137)
+sleep(2)
+pyautogui.click(1173, 189)
+sleep(5)
+pyautogui.press('g')
