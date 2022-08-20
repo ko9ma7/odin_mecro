@@ -784,7 +784,6 @@ def town_request():
                             break
                     if max_request:
                         print('오딘1 - 일일 마을 의뢰 완료')
-                        return 1
                         pyautogui.moveTo(120, 430)
                         pyautogui.dragTo(120, 100, 3, button='left')
                         sleep(2)
@@ -802,7 +801,7 @@ def town_request():
                             auto_play()
                             break
                 else:
-                    # 의뢰 수령 중에 완료된 경우가 있는 경우
+                    # 의뢰 수령 중에 완료된 경우가 있는 경우 랜덤보상선택 수령하기
                     main_back()
                     pyautogui.click(475, 339)
                     sleep(3)
@@ -857,7 +856,6 @@ def town_request():
                             break
                     if max_request:
                         print('오딘2 - 일일 마을 의뢰 완료')
-                        return 1
                         pyautogui.moveTo(1080, 430)
                         pyautogui.dragTo(1080, 100, 3, button='left')
                         sleep(2)
@@ -875,7 +873,7 @@ def town_request():
                             auto_play()
                             break
                 else:
-                    # 의뢰 수령 중에 완료된 경우가 있는 경우
+                    # 의뢰 수령 중에 완료된 경우가 있는 경우 랜덤보상선택 수령하기
                     main_back()
                     pyautogui.click(1435, 339)
                     sleep(3)
@@ -888,237 +886,6 @@ def town_request():
 
 get_mecro()
 
-# # 정예던전 시작(이벤트 던전 포함 현재 3개)
-# # 캐릭1번
-# print('1번 캐릭터 시작')
-# print('1번 캐릭터 첫번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# char_change(1)
-# go_town()
-# elite_dg_entrance(3, 5, 5)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# char_change(1)
-# go_town()
-# elite_dg_entrance(3, 5, 5)
-
-# sleep(3660)
-
-# print('1번 캐릭터 두번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(3, 5, 5)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(3, 5, 5)
-
-# sleep(3660)
-
-# print('1번 캐릭터 세번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(3, 5, 5)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(3, 5, 5)
-
-# sleep(3660)
-
-# # 캐릭2번
-# print('2번 캐릭터 시작')
-# print('2번 캐릭터 첫번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# char_change(2)
-# go_town()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# char_change(2)
-# go_town()
-# elite_dg_entrance(2, 3, 3)
-
-# sleep(3660)
-
-# print('2번 캐릭터 두번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-
-# sleep(3660)
-
-# print('2번 캐릭터 세번째 던전')
-# ctive_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-
-# sleep(3660)
-
-# # 캐릭3번
-# print('3번 캐릭터 시작')
-# print('3번 캐릭터 첫번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# char_change(3)
-# go_town()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# char_change(3)
-# go_town()
-# elite_dg_entrance(2, 3, 3)
-
-# sleep(3660)
-
-# print('3번 캐릭터 두번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-
-# sleep(3660)
-
-# print('3번 캐릭터 세번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-
-# sleep(3660)
-
-
-# # 캐릭4번
-# print('4번 캐릭터 시작')
-# print('4번 캐릭터 첫번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# char_change(4)
-# go_town()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# char_change(4)
-# go_town()
-# elite_dg_entrance(1, 1, 1)
-
-# sleep(3660)
-
-# print('4번 캐릭터 두번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(1, 1, 1)
-
-# sleep(3660)
-
-# print('4번 캐릭터 세번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(1, 1, 1)
-
-# sleep(3660)
-
-# # 캐릭5번
-# print('5번 캐릭터 시작')
-# print('5번 캐릭터 첫번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# char_change(5)
-# go_town()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# char_change(5)
-# go_town()
-# elite_dg_entrance(1, 1, 1)
-
-# sleep(3660)
-
-# print('5번 캐릭터 두번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(1, 1, 1)
-
-# sleep(3660)
-
-# print('5번 캐릭터 세번째 던전')
-# active_mecro_1()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(2, 3, 3)
-# sleep(3)
-
-# active_mecro_2()
-# disable_sleep_mode()
-# main_back()
-# elite_dg_entrance(1, 1, 1)
-
-# sleep(3660)
 
 # 마을 의뢰 시작
 #캐릭1번 
@@ -1256,6 +1023,238 @@ disable_sleep_mode()
 town_request()
 sleep(1200)
 
+# 정예던전 시작(이벤트 던전 포함 현재 3개)
+# 캐릭1번
+print('1번 캐릭터 시작')
+print('1번 캐릭터 첫번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+char_change(1)
+go_town()
+elite_dg_entrance(3, 6, 6)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+char_change(1)
+go_town()
+elite_dg_entrance(3, 6, 6)
+
+sleep(3700)
+
+print('1번 캐릭터 두번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(3, 6, 6)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(3, 6, 6)
+
+sleep(3700)
+
+print('1번 캐릭터 세번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(3, 6, 6)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(3, 6, 6)
+
+sleep(3700)
+
+# 캐릭2번
+print('2번 캐릭터 시작')
+print('2번 캐릭터 첫번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+char_change(2)
+go_town()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+char_change(2)
+go_town()
+elite_dg_entrance(2, 3, 3)
+
+sleep(3700)
+
+print('2번 캐릭터 두번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+
+sleep(3700)
+
+print('2번 캐릭터 세번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+
+sleep(3700)
+
+# 캐릭3번
+print('3번 캐릭터 시작')
+print('3번 캐릭터 첫번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+char_change(3)
+go_town()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+char_change(3)
+go_town()
+elite_dg_entrance(2, 3, 3)
+
+sleep(3700)
+
+print('3번 캐릭터 두번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+
+sleep(3700)
+
+print('3번 캐릭터 세번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+
+sleep(3700)
+
+
+# 캐릭4번
+print('4번 캐릭터 시작')
+print('4번 캐릭터 첫번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+char_change(4)
+go_town()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+char_change(4)
+go_town()
+elite_dg_entrance(1, 1, 1)
+
+sleep(3700)
+
+print('4번 캐릭터 두번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(1, 2, 2)
+
+sleep(3700)
+
+print('4번 캐릭터 세번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(1, 2, 2)
+
+sleep(3700)
+
+# 캐릭5번
+print('5번 캐릭터 시작')
+print('5번 캐릭터 첫번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+char_change(5)
+go_town()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+char_change(5)
+go_town()
+elite_dg_entrance(1, 2, 2)
+
+sleep(3700)
+
+print('5번 캐릭터 두번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(1, 2, 2)
+
+sleep(3700)
+
+print('5번 캐릭터 세번째 던전')
+active_mecro_1()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(2, 3, 3)
+sleep(3)
+
+active_mecro_2()
+disable_sleep_mode()
+main_back()
+elite_dg_entrance(1, 2, 2)
+
+sleep(3700)
+
 # 1번 캐릭터로 복귀 후 첫번째 저장된 위치 사냥
 sleep(10)
 active_mecro_1() # ODIN1 WINDOW
@@ -1264,7 +1263,7 @@ char_change(1)
 pyautogui.click(21, 137)
 sleep(2)
 pyautogui.click(213, 189)
-sleep(5)
+sleep(10)
 pyautogui.press('g')
 
 sleep(10)
@@ -1274,5 +1273,5 @@ char_change(1)
 pyautogui.click(981, 137)
 sleep(2)
 pyautogui.click(1173, 189)
-sleep(5)
+sleep(10)
 pyautogui.press('g')
