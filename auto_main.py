@@ -7,6 +7,7 @@ import time
 import pyautogui
 import pywinauto
 import auto_daily_2 as ad
+import os
 
 def odin1_write(stage):
     with open("odin1.txt", "w") as f:
@@ -38,7 +39,8 @@ def play_odin1():
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
+            # ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin1 == 2:
         ad.active_mecro_1()
@@ -68,6 +70,7 @@ def play_odin1():
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin1 == 6:
         ad.active_mecro_1()
@@ -97,6 +100,7 @@ def play_odin1():
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin1 == 10:
         ad.active_mecro_1()
@@ -127,6 +131,7 @@ def play_odin1():
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin1 == 14:
         ad.active_mecro_1()
@@ -157,22 +162,23 @@ def play_odin1():
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin1 == 18:
         ad.active_mecro_1()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin1_write('19')
 
     if odin1 == 19:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(3)
+        money_dg_end = ad.money_dg_entrance(2)
         if money_dg_end == 1:
             odin1_write('20')
 
     if odin1 == 20:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(3)
+        scroll_dg_end = ad.scroll_dg_entrance(2)
         if scroll_dg_end == 1:
             odin1_write('21')
             ad.char_change(1)
@@ -189,7 +195,8 @@ def play_odin2():
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
+            # ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin2 == 2:
         ad.active_mecro_2()
@@ -219,6 +226,7 @@ def play_odin2():
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin2 == 6:
         ad.active_mecro_2()
@@ -248,6 +256,7 @@ def play_odin2():
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin2 == 10:
         ad.active_mecro_2()
@@ -278,6 +287,7 @@ def play_odin2():
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin2 == 14:
         ad.active_mecro_2()
@@ -308,6 +318,7 @@ def play_odin2():
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
+            ad.go_town() # 물약 구매
 
     if odin2 == 18:
         ad.active_mecro_2()
@@ -423,31 +434,31 @@ ad.get_mecro()
 odin1 = int(odin1_read())
 odin2 = int(odin2_read())
 
-# 오딘1 진행상황에 따른 캐릭터 선택
-ad.active_mecro_1()
-if odin1 == 1 or odin1 == 2 or odin1 == 3 or odin1 == 4 or odin1 == 21:
-    ad.char_change(1)
-elif odin1 == 5 or odin1 == 6 or odin1 == 7 or odin1 == 8 or odin1 == 22:
-    ad.char_change(2)
-elif odin1 == 9 or odin1 == 10 or odin1 == 11 or odin1 == 12 or odin1 == 23:
-    ad.char_change(3)
-elif odin1 == 13 or odin1 == 14 or odin1 == 15 or odin1 == 16 or odin1 == 24:
-    ad.char_change(4)
-elif odin1 == 17 or odin1 == 18 or odin1 == 19 or odin1 == 20 or odin1 == 25:
-    ad.char_change(5)
+# # 오딘1 진행상황에 따른 캐릭터 선택
+# ad.active_mecro_1()
+# if odin1 == 1 or odin1 == 2 or odin1 == 3 or odin1 == 4 or odin1 == 21:
+#     ad.char_change(1)
+# elif odin1 == 5 or odin1 == 6 or odin1 == 7 or odin1 == 8 or odin1 == 22:
+#     ad.char_change(2)
+# elif odin1 == 9 or odin1 == 10 or odin1 == 11 or odin1 == 12 or odin1 == 23:
+#     ad.char_change(3)
+# elif odin1 == 13 or odin1 == 14 or odin1 == 15 or odin1 == 16 or odin1 == 24:
+#     ad.char_change(4)
+# elif odin1 == 17 or odin1 == 18 or odin1 == 19 or odin1 == 20 or odin1 == 25:
+#     ad.char_change(5)
 
-# 오딘2 진행상황에 따른 캐릭터 선택
-ad.active_mecro_2()
-if odin2 == 1 or odin2 == 2 or odin2 == 3 or odin2 == 4 or odin2 == 21:
-    ad.char_change(1)
-elif odin2 == 5 or odin2 == 6 or odin2 == 7 or odin2 == 8 or odin2 == 22:
-    ad.char_change(2)
-elif odin2 == 9 or odin2 == 10 or odin2 == 11 or odin2 == 12 or odin2 == 23:
-    ad.char_change(3)
-elif odin2 == 13 or odin2 == 14 or odin2 == 15 or odin2 == 16 or odin2 == 24:
-    ad.char_change(4)
-elif odin2 == 17 or odin2 == 18 or odin2 == 19 or odin2 == 20 or odin2 == 25:
-    ad.char_change(5)
+# # 오딘2 진행상황에 따른 캐릭터 선택
+# ad.active_mecro_2()
+# if odin2 == 1 or odin2 == 2 or odin2 == 3 or odin2 == 4 or odin2 == 21:
+#     ad.char_change(1)
+# elif odin2 == 5 or odin2 == 6 or odin2 == 7 or odin2 == 8 or odin2 == 22:
+#     ad.char_change(2)
+# elif odin2 == 9 or odin2 == 10 or odin2 == 11 or odin2 == 12 or odin2 == 23:
+#     ad.char_change(3)
+# elif odin2 == 13 or odin2 == 14 or odin2 == 15 or odin2 == 16 or odin2 == 24:
+#     ad.char_change(4)
+# elif odin2 == 17 or odin2 == 18 or odin2 == 19 or odin2 == 20 or odin2 == 25:
+#     ad.char_change(5)
 
 
 while True:
@@ -483,7 +494,7 @@ while True:
                 ad.char_change(1)
 
         # 체크 주기
-        sleep(60)
+        sleep(300)
     except:
         sleep(5)
         print('오류 발생')

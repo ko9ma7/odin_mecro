@@ -739,11 +739,12 @@ def daily_gold_item():
     if odin[0].isActive == True:
         pyautogui.press('u')
         print('오딘1 - 캐쉬 페이지 이동')
-        sleep(3)
+        sleep(5)
         pyautogui.click(64, 436) # 일괄 구매 
-        confirm = image_check('confirm') # 이미지 다시 찍어야 함 다 받아서 얼럿 창을 못봄
-        if confirm:
-            pyautogui.click(confirm) # 팝업 골드 구매 클릭
+        sleep(2)
+        gold_gumae = image_check('gold_gumae') # 골드 상품 구매
+        if gold_gumae:
+            pyautogui.click(gold_gumae) # 팝업 골드 구매 클릭
             print('오딘1 - 골드 상품 일괄 구매 완료')
             sleep(2)
         else:
@@ -752,11 +753,12 @@ def daily_gold_item():
     if odin[1].isActive == True:
         pyautogui.press('u')
         print('오딘2 - 캐쉬 페이지 이동')
-        sleep(3)
+        sleep(5)
         pyautogui.click(1024, 436) # 일괄 구매 
-        confirm = image_check('confirm') # 이미지 다시 찍어야 함 다 받아서 얼럿 창을 못봄
-        if confirm:
-            pyautogui.click(confirm) # 팝업 골드 구매 클릭
+        sleep(2)
+        gold_gumae = image_check('gold_gumae') # 골드 상품 구매
+        if gold_gumae:
+            pyautogui.click(gold_gumae) # 팝업 골드 구매 클릭
             print('오딘2 - 골드 상품 일괄 구매 완료')
             sleep(2)
         else:
@@ -1362,3 +1364,6 @@ def town_request():
                     break
 
 
+# get_mecro()
+# active_mecro_1()
+# go_town()
