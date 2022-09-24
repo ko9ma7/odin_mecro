@@ -27,6 +27,9 @@ def active_mecro_1():
             odin[0].resizeTo(974, 527)  # 창 사이즈 (변경금지)
             odin[0].moveTo(-7, 0)       # 창 위치 (변경금지)
             odin[0].activate()
+            sleep(1)
+            odin[0].activate()
+            sleep(1)
         except:
             print('1번 프로그램 활성화 오류')
 
@@ -38,6 +41,9 @@ def active_mecro_2():
             odin[1].resizeTo(974, 527)  # 창 사이즈 (변경금지)
             odin[1].moveTo(953, 0)      # 창 위치(변경금지)
             odin[1].activate()
+            sleep(1)
+            odin[1].activate()
+            sleep(1)
         except:
             print('2번 프로그램 활성화 오류')
 
@@ -697,6 +703,68 @@ def mimir_eat():
             if i > 5:
                 break
 
+# 물약 소진 시 물약사러 가기
+def no_potion():
+    sleep(1)
+    if odin[0].isActive == True:
+        print('오딘1 - 물약체크 중... ')
+        get_potion = image_check('get_potion')
+        get_potion_2 = image_check('get_potion_2')
+        get_potion_3 = image_check('get_potion_3')
+        get_potion_4 = image_check('get_potion_4')
+        if get_potion or get_potion_2 or get_potion_3 or get_potion_4:
+            print('오딘1 - 물약 소진 확인 마을 귀환')
+            go_town()
+    if odin[1].isActive == True:
+        print('오딘2 - 물약체크 중... ')
+        get_potion = image_check('get_potion')
+        get_potion_2 = image_check('get_potion_2')
+        get_potion_3 = image_check('get_potion_3')
+        get_potion_4 = image_check('get_potion_4')
+        if get_potion or get_potion_2 or get_potion_3 or get_potion_4:
+            print('오딘2 - 물약 소진 확인 마을 귀환')
+            go_town()
+
+# 죽었을 경우 부활하기
+def resurrection():
+    sleep(1)
+    if odin[0].isActive == True:
+        print('오딘1 - 부활 체크 중......')
+        resurrection = image_check('resurrection')
+        if resurrection:
+            print('오딘1 - 사망 확인 부활함 ..')
+            pyautogui.click(resurrection)
+            sleep(1)
+            pyautogui.click(resurrection)
+        sleep(5)
+        resurrection_click = image_check('resurrection_click')
+        if resurrection_click:
+            pyautogui.click(resurrection_click)
+            sleep(2)
+            pyautogui.click(484, 185)
+            sleep(2)
+            pyautogui.click(538, 401) # 무료복구
+            sleep(2)
+            go_town()
+    if odin[1].isActive == True:
+        print('오딘2 - 부활 체크 중......')
+        resurrection = image_check('resurrection')
+        if resurrection:
+            print('오딘2 - 사망 확인 부활함 ..')
+            pyautogui.click(resurrection)
+            sleep(1)
+            pyautogui.click(resurrection)
+        sleep(5)
+        resurrection_click = image_check('resurrection_click')
+        if resurrection_click:
+            pyautogui.click(resurrection_click)
+            sleep(2)
+            pyautogui.click(1444, 185)
+            sleep(2)
+            pyautogui.click(1498, 401) # 무료복구
+            sleep(2)
+            go_town()            
+
 # 우편물 받기
 def get_post():
     sleep(1)
@@ -1269,6 +1337,8 @@ def town_request():
                 sleep(3)
                 pyautogui.click(470, 440)
                 sleep(2)
+                pyautogui.click(470, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
+                sleep(2)
             elif tr_level_2:
                 pyautogui.click(891, 496) # 상급의뢰 수락하기
             elif tr_level_3:
@@ -1328,6 +1398,8 @@ def town_request():
                 sleep(3)
                 pyautogui.click(1430, 440)
                 sleep(2)
+                pyautogui.click(1430, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
+                sleep(2)                
             elif tr_level_2:
                 pyautogui.click(1851, 496) # 상급의뢰 수락하기
             elif tr_level_3:

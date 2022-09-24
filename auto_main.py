@@ -34,7 +34,7 @@ def play_odin1():
         ad.active_mecro_1()
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
-            odin1_write('2')
+            odin1_write('3')
             ad.get_post() # 우편 받기
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
@@ -66,10 +66,10 @@ def play_odin1():
         ad.active_mecro_1()
         tr_end = ad.town_request()
         if tr_end == 1:
-            odin1_write('6')
+            odin1_write('7')
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
+            # ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin1 == 6:
@@ -96,10 +96,10 @@ def play_odin1():
         ad.active_mecro_1()
         tr_end = ad.town_request()
         if tr_end == 1:
-            odin1_write('10')
+            odin1_write('11')
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
+            # ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin1 == 10:
@@ -127,7 +127,7 @@ def play_odin1():
         ad.active_mecro_1()
         tr_end = ad.town_request()
         if tr_end == 1:
-            odin1_write('14')
+            odin1_write('15')
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
@@ -141,13 +141,13 @@ def play_odin1():
 
     if odin1 == 15:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(3)
         if money_dg_end == 1:
             odin1_write('16')
 
     if odin1 == 16:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(3)
         if scroll_dg_end == 1:
             odin1_write('17')
             ad.char_change(5)
@@ -158,7 +158,7 @@ def play_odin1():
         ad.active_mecro_1()
         tr_end = ad.town_request()
         if tr_end == 1:
-            odin1_write('18')
+            odin1_write('19')
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
@@ -172,13 +172,13 @@ def play_odin1():
 
     if odin1 == 19:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(3)
         if money_dg_end == 1:
             odin1_write('20')
 
     if odin1 == 20:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(3)
         if scroll_dg_end == 1:
             odin1_write('21')
             ad.char_change(1)
@@ -190,7 +190,7 @@ def play_odin2():
         ad.active_mecro_2()
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
-            odin2_write('2')
+            odin2_write('3')
             ad.get_post() # 우편 받기
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
@@ -222,10 +222,10 @@ def play_odin2():
         ad.active_mecro_2()
         tr_end = ad.town_request()
         if tr_end == 1:
-            odin2_write('6')
+            odin2_write('7')
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
+            # ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin2 == 6:
@@ -252,10 +252,10 @@ def play_odin2():
         ad.active_mecro_2()
         tr_end = ad.town_request()
         if tr_end == 1:
-            odin2_write('10')
+            odin2_write('11')
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
+            # ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin2 == 10:
@@ -283,7 +283,7 @@ def play_odin2():
         ad.active_mecro_2()
         tr_end = ad.town_request()
         if tr_end == 1:
-            odin2_write('14')
+            odin2_write('15')
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
@@ -291,19 +291,19 @@ def play_odin2():
 
     if odin2 == 14:
         ad.active_mecro_2()
-        event_dg_end = ad.event_dg_entrance(1)
+        event_dg_end = ad.event_dg_entrance(2)
         if event_dg_end == 1:
             odin2_write('15')
 
     if odin2 == 15:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(3)
         if money_dg_end == 1:
             odin2_write('16')
 
     if odin2 == 16:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(3)
         if scroll_dg_end == 1:
             odin2_write('17')
             ad.char_change(5)
@@ -314,7 +314,7 @@ def play_odin2():
         ad.active_mecro_2()
         tr_end = ad.town_request()
         if tr_end == 1:
-            odin2_write('18')
+            odin2_write('19')
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
             ad.mimir_eat() # 미미르 샘물 먹기
@@ -322,19 +322,19 @@ def play_odin2():
 
     if odin2 == 18:
         ad.active_mecro_2()
-        event_dg_end = ad.event_dg_entrance(1)
+        event_dg_end = ad.event_dg_entrance(2)
         if event_dg_end == 1:
-            odin2_write('19')
+            odin2_write('19 ')
 
     if odin2 == 19:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(3)
         if money_dg_end == 1:
             odin2_write('20')
 
     if odin2 == 20:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(3)
         if scroll_dg_end == 1:
             odin2_write('21')
             ad.char_change(1)
@@ -343,35 +343,35 @@ def play_odin2():
 def play_week_dg_odin1():
     if odin1 == 21:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(5)
+        week_end = ad.week_dg_entrance(6)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('22')
             ad.char_change(2)
     
     if odin1 == 22:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(3)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('23')
             ad.char_change(3)
 
     if odin1 == 23:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(3)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('24')
             ad.char_change(4)
 
     if odin1 == 24:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('25')
             ad.char_change(5)
     
     if odin1 == 25:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('26')
             ad.char_change(1)
@@ -381,50 +381,47 @@ def play_week_dg_odin2():
     # 1번 캐릭터
     if odin2 == 21:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(5)
+        week_end = ad.week_dg_entrance(6)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('22')
             ad.char_change(2)
 
     if odin2 == 22:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(3)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('23')
             ad.char_change(3)
 
     if odin2 == 23:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(3)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('24')
             ad.char_change(4)
 
     if odin2 == 24:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('25')
             ad.char_change(5)
 
     if odin2 == 25:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('26')
             ad.char_change(1)
 
 # 필드 사냥(즐겨찾기 1번)
-def field_play():
+def field_play(): 
     if odin1 == 26:
         ad.active_mecro_1()
         fp = ad.field_play()
     if odin2 == 26:
         ad.active_mecro_2()
         fp = ad.field_play()
-
-
-
 
 ############################### 오딘 플레이 ###############################
 # 매크로 시작 오딘 창 불러오기
@@ -467,16 +464,29 @@ while True:
         odin1 = int(odin1_read())
         odin2 = int(odin2_read())
 
+        ad.active_mecro_1()
+        # 오딘 1 - 물약 및 부활 체크
+        ad.no_potion()
+        ad.resurrection()
+
         play_odin1()
+        
+        ad.active_mecro_2()
+        # 오딘 2 - 물약 및 부활 체크
+        ad.no_potion()
+        ad.resurrection()
+
         play_odin2()
+        
         play_week_dg_odin1()
         play_week_dg_odin2()
         field_play()
+        ad.active_mecro_1()
 
-        # 4시 초기화
+        # 6시 초기화
         find_hour = time.strftime('%H', time.localtime(time.time()))
         print('시간체크 :' + find_hour + '시(4시 초기화)')
-        if find_hour == '04':
+        if find_hour == '06':
             if odin1 == 1 or odin1 == 2 or odin1 == 3 or odin1 == 4: # 1, 2번 이면 초기화 안함
                 print('1, 2, 3, 4번 진행 시라면 초기화 하지 않음')
                 pass
@@ -494,7 +504,7 @@ while True:
                 ad.char_change(1)
 
         # 체크 주기
-        sleep(300)
+        sleep(50)
     except:
         sleep(5)
         print('오류 발생')
