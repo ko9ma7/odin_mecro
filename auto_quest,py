@@ -115,43 +115,43 @@ def play_quest():
 
         if quest_go:
             pyautogui.click(quest_go)
-            sleep(2)
+            sleep(1)
         if free_go:
             pyautogui.click(free_go)
-            sleep(2)
+            sleep(1)
         if quset_skip:
             pyautogui.click(quset_skip)
-            sleep(2)    
+            sleep(1)    
         if quest_confirm:
             pyautogui.click(quest_confirm)
-            sleep(2)  
-        if quest_story_skip:
-            pyautogui.click(quest_story_skip)
-            sleep(2)
+            sleep(1)  
+        # if quest_story_skip:
+        #     pyautogui.click(quest_story_skip)
+        #     sleep(2)
         if quest_reword_check:
             pyautogui.click(quest_reword_check)
-            sleep(2)
+            sleep(1)
         if resurrection:
             pyautogui.click(resurrection)
-            sleep(2)
+            sleep(1)
         if resurrection_click:
             pyautogui.click(resurrection_click)
-            sleep(2)
+            sleep(1)
             pyautogui.click(484, 185)
-            sleep(2)
+            sleep(1)
             pyautogui.click(538, 401) # 무료복구
         if exit_click:
             pyautogui.click(exit_click)
-            sleep(2)
+            sleep(1)
         if sleep_mode:
             disable_sleep_mode()
-            sleep(2)
+            sleep(1)
         if main_back:
             pyautogui.click(main_back)
-            sleep(2)
+            sleep(1)
         if main_back_nb:
             pyautogui.click(main_back_nb)
-            sleep(2)
+            sleep(1)
         if get_potion or get_potion_2:
             pyautogui.click(22, 203)
             sleep(2)
@@ -166,9 +166,9 @@ def play_quest():
             pyautogui.click(530, 388) # 구매하기
             sleep(3)
             main_back()
-        if quest_status is None:
-            pyautogui.click(937, 103)
-            sleep(1)
+        # if quest_status is None:
+        #     pyautogui.click(937, 103)
+        #     sleep(1)
 
     elif odin[1].isActive == True:
         pyautogui.click(1875, 97)
@@ -191,43 +191,43 @@ def play_quest():
         
         if quest_go:
             pyautogui.click(quest_go)
-            sleep(2)
+            sleep(1)
         if free_go:
             pyautogui.click(free_go)
-            sleep(2)
+            sleep(1)
         if quset_skip:
             pyautogui.click(quset_skip)
-            sleep(2)    
+            sleep(1)    
         if quest_confirm:
             pyautogui.click(quest_confirm)
-            sleep(2)    
-        if quest_story_skip:
-            pyautogui.click(quest_story_skip)
-            sleep(2)   
+            sleep(1)    
+        # if quest_story_skip:
+        #     pyautogui.click(quest_story_skip)
+        #     sleep(2)   
         if quest_reword_check:
             pyautogui.click(quest_reword_check)
-            sleep(2)
+            sleep(1)
         if resurrection:
             pyautogui.click(resurrection)
-            sleep(2)
+            sleep(1)
         if resurrection_click:
             pyautogui.click(resurrection_click)
-            sleep(2)
+            sleep(1)
             pyautogui.click(1444, 185)
-            sleep(2)
+            sleep(1)
             pyautogui.click(1498, 401) # 무료복구
         if exit_click:
             pyautogui.click(exit_click)
-            sleep(2)
+            sleep(1)
         if sleep_mode:
             disable_sleep_mode()
-            sleep(2)
+            sleep(1)
         if main_back:
             pyautogui.click(main_back)
-            sleep(2)
+            sleep(1)
         if main_back_nb:
             pyautogui.click(main_back_nb)
-            sleep(2)
+            sleep(1)
         if get_potion or get_potion_2:
             pyautogui.click(982, 203)
             sleep(2)
@@ -242,9 +242,9 @@ def play_quest():
             pyautogui.click(1490, 388) # 구매하기
             sleep(3)
             main_back()
-        if quest_status is None:
-            pyautogui.click(1897, 103)
-            sleep(1)
+        # if quest_status is None:
+        #     pyautogui.click(1897, 103)
+        #     sleep(1)
 
 get_mecro()
 while True:
@@ -252,11 +252,11 @@ while True:
         active_mecro_1()
         sleep(1)
         play_quest()
-        sleep(2)
+        sleep(1)
         active_mecro_2()
         sleep(1)
         play_quest()
-        sleep(2)
+        sleep(1)
     except:
         sleep(60)
         active_mecro_1()

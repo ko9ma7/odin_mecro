@@ -163,7 +163,8 @@ def auto_play():
         auto_6 = pyautogui.locateOnScreen('image\\auto_play\\auto_6.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(0, 0, 960, 540))
-        print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8)
+        auto_9 = pyautogui.locateOnScreen('image\\auto_play\\auto_9.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8, auto_9)
         if auto_1:
             pyautogui.click(auto_1)
             sleep(1)
@@ -187,6 +188,9 @@ def auto_play():
             sleep(1)
         elif auto_8:
             pyautogui.click(auto_8)
+            sleep(1)
+        elif auto_9:
+            pyautogui.click(auto_9)
             sleep(1)
         else:
             return 1
@@ -200,7 +204,8 @@ def auto_play():
         auto_6 = pyautogui.locateOnScreen('image\\auto_play\\auto_6.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(960, 0, 960, 540))
-        print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8)
+        auto_9 = pyautogui.locateOnScreen('image\\auto_play\\auto_9.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8, auto_9)
         if auto_1:
             pyautogui.click(auto_1)
             sleep(1)
@@ -224,6 +229,9 @@ def auto_play():
             sleep(1)
         elif auto_8:
             pyautogui.click(auto_8)
+            sleep(1)
+        elif auto_9:
+            pyautogui.click(auto_9)
             sleep(1)
         else:
             return 1
@@ -284,9 +292,9 @@ def char_change(ch_num):
 # 이미지 체크 - 화면 전체
 def image_check(jpg_image):
     if odin[0].isActive == True:
-        image = pyautogui.locateOnScreen('image\\' + jpg_image + '.jpg', grayscale=True, confidence=0.9, region=(0, 0, 960, 540))
+        image = pyautogui.locateOnScreen('image\\' + jpg_image + '.jpg', grayscale=True, confidence=0.8, region=(0, 0, 960, 540))
     if odin[1].isActive == True:
-        image = pyautogui.locateOnScreen('image\\' + jpg_image + '.jpg', grayscale=True, confidence=0.9, region=(960, 0, 960, 540))
+        image = pyautogui.locateOnScreen('image\\' + jpg_image + '.jpg', grayscale=True, confidence=0.8, region=(960, 0, 960, 540))
     return image
 
 # 이미지 체크 - 마을의뢰 > 왼쪽 상단 리스트
@@ -1022,7 +1030,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘1 - 머니 던전 확인됨')
-                dg_time = where_dg(3) # 3번 = 머니던전
+                dg_time = where_dg(2) # 3번 = 머니던전
                 if dg_time:
                     print('오딘1 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1050,7 +1058,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘2 - 머니 던전 확인됨')
-                dg_time = where_dg(3) # 3번 = 머니던전
+                dg_time = where_dg(2) # 3번 = 머니던전
                 if dg_time:
                     print('오딘2 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1083,7 +1091,7 @@ def scroll_dg_entrance(dg_level):
             sleep(2)
             if scroll_dg:
                 print('오딘1 - 스크롤 던전 확인됨')
-                dg_time = where_dg(4) # 4번 = 스크롤던전
+                dg_time = where_dg(3) # 이벤트 던전 생기면 ~4번
                 if dg_time:
                     print('오딘1 - 스크롤 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1111,7 +1119,7 @@ def scroll_dg_entrance(dg_level):
             sleep(2)
             if scroll_dg:
                 print('오딘2 - 스크롤 던전 확인됨')
-                dg_time = where_dg(4) # 4번 = 스크롤던전
+                dg_time = where_dg(3) # 이벤트 던전 생기면 ~4번
                 if dg_time:
                     print('오딘2 - 스크롤 던전 시간 없음, 게임화면으로 이동')
                     main_back()
