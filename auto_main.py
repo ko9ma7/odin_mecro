@@ -338,12 +338,12 @@ def play_odin2():
         if scroll_dg_end == 1:
             odin2_write('21')
             ad.char_change(1)
-4
+
 # 오딘1 지하감옥 스케줄
 def play_week_dg_odin1():
     if odin1 == 21:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('22')
             ad.char_change(2)
@@ -381,7 +381,7 @@ def play_week_dg_odin2():
     # 1번 캐릭터
     if odin2 == 21:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('22')
             ad.char_change(2)
