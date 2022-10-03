@@ -744,7 +744,7 @@ def resurrection():
             pyautogui.click(resurrection)
             sleep(1)
             pyautogui.click(resurrection)
-        sleep(5)
+        sleep(21)
         resurrection_click = image_check('resurrection_click')
         if resurrection_click:
             pyautogui.click(resurrection_click)
@@ -762,7 +762,7 @@ def resurrection():
             pyautogui.click(resurrection)
             sleep(1)
             pyautogui.click(resurrection)
-        sleep(5)
+        sleep(21)
         resurrection_click = image_check('resurrection_click')
         if resurrection_click:
             pyautogui.click(resurrection_click)

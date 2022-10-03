@@ -338,7 +338,7 @@ def play_odin2():
         if scroll_dg_end == 1:
             odin2_write('21')
             ad.char_change(1)
-
+4
 # 오딘1 지하감옥 스케줄
 def play_week_dg_odin1():
     if odin1 == 21:
