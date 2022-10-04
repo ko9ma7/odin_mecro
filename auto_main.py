@@ -470,17 +470,19 @@ while True:
         ad.resurrection()
 
         play_odin1()
-        
+        play_week_dg_odin1()
+        field_play()
+
         ad.active_mecro_2()
         # 오딘 2 - 물약 및 부활 체크
         ad.no_potion()
         ad.resurrection()
 
         play_odin2()
-        
-        play_week_dg_odin1()
         play_week_dg_odin2()
         field_play()
+
+        # 1번 오딘으로 활성창 이동
         ad.active_mecro_1()
 
         # 6시 초기화
