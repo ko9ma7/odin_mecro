@@ -164,7 +164,9 @@ def auto_play():
         auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_9 = pyautogui.locateOnScreen('image\\auto_play\\auto_9.jpg', confidence=0.8, region=(0, 0, 960, 540))
-        print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8, auto_9)
+        auto_10 = pyautogui.locateOnScreen('image\\auto_play\\auto_10.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_11 = pyautogui.locateOnScreen('image\\auto_play\\auto_11.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8, auto_9, auto_10, auto_11)
         if auto_1:
             pyautogui.click(auto_1)
             sleep(1)
@@ -191,6 +193,12 @@ def auto_play():
             sleep(1)
         elif auto_9:
             pyautogui.click(auto_9)
+            sleep(1)
+        elif auto_10:
+            pyautogui.click(auto_10)
+            sleep(1)
+        elif auto_11:
+            pyautogui.click(auto_11)
             sleep(1)
         else:
             return 1
@@ -205,7 +213,9 @@ def auto_play():
         auto_7 = pyautogui.locateOnScreen('image\\auto_play\\auto_7.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_8 = pyautogui.locateOnScreen('image\\auto_play\\auto_8.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_9 = pyautogui.locateOnScreen('image\\auto_play\\auto_9.jpg', confidence=0.8, region=(960, 0, 960, 540))
-        print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8, auto_9)
+        auto_10 = pyautogui.locateOnScreen('image\\auto_play\\auto_10.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_11 = pyautogui.locateOnScreen('image\\auto_play\\auto_11.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8, auto_9, auto_10, auto_11)
         if auto_1:
             pyautogui.click(auto_1)
             sleep(1)
@@ -232,6 +242,12 @@ def auto_play():
             sleep(1)
         elif auto_9:
             pyautogui.click(auto_9)
+            sleep(1)
+        elif auto_10:
+            pyautogui.click(auto_10)
+            sleep(1)
+        elif auto_11:
+            pyautogui.click(auto_11)
             sleep(1)
         else:
             return 1
