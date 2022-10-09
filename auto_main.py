@@ -118,8 +118,8 @@ def play_odin1():
         ad.active_mecro_1()
         scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
-            odin1_write('21')
-            ad.char_change(1)     #5캐릭시 수정       
+            odin1_write('13')
+            ad.char_change(1)     
                         
 
     # 4번 캐릭터
@@ -149,7 +149,7 @@ def play_odin1():
         ad.active_mecro_1()
         scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
-            odin1_write('17')
+            odin1_write('21')  #5캐릭시 수정     
             ad.char_change(5)
 
 
@@ -274,8 +274,8 @@ def play_odin2():
         ad.active_mecro_2()
         scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
-            odin2_write('21')
-            ad.char_change(1)    # 5캐릭시 수정        
+            odin2_write('13')
+            ad.char_change(1)        
                         
 
     # 4번 캐릭터
@@ -305,7 +305,7 @@ def play_odin2():
         ad.active_mecro_2()
         scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
-            odin2_write('17')
+            odin2_write('21') # 5캐릭시 수정    
             ad.char_change(5)
 
 
