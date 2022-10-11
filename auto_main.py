@@ -74,19 +74,19 @@ def play_odin1():
 
     if odin1 == 6:
         ad.active_mecro_1()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin1_write('7')
 
     if odin1 == 7:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin1_write('8')
 
     if odin1 == 8:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin1_write('9')
             ad.char_change(3)
@@ -104,19 +104,19 @@ def play_odin1():
 
     if odin1 == 10:
         ad.active_mecro_1()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin1_write('11')
 
     if odin1 == 11:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin1_write('12')
 
     if odin1 == 12:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin1_write('13')
             ad.char_change(4)     
@@ -135,19 +135,19 @@ def play_odin1():
 
     if odin1 == 14:
         ad.active_mecro_1()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin1_write('15')
 
     if odin1 == 15:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin1_write('16')
 
     if odin1 == 16:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin1_write('17')  
             ad.char_change(4)
@@ -166,19 +166,19 @@ def play_odin1():
 
     if odin1 == 18:
         ad.active_mecro_1()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin1_write('19')
 
     if odin1 == 19:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin1_write('20')
 
     if odin1 == 20:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin1_write('21')
             ad.char_change(1)
@@ -230,19 +230,19 @@ def play_odin2():
 
     if odin2 == 6:
         ad.active_mecro_2()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin2_write('7')
 
     if odin2 == 7:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin2_write('8')
 
     if odin2 == 8:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin2_write('9')
             ad.char_change(3)
@@ -260,19 +260,19 @@ def play_odin2():
 
     if odin2 == 10:
         ad.active_mecro_2()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin2_write('11')
 
     if odin2 == 11:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin2_write('12')
 
     if odin2 == 12:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin2_write('13')
             ad.char_change(4)        
@@ -291,19 +291,19 @@ def play_odin2():
 
     if odin2 == 14:
         ad.active_mecro_2()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin2_write('15')
 
     if odin2 == 15:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin2_write('16')
 
     if odin2 == 16:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin2_write('17') 
             ad.char_change(4)
@@ -322,19 +322,19 @@ def play_odin2():
 
     if odin2 == 18:
         ad.active_mecro_2()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(1)
         if event_dg_end == 1:
             odin2_write('19 ')
 
     if odin2 == 19:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin2_write('20')
 
     if odin2 == 20:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin2_write('21')
             ad.char_change(1)
@@ -364,14 +364,14 @@ def play_week_dg_odin1():
 
     if odin1 == 24:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('25')
             ad.char_change(5)
     
     if odin1 == 25:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('26')
             ad.char_change(1)
@@ -402,14 +402,14 @@ def play_week_dg_odin2():
 
     if odin2 == 24:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('25')
             ad.char_change(5)
 
     if odin2 == 25:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('26')
             ad.char_change(1)
@@ -506,7 +506,7 @@ while True:
                 ad.char_change(1)
 
         # 체크 주기
-        sleep(30)
+        sleep(60)
     except:
         sleep(5)
         print('오류 발생')
