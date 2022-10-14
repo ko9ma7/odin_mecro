@@ -83,6 +83,10 @@ def main_back():
         if click_x:
             pyautogui.click(click_x)
             sleep(1)
+        click_x_2 = pyautogui.locateOnScreen('image\\click_x_2.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+        if click_x_2:
+            pyautogui.click(click_x_2)
+            sleep(1)            
 
     elif odin[1].isActive == True:
         back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
@@ -101,6 +105,10 @@ def main_back():
         if click_x:
             pyautogui.click(click_x)
             sleep(1)
+        click_x_2 = pyautogui.locateOnScreen('image\\click_x_2.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+        if click_x_2:
+            pyautogui.click(click_x_2)
+            sleep(1)    
 
 # 물약 구매
 def go_town():
@@ -797,30 +805,30 @@ def get_post():
         pyautogui.press('f7')
         sleep(2)
         pyautogui.click(895, 496) # 모두 받기
-        sleep(2)
+        sleep(5)
         mimir_check = image_check('mimir_cancel')
         if mimir_check:
             print('오딘1 - 우편 미미르 샘물이 많다. 나중에 받자')
-            sleep(1)
+            sleep(3)
             pyautogui.click(mimir_check)
-            sleep(2)
+            sleep(3)
         pyautogui.click(173, 84) # 계정 우편 탭
-        sleep(2)
+        sleep(3)
         pyautogui.click(895, 496) # 모두 받기
         main_back()
     if odin[1].isActive == True:
         pyautogui.press('f7')
         sleep(2)
         pyautogui.click(1855, 496) # 모두 받기
-        sleep(2)
+        sleep(5)
         mimir_check = image_check('mimir_cancel')
         if mimir_check:
             print('오딘2 - 우편 미미르 샘물이 많다. 나중에 받자')
-            sleep(1)
+            sleep(3)
             pyautogui.click(mimir_check)
-            sleep(2)
+            sleep(3)
         pyautogui.click(1133, 84) # 계정 우편 탭
-        sleep(2)
+        sleep(3)
         pyautogui.click(1855, 496) # 모두 받기
         main_back()
 
@@ -838,7 +846,8 @@ def daily_gold_item():
         if gold_gumae:
             pyautogui.click(gold_gumae) # 팝업 골드 구매 클릭
             print('오딘1 - 골드 상품 일괄 구매 완료')
-            sleep(2)
+            sleep(3)
+            main_back()
         else:
             print('오딘1 - 골드 상품 구매했거나, 구매할 수 없는 상태')
         main_back()
@@ -852,19 +861,22 @@ def daily_gold_item():
         if gold_gumae:
             pyautogui.click(gold_gumae) # 팝업 골드 구매 클릭
             print('오딘2 - 골드 상품 일괄 구매 완료')
-            sleep(2)
+            sleep(3)
+            main_back()
         else:
             print('오딘2 - 골드 상품 구매했거나, 구매할 수 없는 상태')
         main_back()
 
 # 길드 출석 체크 및 주화 사기
 def guild_check():
-    sleep(1)
+    sleep(2)
     main_back()
     if odin[0].isActive == True:
         pyautogui.press('f6')
         print('오딘1 - 길드 페이지 이동')
-        sleep(5)
+        sleep(10)
+        pyautogui.click(470, 350) # 아무대나 클릭 (출석보상 보상 화면)
+        sleep(2)
         pyautogui.click(470, 350) # 아무대나 클릭 (출석보상 보상 화면)
         sleep(2)
         pyautogui.click(139, 86) # 길드 정보 탭
@@ -874,17 +886,17 @@ def guild_check():
         if guild_gibu:
             print('오딘1 - 길드 기부 시작')
             pyautogui.click(325, 465) # 골드 기부
-            sleep(3)
+            sleep(5)
             pyautogui.click(325, 465) # 아무대나 클릭
-            sleep(3)
+            sleep(5)
             pyautogui.click(325, 465) # 골드 기부
-            sleep(3)
+            sleep(5)
             pyautogui.click(325, 465) # 아무대나 클릭
-            sleep(3)
+            sleep(5)
             pyautogui.click(325, 465) # 골드 기부
-            sleep(3)
+            sleep(5)
             pyautogui.click(325, 465) # 아무대나 클릭
-            sleep(3)
+            sleep(5)
             main_back()
         else:
             print('오딘1 - 길드 가입 안했거나, 이미 기부한 상태')
@@ -893,7 +905,9 @@ def guild_check():
     if odin[1].isActive == True:
         pyautogui.press('f6')
         print('오딘2 - 길드 페이지 이동')
-        sleep(5)
+        sleep(10)
+        pyautogui.click(1430, 350) # 아무대나 클릭 (출석보상 보상 화면)
+        sleep(2)
         pyautogui.click(1430, 350) # 아무대나 클릭 (출석보상 보상 화면)
         sleep(2)
         pyautogui.click(1099, 86) # 길드 정보 탭
@@ -903,17 +917,17 @@ def guild_check():
         if guild_gibu:
             print('오딘2 - 길드 기부 시작')
             pyautogui.click(1285, 465) # 골드 기부
-            sleep(3)
+            sleep(5)
             pyautogui.click(1285, 465) # 아무대나 클릭
-            sleep(3)
+            sleep(5)
             pyautogui.click(1285, 465) # 골드 기부
-            sleep(3)
+            sleep(5)
             pyautogui.click(1285, 465) # 아무대나 클릭
-            sleep(3)
+            sleep(5)
             pyautogui.click(1285, 465) # 골드 기부
-            sleep(3)
+            sleep(5)
             pyautogui.click(1285, 465) # 아무대나 클릭
-            sleep(3)
+            sleep(5)
             main_back()
         else:
             print('오딘2 - 길드 가입 안했거나, 이미 기부한 상태')
@@ -1460,6 +1474,7 @@ def town_request():
                     break
 
 
-# get_mecro()
-# active_mecro_1()
-# go_town()
+get_mecro()
+active_mecro_2()
+get_post() 
+daily_gold_item()
