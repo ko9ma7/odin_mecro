@@ -816,6 +816,9 @@ def get_post():
         sleep(3)
         pyautogui.click(895, 496) # 모두 받기
         main_back()
+        sleep(2)
+        main_back()
+        sleep(2)
     if odin[1].isActive == True:
         pyautogui.press('f7')
         sleep(2)
@@ -866,6 +869,9 @@ def daily_gold_item():
         else:
             print('오딘2 - 골드 상품 구매했거나, 구매할 수 없는 상태')
         main_back()
+        sleep(2)
+        main_back()
+        sleep(2)
 
 # 길드 출석 체크 및 주화 사기
 def guild_check():
@@ -995,6 +1001,8 @@ def event_dg_entrance(dg_level):
             sleep(2)
             pyautogui.click(175, 85) # 정예던전 탭
             sleep(2)
+            pyautogui.click(175, 85) # 정예던전 탭
+            sleep(2)            
             #던전 체크
             event_dg = image_check('event_dg')
             if event_dg:
@@ -1022,6 +1030,8 @@ def event_dg_entrance(dg_level):
             sleep(2)
             pyautogui.click(1135, 85) # 정예던전 탭
             sleep(2)
+            pyautogui.click(1135, 85) # 정예던전 탭
+            sleep(2)            
             #던전 체크
             event_dg = image_check('event_dg')
             sleep(2)
@@ -1055,6 +1065,8 @@ def money_dg_entrance(dg_level):
             sleep(2)
             pyautogui.click(175, 85) # 정예던전 탭
             sleep(2)
+            pyautogui.click(175, 85) # 정예던전 탭
+            sleep(2)            
             #던전 체크
             money_dg = image_check('money_dg')
             sleep(2)
@@ -1083,6 +1095,8 @@ def money_dg_entrance(dg_level):
             sleep(2)
             pyautogui.click(1135, 85) # 정예던전 탭
             sleep(2)
+            pyautogui.click(1135, 85) # 정예던전 탭
+            sleep(2)            
             #던전 체크
             money_dg = image_check('money_dg')
             sleep(2)
@@ -1116,6 +1130,8 @@ def scroll_dg_entrance(dg_level):
             sleep(2)
             pyautogui.click(175, 85) # 정예던전 탭
             sleep(2)
+            pyautogui.click(175, 85) # 정예던전 탭
+            sleep(2)            
             #던전 체크
             scroll_dg = image_check('scroll_dg')
             sleep(2)
@@ -1144,6 +1160,8 @@ def scroll_dg_entrance(dg_level):
             sleep(2)
             pyautogui.click(1135, 85) # 정예던전 탭
             sleep(2)
+            pyautogui.click(1135, 85) # 정예던전 탭
+            sleep(2)            
             #던전 체크
             scroll_dg = image_check('scroll_dg')
             sleep(2)
@@ -1177,6 +1195,8 @@ def week_dg_entrance(dg_level):
             sleep(2)
             pyautogui.click(175, 85) # 정예던전 탭
             sleep(2)
+            pyautogui.click(175, 85) # 정예던전 탭
+            sleep(2)            
             #던전 체크 - 지하감옥은 드래그가 필요(이벤트 던전 때문에)
             pyautogui.moveTo(640, 260)
             pyautogui.dragTo(340, 260, 3, button='left')
@@ -1208,6 +1228,8 @@ def week_dg_entrance(dg_level):
             sleep(2)
             pyautogui.click(1135, 85) # 정예던전 탭
             sleep(2)
+            pyautogui.click(1135, 85) # 정예던전 탭
+            sleep(2)            
             #던전 체크 - 지하감옥은 드래그가 필요(이벤트 던전 때문에)
             pyautogui.moveTo(1600, 260)
             pyautogui.dragTo(1300, 260, 3, button='left')
