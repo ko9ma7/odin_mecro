@@ -1408,6 +1408,9 @@ def town_request():
                     break
                 else:
                     main_back()
+                    sleep(2)
+                    main_back()
+                    sleep(5)
                     print('오딘1 - 마을의뢰 완료')
                     return 1
                     break
@@ -1469,12 +1472,19 @@ def town_request():
                     break
                 else:
                     main_back()
+                    sleep(2)
+                    main_back()
+                    sleep(5)
                     print('오딘2 - 마을의뢰 완료')
                     return 1
                     break
 
 
-get_mecro()
-active_mecro_2()
-get_post() 
-daily_gold_item()
+# get_mecro()
+# active_mecro_1()
+# get_post() 
+# daily_gold_item()
+# guild_check() # 길드 출석 체크
+# go_town() # 물약 구매
+# item_bunhae() # 아이템 분해
+# mimir_eat() # 미미르 샘물 먹기
