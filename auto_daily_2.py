@@ -806,12 +806,18 @@ def get_post():
         sleep(2)
         pyautogui.click(895, 496) # 모두 받기
         sleep(5)
-        mimir_check = image_check('mimir_cancel')
+        # mimir_check = image_check('mimir_cancel')
+        mimir_check = image_check('mimir_ok')
         if mimir_check:
-            print('오딘1 - 우편 미미르 샘물이 많다. 나중에 받자')
+            print('오딘1 - 우편 미미르 샘물이 많다. 그래도 먹자')
+            sleep(3)
+            # pyautogui.click(mimir_check)
+            pyautogui.click(mimir_check)
             sleep(3)
             pyautogui.click(mimir_check)
             sleep(3)
+        else:
+            print('오딘1 - 미미르 완전 만땅!!!!')
         pyautogui.click(173, 84) # 계정 우편 탭
         sleep(3)
         pyautogui.click(895, 496) # 모두 받기
@@ -824,12 +830,18 @@ def get_post():
         sleep(2)
         pyautogui.click(1855, 496) # 모두 받기
         sleep(5)
-        mimir_check = image_check('mimir_cancel')
+        # mimir_check = image_check('mimir_cancel')
+        mimir_check = image_check('mimir_ok')
         if mimir_check:
-            print('오딘2 - 우편 미미르 샘물이 많다. 나중에 받자')
+            print('오딘2 - 우편 미미르 샘물이 많다. 그래도 먹자')
+            sleep(3)
+            # pyautogui.click(mimir_check)
+            pyautogui.click(mimir_check)
             sleep(3)
             pyautogui.click(mimir_check)
             sleep(3)
+        else:
+            print('오딘2 - 미미르 완전 만땅!!!!')
         pyautogui.click(1133, 84) # 계정 우편 탭
         sleep(3)
         pyautogui.click(1855, 496) # 모두 받기
