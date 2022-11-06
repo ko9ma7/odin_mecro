@@ -115,46 +115,36 @@ def go_town():
     sleep(1)
     if odin[0].isActive == True:
         main_back()
-        sleep(2)
+        sleep(1)
         pyautogui.click(22, 203)
-        sleep(2)
+        sleep(1)
         gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(0, 0, 960, 540))
         if gotown_click:
             print('물약 사러 마을로 갑니다~!')
-            sleep(2)
             pyautogui.click(gotown_click)
             sleep(20)
         else: 
             print('마을이거나 귀환 불가 지역')
         pyautogui.press('4')
         sleep(20)
-        pyautogui.click(120, 130) # 대형물약
-        sleep(3)
-        pyautogui.click(547, 313) # 최대
-        sleep(3)
-        pyautogui.click(530, 388) # 구매하기
-        sleep(3)
+        pyautogui.click(137, 494) # 지정 구매
+        sleep(2)
         main_back()
     elif odin[1].isActive == True:
         main_back()
-        sleep(2)
+        sleep(1)
         pyautogui.click(982, 203)
-        sleep(2)
+        sleep(1)
         gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(960, 0, 960, 540))
         if gotown_click:
             print('물약 사러 마을로 갑니다~!')
-            sleep(2)
             pyautogui.click(gotown_click)
             sleep(20)
         else: 
             print('마을이거나 귀환 불가 지역')
         pyautogui.press('4')
         sleep(20)
-        pyautogui.click(1080, 130) # 대형물약
-        sleep(3)
-        pyautogui.click(1507, 313) # 최대
-        sleep(3)
-        pyautogui.click(1490, 388) # 구매하기
+        pyautogui.click(1097, 494) # 지정 구매
         sleep(3)
         main_back()
 
@@ -744,7 +734,9 @@ def no_potion():
         get_potion_2 = image_check('get_potion_2')
         get_potion_3 = image_check('get_potion_3')
         get_potion_4 = image_check('get_potion_4')
-        if get_potion or get_potion_2 or get_potion_3 or get_potion_4:
+        get_potion_5 = image_check('get_potion_5')
+        get_potion_6 = image_check('get_potion_6')
+        if get_potion or get_potion_2 or get_potion_3 or get_potion_4 or get_potion_5 or get_potion_6:
             print('오딘1 - 물약 소진 확인 마을 귀환')
             go_town()
     if odin[1].isActive == True:
@@ -753,7 +745,9 @@ def no_potion():
         get_potion_2 = image_check('get_potion_2')
         get_potion_3 = image_check('get_potion_3')
         get_potion_4 = image_check('get_potion_4')
-        if get_potion or get_potion_2 or get_potion_3 or get_potion_4:
+        get_potion_5 = image_check('get_potion_5')
+        get_potion_6 = image_check('get_potion_6')
+        if get_potion or get_potion_2 or get_potion_3 or get_potion_4 or get_potion_5 or get_potion_6:
             print('오딘2 - 물약 소진 확인 마을 귀환')
             go_town()
 
@@ -763,39 +757,127 @@ def resurrection():
     if odin[0].isActive == True:
         print('오딘1 - 부활 체크 중......')
         resurrection = image_check('resurrection')
+        resurrection2 = image_check('resurrection2')
+        print(resurrection, resurrection2)
         if resurrection:
             print('오딘1 - 사망 확인 부활함 ..')
             pyautogui.click(resurrection)
             sleep(1)
             pyautogui.click(resurrection)
-        sleep(21)
+            sleep(20)
+        elif resurrection2:
+            print('오딘1 - 사망 확인 부활함 ..')
+            pyautogui.click(resurrection2)
+            sleep(1)
+            pyautogui.click(resurrection2)
+            sleep(20)
+        # 복구 아이콘 2개 검색(가끔 검색 안될때가 있어서 2개 검색 넣음)
         resurrection_click = image_check('resurrection_click')
+        resurrection_click2 = image_check('resurrection_click2')
+        print(resurrection_click, resurrection_click2)
+        # 1번 서치 시(1번이나 2번이나 행동하는 건 같음) 
         if resurrection_click:
+            print('오딘1 - 부활 복구 시작!')
             pyautogui.click(resurrection_click)
             sleep(2)
-            pyautogui.click(484, 185)
+            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(310, 160, 70, 60))
+            resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(310, 160, 70, 60))
+            sleep(1)
+            if resurrection_check:
+                pyautogui.click(resurrection_check)
+            if resurrection_check2:
+                pyautogui.click(resurrection_check2)
             sleep(2)
-            pyautogui.click(538, 401) # 무료복구
+            resurrection_free = image_check('resurrection_free')
+            resurrection_gold = image_check('resurrection_gold')
+            if resurrection_free:
+                pyautogui.click(resurrection_free)
+            else:
+                pyautogui.click(resurrection_gold)
+            sleep(2)
+        # 2번 서치 시
+        elif resurrection_click2:
+            pyautogui.click(resurrection_click2)
+            sleep(2)
+            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(310, 160, 70, 60))
+            resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(310, 160, 70, 60))
+            sleep(1)
+            if resurrection_check:
+                pyautogui.click(resurrection_check)
+            if resurrection_check2:
+                pyautogui.click(resurrection_check2)
+            sleep(2)
+            resurrection_free = image_check('resurrection_free')
+            resurrection_gold = image_check('resurrection_gold')
+            if resurrection_free:
+                pyautogui.click(resurrection_free)
+            else:
+                pyautogui.click(resurrection_gold)
             sleep(2)
             go_town()
+        else:
+            pass
     if odin[1].isActive == True:
         print('오딘2 - 부활 체크 중......')
         resurrection = image_check('resurrection')
+        resurrection2 = image_check('resurrection2')
         if resurrection:
             print('오딘2 - 사망 확인 부활함 ..')
             pyautogui.click(resurrection)
             sleep(1)
             pyautogui.click(resurrection)
-        sleep(21)
+            sleep(20)
+        elif  resurrection2:
+            print('오딘2 - 사망 확인 부활함 ..')
+            pyautogui.click(resurrection2)
+            sleep(1)
+            pyautogui.click(resurrection2)
+            sleep(20)
+        # 복구 아이콘 2개 검색(가끔 검색 안될때가 있어서 2개 검색 넣음)
         resurrection_click = image_check('resurrection_click')
+        resurrection_click2 = image_check('resurrection_click2')
+        # 1번 서치 시(1번이나 2번이나 행동하는 건 같음) 
         if resurrection_click:
+            print('오딘2 - 부활 복구 시작!')
             pyautogui.click(resurrection_click)
             sleep(2)
-            pyautogui.click(1444, 185)
+            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(1270, 700, 70, 60))
+            resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(1270, 700, 70, 60))
+            sleep(1)
+            if resurrection_check:
+                pyautogui.click(resurrection_check)
+            if resurrection_check2:
+                pyautogui.click(resurrection_check2)
             sleep(2)
-            pyautogui.click(1498, 401) # 무료복구
+            resurrection_free = image_check('resurrection_free')
+            resurrection_gold = image_check('resurrection_gold')
+            if resurrection_free:
+                pyautogui.click(resurrection_free)
+            else:
+                pyautogui.click(resurrection_gold)
             sleep(2)
-            go_town()            
+        # 2번 서치 시
+        elif resurrection_click2:
+            pyautogui.click(resurrection_click)
+            sleep(2)
+            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(1270, 700, 70, 60))
+            resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(1270, 700, 70, 60))
+            sleep(1)
+            if resurrection_check:
+                pyautogui.click(resurrection_check)
+            if resurrection_check2:
+                pyautogui.click(resurrection_check2)
+            sleep(2)
+            resurrection_free = image_check('resurrection_free')
+            resurrection_gold = image_check('resurrection_gold')
+            if resurrection_free:
+                pyautogui.click(resurrection_free)
+            else:
+                pyautogui.click(resurrection_gold)
+            sleep(2)
+            go_town()       
+        else:
+            pass     
 
 # 우편물 받기
 def get_post():
@@ -1513,12 +1595,214 @@ def town_request():
                     return 1
                     break
 
+# 파티던전 끝낫는지 파악
+def end_party():
+    sleep(1)
+    if odin[0].isActive == True:
+        end_1 = pyautogui.locateOnScreen('image\\party_dg\\end_1.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        end_2 = pyautogui.locateOnScreen('image\\party_dg\\end_2.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        end_3 = pyautogui.locateOnScreen('image\\party_dg\\end_3.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        end_4 = pyautogui.locateOnScreen('image\\party_dg\\end_4.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        end_5 = pyautogui.locateOnScreen('image\\party_dg\\end_5.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        end_6 = pyautogui.locateOnScreen('image\\party_dg\\end_6.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        end_7 = pyautogui.locateOnScreen('image\\party_dg\\end_7.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        end_8 = pyautogui.locateOnScreen('image\\party_dg\\end_8.jpg', confidence=0.8, region=(0, 0, 960, 540))
+                
+        if end_1:
+            print('end_1')
+            return 1
+        if end_2:
+            print('end_2')
+            return 1
+        if end_3:
+            print('end_3')
+            return 1
+        if end_4:
+            print('end_4')
+            return 1
+        if end_5:
+            print('end_5')
+            return 1
+        if end_6:
+            print('end_6')
+            return 1
+        if end_7:
+            print('end_7')
+            return 1
+        if end_8:
+            print('end_8')
+            return 1
+
+    elif odin[1].isActive == True:
+        end_1 = pyautogui.locateOnScreen('image\\party_dg\\end_1.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        end_2 = pyautogui.locateOnScreen('image\\party_dg\\end_2.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        end_3 = pyautogui.locateOnScreen('image\\party_dg\\end_3.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        end_4 = pyautogui.locateOnScreen('image\\party_dg\\end_4.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        end_5 = pyautogui.locateOnScreen('image\\party_dg\\end_5.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        end_6 = pyautogui.locateOnScreen('image\\party_dg\\end_6.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        end_7 = pyautogui.locateOnScreen('image\\party_dg\\end_7.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        end_8 = pyautogui.locateOnScreen('image\\party_dg\\end_8.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                
+        if end_1:
+            print('end_1')
+            return 1
+        if end_2:
+            print('end_2')
+            return 1
+        if end_3:
+            print('end_3')
+            return 1
+        if end_4:
+            print('end_4')
+            return 1
+        if end_5:
+            print('end_5')
+            return 1
+        if end_6:
+            print('end_6')
+            return 1
+        if end_7:
+            print('end_7')
+            return 1
+        if end_8:
+            print('end_8')
+            return 1
+# 파티던전 입장 
+# dg_course : 맹독의뱀둥지 - 1, 잊혀진거인의동굴 - 2, 난쟁이왕가의무덤 - 3    
+# 비공개 파티, 솔로 플레이, 보통 난이도만 가능
+def create_party(dg_level):
+    sleep(1)
+    # main_back()
+    if odin[0].isActive == True:
+        sleep(1)
+        # 파티생성
+        if end_party() == 1: # 파티 중인지 체크 1이면 파티중 아님
+            pyautogui.press('F8')
+            sleep(2)
+            party_dg_end = pyautogui.locateOnScreen('image\\party_dg\\party_dg_end.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
+            sleep(1)
+            if party_dg_end:
+                print('오딘1 : 파티 던전 모두 소진(입장권 있어도 불가능) - 입장권은 다음주에 쓰세요')
+                main_back()
+                pass
+            else:
+                if dg_level == 1:
+                    pyautogui.click(128, 284) # 맹독의 뱀 둥지
+                elif dg_level == 2:
+                    pyautogui.click(363, 280) # 잊혀진 거인의 동굴 
+                elif dg_level == 3:
+                    pyautogui.click(587, 293) # 난쟁이 왕가의 무덤
+                sleep(2)
+                already_party = pyautogui.locateOnScreen('image\\party_dg\\already_party.jpg', confidence=0.8, region=(830, 460, 120, 50)) 
+                if already_party:
+                    print('오딘1 : 파티 이미 생성됨!!! 뒤로가기!')
+                    main_back()
+                else:
+
+                    pyautogui.click(23, 329) # 비공개 파티 체크
+                    sleep(2)
+                    pyautogui.click(895, 494) # 파티 생성
+                    sleep(2)
+                    pyautogui.click(532, 332)
+                    print('오딘1 : 파티생성 완료!!!! 뒤로가기 !')
+                    sleep(3)
+                    main_back()
+        else: # 파티 중이면 아무것도 안함
+            pass
+    elif odin[1].isActive == True:
+        sleep(1)
+        # 파티생성
+        if end_party() == 1: # 파티 중인지 체크 1이면 파티중 아님
+            pyautogui.press('F8')
+            sleep(2)
+            party_dg_end = pyautogui.locateOnScreen('image\\party_dg\\party_dg_end.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
+            sleep(1)
+            if party_dg_end:
+                print('오딘2 : 파티 던전 모두 소진(입장권 있어도 불가능) - 입장권은 다음주에 쓰세요')
+                main_back()
+                pass
+            else:
+                if dg_level == 1:
+                    pyautogui.click(1088, 284) # 맹독의 뱀 둥지
+                elif dg_level == 2:
+                    pyautogui.click(1323, 280) # 잊혀진 거인의 동굴 
+                elif dg_level == 3:
+                    pyautogui.click(1547, 293) # 난쟁이 왕가의 무덤
+                sleep(2)
+                already_party = pyautogui.locateOnScreen('image\\party_dg\\already_party.jpg', confidence=0.8, region=(1790, 460, 120, 50)) 
+                if already_party:
+                    print('오딘2 : 파티 이미 생성됨!!! 뒤로가기!')
+                    main_back()
+                else:
+
+                    pyautogui.click(983, 329) # 비공개 파티 체크
+                    sleep(2)
+                    pyautogui.click(1855, 494) # 파티 생성
+                    sleep(2)
+                    pyautogui.click(1492, 332)
+                    print('오딘2 : 파티생성 완료!!!! 뒤로가기 !')
+                    sleep(3)
+                    main_back()
+        else: # 파티 중이면 아무것도 안함
+            pass
+
+# 파티던전 플레이
+def paly_party_dg():
+    sleep(1)
+    main_back()
+    if odin[0].isActive == True:    
+        # 파티던전 시작하기 버튼 찾기
+        print('오딘1 : 시작하기 버튼 체크')
+        party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(810, 130, 120, 80)) 
+        # 파티던전 탭이 안눌러져 있을 경우 대비 탭 한번 클릭하고 시작버튼 다시 서치
+        pyautogui.click(935, 141)
+        sleep(1)
+        party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(810, 130, 120, 80)) 
+        sleep(1)
+        if party_dg_start:
+            print('오딘1 : 파티던전 시작하기!!')
+            pyautogui.click(party_dg_start)
+            sleep(2)
+            pyautogui.click(533, 331) # 입장 클릭
+            sleep(2)
+            pyautogui.click(533, 331) # 입장권 입장 시 한번 더 클릭
+            sleep(10) # 입장 대기 시간
+            auto_play()
+        else:
+            if end_party() == 1: #종료
+                print('오딘1 : 파티던전 종료!!')
+                print('오딘1 : ', end_party())
+                return 1
+            else:
+                print('오딘1 : 파티던전 진행중!!')
+                pass
+    elif odin[1].isActive == True:
+        # 파티던전 시작하기 버튼 찾기
+        print('오딘2 : 시작하기 버튼 체크')
+        party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(1770, 130, 120, 80)) 
+        # 파티던전 탭이 안눌러져 있을 경우 대비 탭 한번 클릭하고 시작버튼 다시 서치
+        pyautogui.click(1895, 141)
+        sleep(1)
+        party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(1770, 130, 120, 80)) 
+        sleep(1)
+        if party_dg_start:
+            print('오딘2 : 파티던전 시작하기!!')
+            pyautogui.click(party_dg_start)
+            sleep(2)
+            pyautogui.click(1493, 331) # 입장 클릭
+            sleep(2)
+            pyautogui.click(1493, 331) # 입장권 입장 시 한번 더 클릭
+            sleep(10) # 입장 대기 시간
+            auto_play()
+        else:
+            if end_party() == 1: #종료
+                print('오딘2 : 파티던전 종료!!')
+                print('오딘2 : ', end_party())
+                return 1
+            else:
+                print('오딘2 : 파티던전 진행중!!')
+                pass
 
 # get_mecro()
 # active_mecro_1()
-# get_post() 
-# daily_gold_item()
-# guild_check() # 길드 출석 체크
-# go_town() # 물약 구매
-# item_bunhae() # 아이템 분해
-# mimir_eat() # 미미르 샘물 먹기
+# resurrection()

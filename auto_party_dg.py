@@ -451,35 +451,35 @@ char_change(1)
 go_town()
 party_dg_entrance(2)
 
-# 2번 캐릭터
-char_change(2)
-go_town()
-party_dg_entrance(1)
+# # 2번 캐릭터
+# char_change(2)
+# go_town()
+# party_dg_entrance(1)
 
-# 3번 캐릭터
-char_change(3)
-go_town()
-party_dg_entrance(1)
+# # 3번 캐릭터
+# char_change(3)
+# go_town()
+# party_dg_entrance(1)
 
-# 4번 캐릭터
-char_change(4)
-go_town()
-party_dg_entrance(1)
+# # 4번 캐릭터
+# char_change(4)
+# go_town()
+# party_dg_entrance(1)
 
-# 5번 캐릭터
-char_change(5)
-go_town()
-party_dg_entrance(1)
+# # 5번 캐릭터
+# char_change(5)
+# go_town()
+# party_dg_entrance(1)
 
-# 1번 캐릭터로 복귀 후 첫번째 저장된 위치 사냥
-sleep(10)
-char_change(1)
-pyautogui.click(21, 137)
-sleep(2)
-pyautogui.click(213, 189)
-sleep(20)
-pyautogui.press('g')
-auto_play()
+# # 1번 캐릭터로 복귀 후 첫번째 저장된 위치 사냥
+# sleep(10)
+# char_change(1)
+# pyautogui.click(21, 137)
+# sleep(2)
+# pyautogui.click(213, 189)
+# sleep(20)
+# pyautogui.press('g')
+# auto_play()
 
 #########################################################
 
