@@ -7,7 +7,6 @@ import time
 import pyautogui
 import pywinauto
 import auto_daily_2 as ad
-import auto_party_dg2 as apd
 import os
 
 def odin1_write(stage):
