@@ -1491,6 +1491,8 @@ def town_request():
                 sleep(3)
                 pyautogui.click(470, 440)
                 sleep(2)
+                pyautogui.click(475, 339) # 한번 더 선택
+                sleep(3)                
                 pyautogui.click(470, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
                 sleep(2)
             elif tr_level_2:
@@ -1555,6 +1557,8 @@ def town_request():
                 sleep(3)
                 pyautogui.click(1430, 440)
                 sleep(2)
+                pyautogui.click(1435, 339) # 한번 더 선택
+                sleep(3)
                 pyautogui.click(1430, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
                 sleep(2)                
             elif tr_level_2:
@@ -1667,6 +1671,7 @@ def end_party():
         if end_8:
             print('end_8')
             return 1
+
 # 파티던전 입장 
 # dg_course : 맹독의뱀둥지 - 1, 잊혀진거인의동굴 - 2, 난쟁이왕가의무덤 - 3    
 # 비공개 파티, 솔로 플레이, 보통 난이도만 가능
@@ -1698,7 +1703,6 @@ def create_party(dg_level):
                     print('오딘1 : 파티 이미 생성됨!!! 뒤로가기!')
                     main_back()
                 else:
-
                     pyautogui.click(23, 329) # 비공개 파티 체크
                     sleep(2)
                     pyautogui.click(895, 494) # 파티 생성
@@ -1734,7 +1738,6 @@ def create_party(dg_level):
                     print('오딘2 : 파티 이미 생성됨!!! 뒤로가기!')
                     main_back()
                 else:
-
                     pyautogui.click(983, 329) # 비공개 파티 체크
                     sleep(2)
                     pyautogui.click(1855, 494) # 파티 생성
@@ -1755,9 +1758,12 @@ def paly_party_dg():
         print('오딘1 : 시작하기 버튼 체크')
         party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(810, 130, 120, 80)) 
         # 파티던전 탭이 안눌러져 있을 경우 대비 탭 한번 클릭하고 시작버튼 다시 서치
-        pyautogui.click(935, 141)
-        sleep(1)
-        party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(810, 130, 120, 80)) 
+        if party_dg_start:
+            pass
+        else:
+            pyautogui.click(935, 141)
+            sleep(2)
+            party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(810, 130, 120, 80)) 
         sleep(1)
         if party_dg_start:
             print('오딘1 : 파티던전 시작하기!!')
@@ -1781,9 +1787,12 @@ def paly_party_dg():
         print('오딘2 : 시작하기 버튼 체크')
         party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(1770, 130, 120, 80)) 
         # 파티던전 탭이 안눌러져 있을 경우 대비 탭 한번 클릭하고 시작버튼 다시 서치
-        pyautogui.click(1895, 141)
-        sleep(1)
-        party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(1770, 130, 120, 80)) 
+        if party_dg_start:
+            pass
+        else:
+            pyautogui.click(1895, 141)
+            sleep(2)
+            party_dg_start = pyautogui.locateOnScreen('image\\party_dg\\party_dg_start.jpg', confidence=0.8, region=(1770, 130, 120, 80)) 
         sleep(1)
         if party_dg_start:
             print('오딘2 : 파티던전 시작하기!!')

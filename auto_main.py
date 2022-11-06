@@ -53,6 +53,7 @@ def play_odin1():
         ad.active_mecro_1()
         money_dg_end = ad.money_dg_entrance(2)
         if money_dg_end == 1:
+            print('4번~~~~~')
             odin1_write('4')
 
     if odin1 == 4:
@@ -212,7 +213,7 @@ def play_odin2():
         ad.create_party(1) # 파티던전 레벨
         paly_party_dg = ad.paly_party_dg()
         if paly_party_dg == 1:
-            odin1_write('3')
+            odin2_write('3')
 
     if odin2 == 3:
         ad.active_mecro_2()
@@ -244,7 +245,7 @@ def play_odin2():
         ad.create_party(1) # 파티던전 레벨
         paly_party_dg = ad.paly_party_dg()
         if paly_party_dg == 1:
-            odin1_write('7')
+            odin2_write('7')
 
     if odin2 == 7:
         ad.active_mecro_2()
@@ -276,7 +277,7 @@ def play_odin2():
         ad.create_party(1) # 파티던전 레벨
         paly_party_dg = ad.paly_party_dg()
         if paly_party_dg == 1:
-            odin1_write('11')
+            odin2_write('11')
 
     if odin2 == 11:
         ad.active_mecro_2()
@@ -309,7 +310,7 @@ def play_odin2():
         ad.create_party(1) # 파티던전 레벨
         paly_party_dg = ad.paly_party_dg()
         if paly_party_dg == 1:
-            odin1_write('15')
+            odin2_write('15')
 
     if odin2 == 15:
         ad.active_mecro_2()
@@ -342,7 +343,7 @@ def play_odin2():
         ad.create_party(1) # 파티던전 레벨
         paly_party_dg = ad.paly_party_dg()
         if paly_party_dg == 1:
-            odin1_write('19')
+            odin2_write('19')
 
     if odin2 == 19:
         ad.active_mecro_2()
@@ -524,7 +525,7 @@ while True:
                 ad.char_change(1)
 
         # 체크 주기
-        sleep(60)
+        sleep(10)
     except:
         sleep(5)
         print('오류 발생')
