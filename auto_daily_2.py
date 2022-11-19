@@ -728,6 +728,7 @@ def mimir_eat():
 # 물약 소진 시 물약사러 가기
 def no_potion():
     sleep(1)
+    main_back()
     if odin[0].isActive == True:
         print('오딘1 - 물약체크 중... ')
         get_potion = image_check('get_potion')
@@ -754,135 +755,137 @@ def no_potion():
 # 죽었을 경우 부활하기
 def resurrection():
     sleep(1)
+    main_back()
     if odin[0].isActive == True:
         print('오딘1 - 부활 체크 중......')
         resurrection = image_check('resurrection')
         resurrection2 = image_check('resurrection2')
         print(resurrection, resurrection2)
-        if resurrection:
+        if resurrection or resurrection2:
             print('오딘1 - 사망 확인 부활함 ..')
-            pyautogui.click(resurrection)
+            pyautogui.click(556, 445)
             sleep(1)
-            pyautogui.click(resurrection)
+            pyautogui.click(556, 445)
             sleep(20)
-        elif resurrection2:
-            print('오딘1 - 사망 확인 부활함 ..')
-            pyautogui.click(resurrection2)
-            sleep(1)
-            pyautogui.click(resurrection2)
-            sleep(20)
-        # 복구 아이콘 2개 검색(가끔 검색 안될때가 있어서 2개 검색 넣음)
-        resurrection_click = image_check('resurrection_click')
-        resurrection_click2 = image_check('resurrection_click2')
-        print(resurrection_click, resurrection_click2)
-        # 1번 서치 시(1번이나 2번이나 행동하는 건 같음) 
-        if resurrection_click:
-            print('오딘1 - 부활 복구 시작!')
-            pyautogui.click(resurrection_click)
-            sleep(2)
-            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(310, 160, 70, 60))
-            resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(310, 160, 70, 60))
-            sleep(1)
-            if resurrection_check:
-                pyautogui.click(resurrection_check)
-            if resurrection_check2:
-                pyautogui.click(resurrection_check2)
-            sleep(2)
-            resurrection_free = image_check('resurrection_free')
-            resurrection_gold = image_check('resurrection_gold')
-            if resurrection_free:
-                pyautogui.click(resurrection_free)
-            else:
-                pyautogui.click(resurrection_gold)
-            sleep(2)
-        # 2번 서치 시
-        elif resurrection_click2:
-            pyautogui.click(resurrection_click2)
-            sleep(2)
-            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(310, 160, 70, 60))
-            resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(310, 160, 70, 60))
-            sleep(1)
-            if resurrection_check:
-                pyautogui.click(resurrection_check)
-            if resurrection_check2:
-                pyautogui.click(resurrection_check2)
-            sleep(2)
-            resurrection_free = image_check('resurrection_free')
-            resurrection_gold = image_check('resurrection_gold')
-            if resurrection_free:
-                pyautogui.click(resurrection_free)
-            else:
-                pyautogui.click(resurrection_gold)
-            sleep(2)
             go_town()
-        else:
-            pass
+            # 복구 아이콘 2개 검색(가끔 검색 안될때가 있어서 2개 검색 넣음)
+            resurrection_click = image_check('resurrection_click')
+            resurrection_click2 = image_check('resurrection_click2')
+            print(resurrection_click, resurrection_click2)
+            if resurrection_click or resurrection_click2:
+                print('오딘1 - 부활 복구 시작!')
+                pyautogui.click(215, 52)
+                sleep(1)
+                pyautogui.click(215, 52)
+                sleep(3)
+                while True:
+                    resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(315, 166, 50, 50))
+                    resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(315, 166, 50, 50))
+                    sleep(1)
+                    if resurrection_check or resurrection_check2:
+                        pyautogui.click(492, 187)
+                        sleep(1)
+                        pyautogui.click(492, 187)
+                        sleep(2)
+                        resurrection_free = image_check('resurrection_free')
+                        resurrection_gold = image_check('resurrection_gold')
+                        if resurrection_free:
+                            pyautogui.click(resurrection_free)
+                        else:
+                            pyautogui.click(resurrection_gold)
+                        sleep(5)
+                    else:
+                        break
+            else:
+                pass
     if odin[1].isActive == True:
         print('오딘2 - 부활 체크 중......')
         resurrection = image_check('resurrection')
         resurrection2 = image_check('resurrection2')
-        if resurrection:
+        print(resurrection, resurrection2)
+        if resurrection or resurrection2:
             print('오딘2 - 사망 확인 부활함 ..')
-            pyautogui.click(resurrection)
+            pyautogui.click(1516, 445)
             sleep(1)
-            pyautogui.click(resurrection)
+            pyautogui.click(1516, 445)
             sleep(20)
-        elif  resurrection2:
-            print('오딘2 - 사망 확인 부활함 ..')
-            pyautogui.click(resurrection2)
-            sleep(1)
-            pyautogui.click(resurrection2)
-            sleep(20)
-        # 복구 아이콘 2개 검색(가끔 검색 안될때가 있어서 2개 검색 넣음)
-        resurrection_click = image_check('resurrection_click')
-        resurrection_click2 = image_check('resurrection_click2')
-        # 1번 서치 시(1번이나 2번이나 행동하는 건 같음) 
-        if resurrection_click:
-            print('오딘2 - 부활 복구 시작!')
-            pyautogui.click(resurrection_click)
-            sleep(2)
-            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(1270, 700, 70, 60))
-            resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(1270, 700, 70, 60))
-            sleep(1)
-            if resurrection_check:
-                pyautogui.click(resurrection_check)
-            if resurrection_check2:
-                pyautogui.click(resurrection_check2)
-            sleep(2)
-            resurrection_free = image_check('resurrection_free')
-            resurrection_gold = image_check('resurrection_gold')
-            if resurrection_free:
-                pyautogui.click(resurrection_free)
+            go_town()
+            # 복구 아이콘 2개 검색(가끔 검색 안될때가 있어서 2개 검색 넣음)
+            resurrection_click = image_check('resurrection_click')
+            resurrection_click2 = image_check('resurrection_click2')
+            print(resurrection_click, resurrection_click2)
+            if resurrection_click or resurrection_click2:
+                print('오딘2 - 부활 복구 시작!')
+                pyautogui.click(1175, 52)
+                sleep(1)
+                pyautogui.click(1175, 52)
+                sleep(3)
+                while True:
+                    resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(1275, 166, 50, 50))
+                    resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(1275, 166, 50, 50))
+                    sleep(1)
+                    if resurrection_check or resurrection_check2:
+                        pyautogui.click(1452, 187)
+                        sleep(1)
+                        pyautogui.click(1452, 187)
+                        sleep(2)
+                        resurrection_free = image_check('resurrection_free')
+                        resurrection_gold = image_check('resurrection_gold')
+                        if resurrection_free:
+                            pyautogui.click(resurrection_free)
+                        else:
+                            pyautogui.click(resurrection_gold)
+                        sleep(5)
+                    else:
+                        break
             else:
-                pyautogui.click(resurrection_gold)
-            sleep(2)
-        # 2번 서치 시
-        elif resurrection_click2:
-            pyautogui.click(resurrection_click)
-            sleep(2)
-            resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(1270, 700, 70, 60))
-            resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(1270, 700, 70, 60))
-            sleep(1)
-            if resurrection_check:
-                pyautogui.click(resurrection_check)
-            if resurrection_check2:
-                pyautogui.click(resurrection_check2)
-            sleep(2)
-            resurrection_free = image_check('resurrection_free')
-            resurrection_gold = image_check('resurrection_gold')
-            if resurrection_free:
-                pyautogui.click(resurrection_free)
-            else:
-                pyautogui.click(resurrection_gold)
-            sleep(2)
-            go_town()       
-        else:
-            pass     
+                pass
 
-# 우편물 받기
-def get_post():
+# 우편물 미미르 먹거나 미미르 포션 먹기
+def get_mimir():
     sleep(1)
     main_back()
+    if odin[0].isActive == True:
+        pyautogui.press('f7')
+        sleep(2)
+        mimir_frist = pyautogui.locateOnScreen('image\\mimir_frist.jpg', confidence=0.8, region=(865, 107, 85, 45))
+        if mimir_frist:
+            pyautogui.click(mimir_frist) # 상단 첫번째 미미르 받기
+            sleep(5)
+            mimir_check = image_check('mimir_cancel')    
+            if mimir_check:
+                pyautogui.click(mimir_check) # 미미르가 가득 차 있다면 취소 클릭
+                sleep(3)
+            else:
+                pyautogui.click(mimir_frist) # 아무곳이나 클릭
+                sleep(3)
+            main_back() # 게임 화면으로 이동
+        else:
+            mimir_eat()
+            sleep(1)
+            main_back()
+    if odin[1].isActive == True:
+        pyautogui.press('f7')
+        sleep(2)
+        mimir_frist = pyautogui.locateOnScreen('image\\mimir_frist.jpg', confidence=0.8, region=(1825, 107, 85, 45))
+        if mimir_frist:
+            pyautogui.click(mimir_frist) # 상단 첫번째 미미르 받기
+            sleep(5)
+            mimir_check = image_check('mimir_cancel')    
+            if mimir_check:
+                pyautogui.click(mimir_check) # 미미르가 가득 차 있다면 취소 클릭
+                sleep(3)
+            else:
+                pyautogui.click(mimir_frist) # 아무곳이나 클릭
+                sleep(3)
+            main_back() # 게임 화면으로 이동
+        else:
+            mimir_eat()
+            sleep(1)
+            main_back()
+        
+# 우편물 받기 - 구버전 사용안함
+def get_post():
     if odin[0].isActive == True:
         pyautogui.press('f7')
         sleep(2)
@@ -1365,6 +1368,285 @@ def field_play():
             print('오딘2 - 놀고 있음 사냥터 이동')
             favorite_go()
 
+# 메인 퀘스트 실행
+def main_quest():
+    sleep(1)
+    main_back()
+    if odin[0].isActive == True:
+        sleep(1)
+        pyautogui.click(913, 98) 
+        print('오딘1 - 메인 퀘스트 진행 빠른이동 클릭')
+        sleep(3)
+        # 골드 이동 이미지 체킹
+        fast_move_by_gold = image_check('fast_move_by_gold')
+        fast_move_by_free = image_check('fast_move_by_free')
+        play_quest = image_check('play_quest')
+        if fast_move_by_gold:
+            print('오딘1 - 골드 빠른이동 클릭')
+            pyautogui.click(fast_move_by_gold)  # 골드 빠른 이동
+        elif fast_move_by_free: 
+            print('오딘1 - 무료 빠른이동 클릭(마을가기)')
+            pyautogui.click(fast_move_by_free)  # 무료 빠른 이동
+        elif play_quest: 
+            print('오딘1 - 메인 퀘스트 진행 중...')
+            pass
+        else:
+            while True:
+                #skip 이미지 체킹 후 있으면 클릭 후 5초 대기
+                get_reword = image_check('get_reword')
+                get_reword_1 = image_check('get_reword_1')
+                get_reword_2 = image_check('get_reword_2')
+                quest_boss = image_check('quest_boss')
+                quest_complete_3 = image_check('quest_complete_3')
+                story_skip = image_check('story_skip')
+                story_skip_1 = image_check('story_skip_1')
+                story_skip_2 = image_check('story_skip_2')
+                story_skip_3 = image_check('story_skip_3')
+                story_skip_side = image_check('story_skip_side')
+                story_skip_side_2 = image_check('story_skip_side_2')
+                story_skip_top = image_check('story_skip_top')
+                story_skip_top_2 = image_check('story_skip_top_2')
+                story_skip_top_3 = image_check('story_skip_top_3')
+                print('오딘1 - 스킵 이미지 체크 중.........')
+                if get_reword:
+                    pyautogui.click(get_reword)
+                elif get_reword_1:
+                    pyautogui.click(get_reword_1)
+                elif get_reword_2:
+                    pyautogui.click(get_reword_2)
+                elif quest_boss:
+                    pyautogui.click(quest_boss)
+                elif quest_complete_3:
+                    pyautogui.click(quest_complete_3)
+                elif story_skip:
+                    pyautogui.click(story_skip)
+                elif story_skip_1:
+                    pyautogui.click(story_skip_1)
+                elif story_skip_2:
+                    pyautogui.click(story_skip_2)
+                elif story_skip_3:
+                    pyautogui.click(story_skip_3)
+                elif story_skip_side:
+                    pyautogui.click(story_skip_side)
+                elif story_skip_side_2:
+                    pyautogui.click(story_skip_side_2)
+                elif story_skip_top:
+                    pyautogui.click(story_skip_top)
+                elif story_skip_top_2:
+                    pyautogui.click(story_skip_top_2)
+                elif story_skip_top_3:
+                    pyautogui.click(story_skip_top_3)
+                else:
+                    pyautogui.click(913, 98) 
+                    sleep(1)
+                    # 스크롤 퀘스트 받기(f3: 최고급, f2: 고급)
+                    print('오딘1 - 스킵 이미지 없음!! 스크롤 퀘스트 있는지 체크 ')
+                    while True:
+                        pyautogui.press('f3')
+                        sleep(2)
+                        scroll_quest_ok = image_check('scroll_quest_ok')
+                        quest_over = image_check('quest_over')
+                        if scroll_quest_ok:
+                            pyautogui.click(scroll_quest_ok)
+                            sleep(2)
+                        elif quest_over:
+                            pyautogui.click(481, 328)
+                            sleep(2)
+                            break
+                        else:
+                            break
+                    while True:    
+                        pyautogui.press('f2')
+                        sleep(2)
+                        scroll_quest_ok = image_check('scroll_quest_ok')
+                        quest_over = image_check('quest_over')
+                        if scroll_quest_ok:
+                            pyautogui.click(scroll_quest_ok)    
+                            sleep(2)
+                        elif quest_over:
+                            pyautogui.click(481, 328)
+                            sleep(2)
+                            break
+                        else:
+                            break
+                    sleep(2)
+                    pyautogui.press('j') # 마을의뢰 보상받기 창 열기
+                    sleep(2)
+                    # 완료한 스크롤 마을 의뢰 모두 보상 받기
+                    while True: 
+                        # 마을의뢰 완료 이미지는 변동형이라 3번 체크
+                        check_atr = tr_image_check('request_reward')
+                        if check_atr is None:
+                            sleep(0.5)
+                            check_atr = tr_image_check('request_reward')
+                        if check_atr is None:
+                            sleep(0.5)
+                            check_atr = tr_image_check('request_reward')
+                        sleep(1)
+                        # 마을의뢰 완료 체크 보상받기
+                        if check_atr:
+                            print('오딘1 - 완료한 스크롤 마을의뢰 있음')
+                            pyautogui.click(901, 496)
+                            sleep(4)
+                            pyautogui.click(475, 339)
+                            sleep(3)
+                            pyautogui.click(470, 440)
+                            sleep(2)
+                            hidden_quest = image_check('hidden_quest')
+                            while True:
+                                if hidden_quest:
+                                    pyautogui.click(475, 339) # 한번 더 선택
+                                    sleep(3)                
+                                    pyautogui.click(470, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
+                                    sleep(2)
+                                else:
+                                    break # 랜덤 보상 클릭 미스 브래이크
+                        else:
+                            print('오딘1 - 완료한 스크롤 마을의뢰 없거나, 보상 수령 완료')
+                            sleep(2)
+                            main_back()
+                            break # 마을의뢰 모두 받았으면 브레이크
+                    break # 스킵 이미지 없으면 브레이크
+                sleep(3)
+    elif odin[1].isActive == True:
+        sleep(1)
+        pyautogui.click(1873, 98) 
+        print('오딘2 - 메인 퀘스트 진행 빠른이동 클릭')
+        sleep(3)
+        # 골드 이동 이미지 체킹
+        fast_move_by_gold = image_check('fast_move_by_gold')
+        fast_move_by_free = image_check('fast_move_by_free')
+        play_quest = image_check('play_quest')
+        if fast_move_by_gold:
+            print('오딘2 - 골드 빠른이동 클릭')
+            pyautogui.click(fast_move_by_gold)  # 골드 빠른 이동
+        elif fast_move_by_free: 
+            print('오딘2 - 무료 빠른이동 클릭(마을가기)')
+            pyautogui.click(fast_move_by_free)  # 무료 빠른 이동
+        elif play_quest: 
+            print('오딘2 - 메인 퀘스트 진행 중...')
+            pass
+        else:
+            while True:
+                #skip 이미지 체킹 후 있으면 클릭 후 5초 대기
+                get_reword = image_check('get_reword')
+                get_reword_1 = image_check('get_reword_1')
+                get_reword_2 = image_check('get_reword_2')
+                quest_boss = image_check('quest_boss')
+                quest_complete_3 = image_check('quest_complete_3')
+                story_skip = image_check('story_skip')
+                story_skip_1 = image_check('story_skip_1')
+                story_skip_2 = image_check('story_skip_2')
+                story_skip_3 = image_check('story_skip_3')
+                story_skip_side = image_check('story_skip_side')
+                story_skip_side_2 = image_check('story_skip_side_2')
+                story_skip_top = image_check('story_skip_top')
+                story_skip_top_2 = image_check('story_skip_top_2')
+                story_skip_top_3 = image_check('story_skip_top_3')
+                print('오딘2 - 스킵 이미지 체크 중.........')
+                if get_reword:
+                    pyautogui.click(get_reword)
+                elif get_reword_1:
+                    pyautogui.click(get_reword_1)
+                elif get_reword_2:
+                    pyautogui.click(get_reword_2)
+                elif quest_boss:
+                    pyautogui.click(quest_boss)
+                elif quest_complete_3:
+                    pyautogui.click(quest_complete_3)
+                elif story_skip:
+                    pyautogui.click(story_skip)
+                elif story_skip_1:
+                    pyautogui.click(story_skip_1)
+                elif story_skip_2:
+                    pyautogui.click(story_skip_2)
+                elif story_skip_3:
+                    pyautogui.click(story_skip_3)
+                elif story_skip_side:
+                    pyautogui.click(story_skip_side)
+                elif story_skip_side_2:
+                    pyautogui.click(story_skip_side_2)
+                elif story_skip_top:
+                    pyautogui.click(story_skip_top)
+                elif story_skip_top_2:
+                    pyautogui.click(story_skip_top_2)
+                elif story_skip_top_3:
+                    pyautogui.click(story_skip_top_3)
+                else:
+                    pyautogui.click(1873, 98) 
+                    sleep(1)
+                    # 스크롤 퀘스트 받기(f3: 최고급, f2: 고급)
+                    print('오딘2 - 스킵 이미지 없음!! 스크롤 퀘스트 있는지 체크 ')
+                    while True:
+                        pyautogui.press('f3')
+                        sleep(2)
+                        scroll_quest_ok = image_check('scroll_quest_ok')
+                        quest_over = image_check('quest_over')
+                        if scroll_quest_ok:
+                            pyautogui.click(scroll_quest_ok)
+                            sleep(2)
+                        elif quest_over:
+                            pyautogui.click(1441, 328)
+                            sleep(2)
+                            break
+                        else:
+                            break
+                    while True:    
+                        pyautogui.press('f2')
+                        sleep(2)
+                        scroll_quest_ok = image_check('scroll_quest_ok')
+                        quest_over = image_check('quest_over')
+                        if scroll_quest_ok:
+                            pyautogui.click(scroll_quest_ok)
+                            sleep(2)
+                        elif quest_over:
+                            pyautogui.click(1441, 328)  
+                            sleep(2)
+                            break
+                        else:
+                            break
+                    sleep(2)
+                    pyautogui.press('j') # 마을의뢰 보상받기 창 열기
+                    sleep(2)
+                    # 완료한 스크롤 마을 의뢰 모두 보상 받기
+                    while True: 
+                        # 마을의뢰 완료 이미지는 변동형이라 3번 체크
+                        check_atr = tr_image_check('request_reward')
+                        if check_atr is None:
+                            sleep(0.5)
+                            check_atr = tr_image_check('request_reward')
+                        if check_atr is None:
+                            sleep(0.5)
+                            check_atr = tr_image_check('request_reward')
+                        sleep(1)
+                        # 마을의뢰 완료 체크 보상받기
+                        if check_atr:
+                            print('오딘2 - 완료한 스크롤 마을의뢰 있음')
+                            pyautogui.click(1861, 496)
+                            sleep(4)
+                            pyautogui.click(1435, 339)
+                            sleep(3)
+                            pyautogui.click(1430, 440)
+                            sleep(2)
+                            hidden_quest = image_check('hidden_quest')
+                            while True:
+                                if hidden_quest:
+                                    pyautogui.click(1435, 339) # 한번 더 선택
+                                    sleep(3)                
+                                    pyautogui.click(1430, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
+                                    sleep(2)
+                                else:
+                                    break # 랜덤 보상 클릭 미스 브래이크
+                        else:
+                            print('오딘2 - 완료한 스크롤 마을의뢰 없거나, 보상 수령 완료')
+                            sleep(2)
+                            main_back()
+                            break # 마을의뢰 모두 받았으면 브레이크
+                    break # 스킵 이미지 없으면 브레이크
+                sleep(3)
+
+
+
 #사용안함 - 구버전
 def elite_dg_entrance(event_dg_level, money_dg_level, scroll_dg_level):
     sleep(1)
@@ -1491,10 +1773,12 @@ def town_request():
                 sleep(3)
                 pyautogui.click(470, 440)
                 sleep(2)
-                pyautogui.click(475, 339) # 한번 더 선택
-                sleep(3)                
-                pyautogui.click(470, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
-                sleep(2)
+                hidden_quest = image_check('hidden_quest')
+                if hidden_quest:
+                    pyautogui.click(475, 339) # 한번 더 선택
+                    sleep(3)                
+                    pyautogui.click(470, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
+                    sleep(2)
             elif tr_level_2:
                 pyautogui.click(891, 496) # 상급의뢰 수락하기
             elif tr_level_3:
@@ -1557,10 +1841,12 @@ def town_request():
                 sleep(3)
                 pyautogui.click(1430, 440)
                 sleep(2)
-                pyautogui.click(1435, 339) # 한번 더 선택
-                sleep(3)
-                pyautogui.click(1430, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
-                sleep(2)                
+                hidden_quest = image_check('hidden_quest')
+                if hidden_quest:
+                    pyautogui.click(1435, 339) # 한번 더 선택
+                    sleep(3)
+                    pyautogui.click(1430, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
+                    sleep(2)                
             elif tr_level_2:
                 pyautogui.click(1851, 496) # 상급의뢰 수락하기
             elif tr_level_3:
@@ -1812,6 +2098,46 @@ def paly_party_dg():
                 print('오딘2 : 파티던전 진행중!!')
                 pass
 
+# 페이지 로딩 체크 - 로딩 페이지의 경우 패스하는 로직 추가
+def loding_page():
+    sleep(1)
+    main_back()
+    if odin[0].isActive == True:    
+        print('오딘1 : 로딩 중 체크')
+        loding_1 = pyautogui.locateOnScreen('image\\loding_1.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        loding_2 = pyautogui.locateOnScreen('image\\loding_2.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        loding_3 = pyautogui.locateOnScreen('image\\loding_3.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        loding_4 = pyautogui.locateOnScreen('image\\loding_4.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        loding_5 = pyautogui.locateOnScreen('image\\loding_5.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        loding_6 = pyautogui.locateOnScreen('image\\loding_6.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        loding_7 = pyautogui.locateOnScreen('image\\loding_7.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        loding_8 = pyautogui.locateOnScreen('image\\loding_8.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        loding_9 = pyautogui.locateOnScreen('image\\loding_9.jpg', confidence=0.8, region=(840, 450, 110, 65)) 
+        if loding_1 or loding_2 or loding_3 or loding_4 or loding_5 or loding_6 or loding_7 or loding_8 or loding_9:
+            print('오딘1 - 현재 로딩 페이지 중')
+            return 1
+        else:
+            return 0
+    elif odin[1].isActive == True:
+        print('오딘2 : 로딩 중 체크')
+        loding_1 = pyautogui.locateOnScreen('image\\loding_1.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        loding_2 = pyautogui.locateOnScreen('image\\loding_2.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        loding_3 = pyautogui.locateOnScreen('image\\loding_3.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        loding_4 = pyautogui.locateOnScreen('image\\loding_4.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        loding_5 = pyautogui.locateOnScreen('image\\loding_5.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        loding_6 = pyautogui.locateOnScreen('image\\loding_6.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        loding_7 = pyautogui.locateOnScreen('image\\loding_7.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        loding_8 = pyautogui.locateOnScreen('image\\loding_8.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        loding_9 = pyautogui.locateOnScreen('image\\loding_9.jpg', confidence=0.8, region=(1800, 450, 110, 65)) 
+        if loding_1 or loding_2 or loding_3 or loding_4 or loding_5 or loding_6 or loding_7 or loding_8 or loding_9:
+            print('오딘2 - 현재 로딩 페이지 중')
+            return 1
+        else:
+            return 0
+
 # get_mecro()
 # active_mecro_1()
-# resurrection()
+# main_quest()
+# sleep(5)
+# active_mecro_2()
+# main_quest()

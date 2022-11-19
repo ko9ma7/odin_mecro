@@ -35,11 +35,10 @@ def play_odin1():
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('2')
-            ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            # ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin1 == 2:
@@ -53,7 +52,6 @@ def play_odin1():
         ad.active_mecro_1()
         money_dg_end = ad.money_dg_entrance(2)
         if money_dg_end == 1:
-            print('4번~~~~~')
             odin1_write('4')
 
     if odin1 == 4:
@@ -69,10 +67,9 @@ def play_odin1():
         tr_end = ad.town_request()
         if tr_end == 1:
             odin1_write('6')
-            # ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin1 == 6:
@@ -101,10 +98,9 @@ def play_odin1():
         tr_end = ad.town_request()
         if tr_end == 1:
             odin1_write('10')
-            # ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin1 == 10:
@@ -134,10 +130,9 @@ def play_odin1():
         tr_end = ad.town_request()
         if tr_end == 1:
             odin1_write('14')
-            # ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin1 == 14:
@@ -167,10 +162,9 @@ def play_odin1():
         tr_end = ad.town_request()
         if tr_end == 1:
             odin1_write('18')
-            # ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin1 == 18:
@@ -201,11 +195,10 @@ def play_odin2():
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('2')
-            ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin2 == 2:
@@ -234,10 +227,9 @@ def play_odin2():
         tr_end = ad.town_request()
         if tr_end == 1:
             odin2_write('6')
-            # ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin2 == 6:
@@ -266,10 +258,9 @@ def play_odin2():
         tr_end = ad.town_request()
         if tr_end == 1:
             odin2_write('10')
-            # ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin2 == 10:
@@ -299,10 +290,9 @@ def play_odin2():
         tr_end = ad.town_request()
         if tr_end == 1:
             odin2_write('14')
-            # ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin2 == 14:
@@ -332,10 +322,9 @@ def play_odin2():
         tr_end = ad.town_request()
         if tr_end == 1:
             odin2_write('18')
-            # ad.get_post() # 우편 받기
+            ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.guild_check() # 길드 출석 체크
             ad.item_bunhae() # 아이템 분해
-            ad.mimir_eat() # 미미르 샘물 먹기
             ad.go_town() # 물약 구매
 
     if odin2 == 18:
@@ -433,14 +422,25 @@ def play_week_dg_odin2():
             odin2_write('26')
             ad.char_change(1)
 
-# 필드 사냥(즐겨찾기 1번)
-def field_play(): 
+# 필드 사냥(즐겨찾기 1번) - 사용안함(퀘스트 밀기로 함)
+def field_play_odin1(): 
     if odin1 == 26:
         ad.active_mecro_1()
         fp = ad.field_play()
+def field_play_odin2():         
     if odin2 == 26:
         ad.active_mecro_2()
         fp = ad.field_play()
+
+# 메인 퀘스트
+def main_quest_start_odin1():
+    if odin1 == 26:
+        ad.active_mecro_1()
+        ad.main_quest()
+def main_quest_start_odin2():        
+    if odin2 == 26:
+        ad.active_mecro_2()
+        ad.main_quest()
 
 ############################### 오딘 플레이 ###############################
 # 매크로 시작 오딘 창 불러오기
@@ -484,30 +484,36 @@ while True:
         odin2 = int(odin2_read())
 
         ad.active_mecro_1()
-        # 오딘 1 - 물약 및 부활 체크
-        ad.no_potion()
-        ad.resurrection()
+        loding_page = ad.loding_page()
+        if loding_page == 1:
+            pass
+        else:
+            # 오딘 1 - 물약 및 부활 체크
+            ad.no_potion()
+            ad.resurrection()
 
-        play_odin1()
-        play_week_dg_odin1()
-        field_play()
+            play_odin1()
+            play_week_dg_odin1()
+            main_quest_start_odin1()
 
         ad.active_mecro_2()
-        # 오딘 2 - 물약 및 부활 체크
-        ad.no_potion()
-        ad.resurrection()
+        loding_page = ad.loding_page()
+        if loding_page == 1:
+            pass
+        else:
+            # 오딘 2 - 물약 및 부활 체크
+            ad.no_potion()
+            ad.resurrection()
 
-        play_odin2()
-        play_week_dg_odin2()
-        field_play()
+            play_odin2()
+            play_week_dg_odin2()
+            main_quest_start_odin2()
 
-        # 1번 오딘으로 활성창 이동
-        ad.active_mecro_1()
 
-        # 6시 초기화
+        # 10시 초기화
         find_hour = time.strftime('%H', time.localtime(time.time()))
-        print('시간체크 :' + find_hour + '시(6시 초기화)')
-        if find_hour == '06':
+        print('시간체크 :' + find_hour + '시(10시 초기화)')
+        if find_hour == '10':
             if odin1 == 1 or odin1 == 2 or odin1 == 3 or odin1 == 4: # 1, 2번 이면 초기화 안함
                 print('1, 2, 3, 4번 진행 시라면 초기화 하지 않음')
                 pass
@@ -525,7 +531,7 @@ while True:
                 ad.char_change(1)
 
         # 체크 주기
-        sleep(10)
+        sleep(20)
     except:
         sleep(5)
         print('오류 발생')
