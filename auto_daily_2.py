@@ -772,32 +772,33 @@ def resurrection():
             resurrection_click = image_check('resurrection_click')
             resurrection_click2 = image_check('resurrection_click2')
             print(resurrection_click, resurrection_click2)
-            if resurrection_click or resurrection_click2:
-                print('오딘1 - 부활 복구 시작!')
-                pyautogui.click(215, 52)
-                sleep(1)
-                pyautogui.click(215, 52)
-                sleep(3)
-                while True:
-                    resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(315, 166, 50, 50))
-                    resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(315, 166, 50, 50))
-                    sleep(1)
-                    if resurrection_check or resurrection_check2:
-                        pyautogui.click(492, 187)
-                        sleep(1)
-                        pyautogui.click(492, 187)
-                        sleep(2)
-                        resurrection_free = image_check('resurrection_free')
-                        resurrection_gold = image_check('resurrection_gold')
-                        if resurrection_free:
-                            pyautogui.click(resurrection_free)
-                        else:
-                            pyautogui.click(resurrection_gold)
-                        sleep(5)
-                    else:
-                        break
+            print('오딘1 - 부활 복구 시작!')
+            if resurrection_click:
+                pyautogui.click(resurrection_click)
+            elif resurrection_click2:
+                pyautogui.click(resurrection_click2)
             else:
+                pyautogui.click(215, 52)
                 pass
+                sleep(3)
+            while True:
+                resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(315, 166, 50, 50))
+                resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(315, 166, 50, 50))
+                sleep(1)
+                if resurrection_check or resurrection_check2:
+                    pyautogui.click(492, 187)
+                    sleep(1)
+                    pyautogui.click(492, 187)
+                    sleep(2)
+                    resurrection_free = image_check('resurrection_free')
+                    resurrection_gold = image_check('resurrection_gold')
+                    if resurrection_free:
+                        pyautogui.click(resurrection_free)
+                    else:
+                        pyautogui.click(resurrection_gold)
+                    sleep(5)
+                else:
+                    break
     if odin[1].isActive == True:
         print('오딘2 - 부활 체크 중......')
         resurrection = image_check('resurrection')
@@ -814,32 +815,32 @@ def resurrection():
             resurrection_click = image_check('resurrection_click')
             resurrection_click2 = image_check('resurrection_click2')
             print(resurrection_click, resurrection_click2)
-            if resurrection_click or resurrection_click2:
-                print('오딘2 - 부활 복구 시작!')
-                pyautogui.click(1175, 52)
-                sleep(1)
+            print('오딘2 - 부활 복구 시작!')
+            if resurrection_click:
+                pyautogui.click(resurrection_click)
+            elif resurrection_click2:
+                pyautogui.click(resurrection_click2)
+            else:
                 pyautogui.click(1175, 52)
                 sleep(3)
-                while True:
-                    resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(1275, 166, 50, 50))
-                    resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(1275, 166, 50, 50))
+            while True:
+                resurrection_check = pyautogui.locateOnScreen('image\\resurrection_check.jpg', confidence=0.8, region=(1275, 166, 50, 50))
+                resurrection_check2 = pyautogui.locateOnScreen('image\\resurrection_check2.jpg', confidence=0.8, region=(1275, 166, 50, 50))
+                sleep(1)
+                if resurrection_check or resurrection_check2:
+                    pyautogui.click(1452, 187)
                     sleep(1)
-                    if resurrection_check or resurrection_check2:
-                        pyautogui.click(1452, 187)
-                        sleep(1)
-                        pyautogui.click(1452, 187)
-                        sleep(2)
-                        resurrection_free = image_check('resurrection_free')
-                        resurrection_gold = image_check('resurrection_gold')
-                        if resurrection_free:
-                            pyautogui.click(resurrection_free)
-                        else:
-                            pyautogui.click(resurrection_gold)
-                        sleep(5)
+                    pyautogui.click(1452, 187)
+                    sleep(2)
+                    resurrection_free = image_check('resurrection_free')
+                    resurrection_gold = image_check('resurrection_gold')
+                    if resurrection_free:
+                        pyautogui.click(resurrection_free)
                     else:
-                        break
-            else:
-                pass
+                        pyautogui.click(resurrection_gold)
+                    sleep(5)
+                else:
+                    break
 
 # 우편물 미미르 먹거나 미미르 포션 먹기
 def get_mimir():
@@ -1393,7 +1394,7 @@ def main_quest():
             print('오딘1 - 무료 빠른이동 클릭(마을가기)')
             pyautogui.click(fast_move_by_free)  # 무료 빠른 이동
         elif quest_confirm: 
-            print('오딘2 - 확인버튼 클릭')
+            print('오딘1 - 확인버튼 클릭')
             pyautogui.click(quest_confirm)  # 던전 입장 확인 버튼
         elif play_quest: 
             print('오딘1 - 메인 퀘스트 진행 중...')

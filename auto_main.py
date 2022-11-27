@@ -43,20 +43,20 @@ def play_odin1():
 
     if odin1 == 2:
         ad.active_mecro_1()
-        ad.create_party(1) # 파티던전 레벨
+        ad.create_party(2) # 파티던전 레벨
         paly_party_dg = ad.paly_party_dg()
         if paly_party_dg == 1:
             odin1_write('3')
 
     if odin1 == 3:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(1)
+        money_dg_end = ad.money_dg_entrance(5)
         if money_dg_end == 1:
             odin1_write('4')
 
     if odin1 == 4:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(1)
+        scroll_dg_end = ad.scroll_dg_entrance(5)
         if scroll_dg_end == 1:
             odin1_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이하기로 함
@@ -210,15 +210,15 @@ def play_odin2():
 
     if odin2 == 3:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(1)
+        money_dg_end = ad.money_dg_entrance(4)
         if money_dg_end == 1:
             odin2_write('4')
 
     if odin2 == 4:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(1)
+        scroll_dg_end = ad.scroll_dg_entrance(4)
         if scroll_dg_end == 1:
-            odin2_write('5')
+            odin2_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이 하기로 함
 
     # 2번 캐릭터
@@ -351,9 +351,9 @@ def play_odin2():
 def play_week_dg_odin1():
     if odin1 == 21:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(1)
+        week_end = ad.week_dg_entrance(5)
         if week_end == 1: # 리턴값이 1일 경우 종료
-            odin1_write('26')
+            odin1_write('27')
             # ad.char_change(2) # 1번만 플레이
     
     if odin1 == 22:
@@ -389,9 +389,9 @@ def play_week_dg_odin2():
     # 1번 캐릭터
     if odin2 == 21:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(1)
+        week_end = ad.week_dg_entrance(4)
         if week_end == 1: # 리턴값이 1일 경우 종료
-            odin2_write('26')
+            odin2_write('27')
             # ad.char_change(2) # 1번만 플레이
 
     if odin2 == 22:
