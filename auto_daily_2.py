@@ -1379,14 +1379,22 @@ def main_quest():
         sleep(3)
         # 골드 이동 이미지 체킹
         fast_move_by_gold = image_check('fast_move_by_gold')
+        fast_move_by_gold2 = image_check('fast_move_by_gold2')
         fast_move_by_free = image_check('fast_move_by_free')
+        quest_confirm = image_check('quest_confirm')
         play_quest = image_check('play_quest')
         if fast_move_by_gold:
             print('오딘1 - 골드 빠른이동 클릭')
             pyautogui.click(fast_move_by_gold)  # 골드 빠른 이동
+        elif fast_move_by_gold2:
+            print('오딘1 - 골드 빠른이동 클릭')
+            pyautogui.click(fast_move_by_gold2)  # 골드 빠른 이동
         elif fast_move_by_free: 
             print('오딘1 - 무료 빠른이동 클릭(마을가기)')
             pyautogui.click(fast_move_by_free)  # 무료 빠른 이동
+        elif quest_confirm: 
+            print('오딘2 - 확인버튼 클릭')
+            pyautogui.click(quest_confirm)  # 던전 입장 확인 버튼
         elif play_quest: 
             print('오딘1 - 메인 퀘스트 진행 중...')
             pass
@@ -1394,12 +1402,12 @@ def main_quest():
             while True:
                 #skip 이미지 체킹 후 있으면 클릭 후 5초 대기
                 get_reword = image_check('get_reword')
-                get_reword_1 = image_check('get_reword_1')
-                get_reword_2 = image_check('get_reword_2')
-                quest_boss = image_check('quest_boss')
+                # get_reword_1 = image_check('get_reword_1')
+                # get_reword_2 = image_check('get_reword_2')
+                # quest_boss = image_check('quest_boss')
                 quest_complete_3 = image_check('quest_complete_3')
                 story_skip = image_check('story_skip')
-                story_skip_1 = image_check('story_skip_1')
+                # story_skip_1 = image_check('story_skip_1')
                 story_skip_2 = image_check('story_skip_2')
                 story_skip_3 = image_check('story_skip_3')
                 story_skip_side = image_check('story_skip_side')
@@ -1410,18 +1418,18 @@ def main_quest():
                 print('오딘1 - 스킵 이미지 체크 중.........')
                 if get_reword:
                     pyautogui.click(get_reword)
-                elif get_reword_1:
-                    pyautogui.click(get_reword_1)
-                elif get_reword_2:
-                    pyautogui.click(get_reword_2)
-                elif quest_boss:
-                    pyautogui.click(quest_boss)
+                # elif get_reword_1:
+                #     pyautogui.click(get_reword_1)
+                # elif get_reword_2:
+                #     pyautogui.click(get_reword_2)
+                # elif quest_boss:
+                #     pyautogui.click(quest_boss)
                 elif quest_complete_3:
                     pyautogui.click(quest_complete_3)
                 elif story_skip:
                     pyautogui.click(story_skip)
-                elif story_skip_1:
-                    pyautogui.click(story_skip_1)
+                # elif story_skip_1:
+                #     pyautogui.click(story_skip_1)
                 elif story_skip_2:
                     pyautogui.click(story_skip_2)
                 elif story_skip_3:
@@ -1438,76 +1446,29 @@ def main_quest():
                     pyautogui.click(story_skip_top_3)
                 else:
                     pyautogui.click(913, 98) 
-                    sleep(1)
-                    # 스크롤 퀘스트 받기(f3: 최고급, f2: 고급)
-                    print('오딘1 - 스킵 이미지 없음!! 스크롤 퀘스트 있는지 체크 ')
-                    while True:
-                        pyautogui.press('f3')
-                        sleep(2)
-                        scroll_quest_ok = image_check('scroll_quest_ok')
-                        quest_over = image_check('quest_over')
-                        if scroll_quest_ok:
-                            pyautogui.click(scroll_quest_ok)
-                            sleep(2)
-                        elif quest_over:
-                            pyautogui.click(481, 328)
-                            sleep(2)
-                            break
-                        else:
-                            break
-                    while True:    
-                        pyautogui.press('f2')
-                        sleep(2)
-                        scroll_quest_ok = image_check('scroll_quest_ok')
-                        quest_over = image_check('quest_over')
-                        if scroll_quest_ok:
-                            pyautogui.click(scroll_quest_ok)    
-                            sleep(2)
-                        elif quest_over:
-                            pyautogui.click(481, 328)
-                            sleep(2)
-                            break
-                        else:
-                            break
                     sleep(2)
-                    pyautogui.press('j') # 마을의뢰 보상받기 창 열기
-                    sleep(2)
-                    # 완료한 스크롤 마을 의뢰 모두 보상 받기
-                    while True: 
-                        # 마을의뢰 완료 이미지는 변동형이라 3번 체크
-                        check_atr = tr_image_check('request_reward')
-                        if check_atr is None:
-                            sleep(0.5)
-                            check_atr = tr_image_check('request_reward')
-                        if check_atr is None:
-                            sleep(0.5)
-                            check_atr = tr_image_check('request_reward')
-                        sleep(1)
-                        # 마을의뢰 완료 체크 보상받기
-                        if check_atr:
-                            print('오딘1 - 완료한 스크롤 마을의뢰 있음')
-                            pyautogui.click(901, 496)
-                            sleep(4)
-                            pyautogui.click(475, 339)
-                            sleep(3)
-                            pyautogui.click(470, 440)
-                            sleep(2)
-                            hidden_quest = image_check('hidden_quest')
-                            while True:
-                                if hidden_quest:
-                                    pyautogui.click(475, 339) # 한번 더 선택
-                                    sleep(3)                
-                                    pyautogui.click(470, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
-                                    sleep(2)
-                                else:
-                                    break # 랜덤 보상 클릭 미스 브래이크
-                        else:
-                            print('오딘1 - 완료한 스크롤 마을의뢰 없거나, 보상 수령 완료')
-                            sleep(2)
-                            main_back()
-                            break # 마을의뢰 모두 받았으면 브레이크
-                    break # 스킵 이미지 없으면 브레이크
-                sleep(3)
+                    # 골드 이동 이미지 체킹
+                    fast_move_by_gold = image_check('fast_move_by_gold')
+                    fast_move_by_free = image_check('fast_move_by_free')
+                    play_quest = image_check('play_quest')
+                    if fast_move_by_gold:
+                        print('오딘1 - 골드 빠른이동 클릭')
+                        pyautogui.click(fast_move_by_gold)  # 골드 빠른 이동
+                        break
+                    elif fast_move_by_gold2:
+                        print('오딘1 - 골드 빠른이동 클릭')
+                        pyautogui.click(fast_move_by_gold2)  # 골드 빠른 이동
+                        break
+                    elif fast_move_by_free: 
+                        print('오딘1 - 무료 빠른이동 클릭(마을가기)')
+                        pyautogui.click(fast_move_by_free)  # 무료 빠른 이동
+                        break
+                    elif play_quest: 
+                        print('오딘1 - 메인 퀘스트 진행 중...')
+                        break
+                    else:
+                        break
+
     elif odin[1].isActive == True:
         sleep(1)
         pyautogui.click(1873, 98) 
@@ -1515,14 +1476,22 @@ def main_quest():
         sleep(3)
         # 골드 이동 이미지 체킹
         fast_move_by_gold = image_check('fast_move_by_gold')
+        fast_move_by_gold2 = image_check('fast_move_by_gold2')
         fast_move_by_free = image_check('fast_move_by_free')
+        quest_confirm = image_check('quest_confirm')
         play_quest = image_check('play_quest')
         if fast_move_by_gold:
             print('오딘2 - 골드 빠른이동 클릭')
             pyautogui.click(fast_move_by_gold)  # 골드 빠른 이동
+        elif fast_move_by_gold2:
+            print('오딘2 - 골드 빠른이동 클릭')
+            pyautogui.click(fast_move_by_gold2)  # 골드 빠른 이동
         elif fast_move_by_free: 
             print('오딘2 - 무료 빠른이동 클릭(마을가기)')
             pyautogui.click(fast_move_by_free)  # 무료 빠른 이동
+        elif quest_confirm: 
+            print('오딘2 - 확인버튼 클릭')
+            pyautogui.click(quest_confirm)  # 던전 입장 확인 버튼
         elif play_quest: 
             print('오딘2 - 메인 퀘스트 진행 중...')
             pass
@@ -1530,12 +1499,12 @@ def main_quest():
             while True:
                 #skip 이미지 체킹 후 있으면 클릭 후 5초 대기
                 get_reword = image_check('get_reword')
-                get_reword_1 = image_check('get_reword_1')
-                get_reword_2 = image_check('get_reword_2')
-                quest_boss = image_check('quest_boss')
+                # get_reword_1 = image_check('get_reword_1')
+                # get_reword_2 = image_check('get_reword_2')
+                # quest_boss = image_check('quest_boss')
                 quest_complete_3 = image_check('quest_complete_3')
                 story_skip = image_check('story_skip')
-                story_skip_1 = image_check('story_skip_1')
+                # story_skip_1 = image_check('story_skip_1')
                 story_skip_2 = image_check('story_skip_2')
                 story_skip_3 = image_check('story_skip_3')
                 story_skip_side = image_check('story_skip_side')
@@ -1546,18 +1515,18 @@ def main_quest():
                 print('오딘2 - 스킵 이미지 체크 중.........')
                 if get_reword:
                     pyautogui.click(get_reword)
-                elif get_reword_1:
-                    pyautogui.click(get_reword_1)
-                elif get_reword_2:
-                    pyautogui.click(get_reword_2)
-                elif quest_boss:
-                    pyautogui.click(quest_boss)
+                # elif get_reword_1:
+                #     pyautogui.click(get_reword_1)
+                # elif get_reword_2:
+                #     pyautogui.click(get_reword_2)
+                # elif quest_boss:
+                #     pyautogui.click(quest_boss)
                 elif quest_complete_3:
                     pyautogui.click(quest_complete_3)
                 elif story_skip:
                     pyautogui.click(story_skip)
-                elif story_skip_1:
-                    pyautogui.click(story_skip_1)
+                # elif story_skip_1:
+                #     pyautogui.click(story_skip_1)
                 elif story_skip_2:
                     pyautogui.click(story_skip_2)
                 elif story_skip_3:
@@ -1575,76 +1544,27 @@ def main_quest():
                 else:
                     pyautogui.click(1873, 98) 
                     sleep(1)
-                    # 스크롤 퀘스트 받기(f3: 최고급, f2: 고급)
-                    print('오딘2 - 스킵 이미지 없음!! 스크롤 퀘스트 있는지 체크 ')
-                    while True:
-                        pyautogui.press('f3')
-                        sleep(2)
-                        scroll_quest_ok = image_check('scroll_quest_ok')
-                        quest_over = image_check('quest_over')
-                        if scroll_quest_ok:
-                            pyautogui.click(scroll_quest_ok)
-                            sleep(2)
-                        elif quest_over:
-                            pyautogui.click(1441, 328)
-                            sleep(2)
-                            break
-                        else:
-                            break
-                    while True:    
-                        pyautogui.press('f2')
-                        sleep(2)
-                        scroll_quest_ok = image_check('scroll_quest_ok')
-                        quest_over = image_check('quest_over')
-                        if scroll_quest_ok:
-                            pyautogui.click(scroll_quest_ok)
-                            sleep(2)
-                        elif quest_over:
-                            pyautogui.click(1441, 328)  
-                            sleep(2)
-                            break
-                        else:
-                            break
-                    sleep(2)
-                    pyautogui.press('j') # 마을의뢰 보상받기 창 열기
-                    sleep(2)
-                    # 완료한 스크롤 마을 의뢰 모두 보상 받기
-                    while True: 
-                        # 마을의뢰 완료 이미지는 변동형이라 3번 체크
-                        check_atr = tr_image_check('request_reward')
-                        if check_atr is None:
-                            sleep(0.5)
-                            check_atr = tr_image_check('request_reward')
-                        if check_atr is None:
-                            sleep(0.5)
-                            check_atr = tr_image_check('request_reward')
-                        sleep(1)
-                        # 마을의뢰 완료 체크 보상받기
-                        if check_atr:
-                            print('오딘2 - 완료한 스크롤 마을의뢰 있음')
-                            pyautogui.click(1861, 496)
-                            sleep(4)
-                            pyautogui.click(1435, 339)
-                            sleep(3)
-                            pyautogui.click(1430, 440)
-                            sleep(2)
-                            hidden_quest = image_check('hidden_quest')
-                            while True:
-                                if hidden_quest:
-                                    pyautogui.click(1435, 339) # 한번 더 선택
-                                    sleep(3)                
-                                    pyautogui.click(1430, 440) # 보상 선택후 임의의 장소 2번 클릭함. 에러때문에
-                                    sleep(2)
-                                else:
-                                    break # 랜덤 보상 클릭 미스 브래이크
-                        else:
-                            print('오딘2 - 완료한 스크롤 마을의뢰 없거나, 보상 수령 완료')
-                            sleep(2)
-                            main_back()
-                            break # 마을의뢰 모두 받았으면 브레이크
-                    break # 스킵 이미지 없으면 브레이크
-                sleep(3)
-
+                    # 골드 이동 이미지 체킹
+                    fast_move_by_gold = image_check('fast_move_by_gold')
+                    fast_move_by_free = image_check('fast_move_by_free')
+                    play_quest = image_check('play_quest')
+                    if fast_move_by_gold:
+                        print('오딘2 - 골드 빠른이동 클릭')
+                        pyautogui.click(fast_move_by_gold)  # 골드 빠른 이동
+                        break
+                    elif fast_move_by_gold2:
+                        print('오딘2 - 골드 빠른이동 클릭')
+                        pyautogui.click(fast_move_by_gold2)  # 골드 빠른 이동
+                        break
+                    elif fast_move_by_free: 
+                        print('오딘2 - 무료 빠른이동 클릭(마을가기)')
+                        pyautogui.click(fast_move_by_free)  # 무료 빠른 이동
+                        break
+                    elif play_quest: 
+                        print('오딘2 - 메인 퀘스트 진행 중...')
+                        break
+                    else:
+                        break
 
 
 #사용안함 - 구버전

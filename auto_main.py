@@ -50,13 +50,13 @@ def play_odin1():
 
     if odin1 == 3:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin1_write('4')
 
     if odin1 == 4:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin1_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이하기로 함
@@ -210,13 +210,13 @@ def play_odin2():
 
     if odin2 == 3:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin2_write('4')
 
     if odin2 == 4:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin2_write('5')
             # ad.char_change(2) # 1번 캐릭터만 플레이 하기로 함
@@ -351,7 +351,7 @@ def play_odin2():
 def play_week_dg_odin1():
     if odin1 == 21:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('26')
             # ad.char_change(2) # 1번만 플레이
@@ -389,7 +389,7 @@ def play_week_dg_odin2():
     # 1번 캐릭터
     if odin2 == 21:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('26')
             # ad.char_change(2) # 1번만 플레이
@@ -424,11 +424,11 @@ def play_week_dg_odin2():
 
 # 필드 사냥(즐겨찾기 1번) - 사용안함(퀘스트 밀기로 함)
 def field_play_odin1(): 
-    if odin1 == 26:
+    if odin1 == 27:
         ad.active_mecro_1()
         fp = ad.field_play()
 def field_play_odin2():         
-    if odin2 == 26:
+    if odin2 == 27:
         ad.active_mecro_2()
         fp = ad.field_play()
 
@@ -450,33 +450,6 @@ ad.get_mecro()
 odin1 = int(odin1_read())
 odin2 = int(odin2_read())
 
-# # 오딘1 진행상황에 따른 캐릭터 선택
-# ad.active_mecro_1()
-# if odin1 == 1 or odin1 == 2 or odin1 == 3 or odin1 == 4 or odin1 == 21:
-#     ad.char_change(1)
-# elif odin1 == 5 or odin1 == 6 or odin1 == 7 or odin1 == 8 or odin1 == 22:
-#     ad.char_change(2)
-# elif odin1 == 9 or odin1 == 10 or odin1 == 11 or odin1 == 12 or odin1 == 23:
-#     ad.char_change(3)
-# elif odin1 == 13 or odin1 == 14 or odin1 == 15 or odin1 == 16 or odin1 == 24:
-#     ad.char_change(4)
-# elif odin1 == 17 or odin1 == 18 or odin1 == 19 or odin1 == 20 or odin1 == 25:
-#     ad.char_change(5)
-
-# # 오딘2 진행상황에 따른 캐릭터 선택
-# ad.active_mecro_2()
-# if odin2 == 1 or odin2 == 2 or odin2 == 3 or odin2 == 4 or odin2 == 21:
-#     ad.char_change(1)
-# elif odin2 == 5 or odin2 == 6 or odin2 == 7 or odin2 == 8 or odin2 == 22:
-#     ad.char_change(2)
-# elif odin2 == 9 or odin2 == 10 or odin2 == 11 or odin2 == 12 or odin2 == 23:
-#     ad.char_change(3)
-# elif odin2 == 13 or odin2 == 14 or odin2 == 15 or odin2 == 16 or odin2 == 24:
-#     ad.char_change(4)
-# elif odin2 == 17 or odin2 == 18 or odin2 == 19 or odin2 == 20 or odin2 == 25:
-#     ad.char_change(5)
-
-
 while True:
     try:
         # 스테이지 불러오기
@@ -495,6 +468,7 @@ while True:
             play_odin1()
             play_week_dg_odin1()
             main_quest_start_odin1()
+            field_play_odin1()
 
         ad.active_mecro_2()
         loding_page = ad.loding_page()
@@ -508,6 +482,7 @@ while True:
             play_odin2()
             play_week_dg_odin2()
             main_quest_start_odin2()
+            field_play_odin2()
 
 
         # 10시 초기화
@@ -531,7 +506,7 @@ while True:
                 ad.char_change(1)
 
         # 체크 주기
-        sleep(60)
+        sleep(1)
     except:
         sleep(5)
         print('오류 발생')
