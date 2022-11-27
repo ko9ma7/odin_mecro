@@ -1353,21 +1353,23 @@ def field_play():
     sleep(1)
     main_back()
     if odin[0].isActive == True:
-        auto_status = auto_play() # 자동샤냥 중인지 체크
-        if auto_status == 1: # 1이면 자동사냥 중
-            print('오딘1 - 자동 사냥 중.....')
-            pass
+        safe_zone = image_check('safe_zone')
+        if safe_zone: # 안전 지역이면 1번 자동사냥 시작
+            print('오딘1 - 마을에서 놀고 있음. 자동사냥 시작')
+            favorite_go() 
         else:
-            print('오딘1 - 놀고 있음 사냥터 이동')
-            favorite_go() # 자동사냥 중 아니면 즐겨찾기 1번 이동 및 자동사냥
+            print('오딘1 - 열심히 자동사냥 중.. 즐겨찾기 1번.. ')
+            auto_play() # 자동사냥 
+            pass
     if odin[1].isActive == True:
-        auto_status = auto_play()
-        if auto_status == 1:
-            print('오딘2 - 자동 사냥 중.....')
-            pass
+        safe_zone = image_check('safe_zone')
+        if safe_zone: # 안전 지역이면 1번 자동사냥 시작
+            print('오딘1 - 마을에서 놀고 있음. 자동사냥 시작')
+            favorite_go() 
         else:
-            print('오딘2 - 놀고 있음 사냥터 이동')
-            favorite_go()
+            print('오딘1 - 열심히 자동사냥 중.. 즐겨찾기 1번.. ')
+            auto_play() # 자동사냥 체크
+            pass
 
 # 메인 퀘스트 실행
 def main_quest():
