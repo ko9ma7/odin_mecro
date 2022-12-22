@@ -194,7 +194,7 @@ def play_odin2():
         ad.active_mecro_2()
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
-            odin2_write('2')
+            odin2_write('3')
             ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
@@ -210,13 +210,13 @@ def play_odin2():
 
     if odin2 == 3:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(4)
+        money_dg_end = ad.money_dg_entrance(1)
         if money_dg_end == 1:
             odin2_write('4')
 
     if odin2 == 4:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(4)
+        scroll_dg_end = ad.scroll_dg_entrance(1)
         if scroll_dg_end == 1:
             odin2_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이 하기로 함
@@ -389,7 +389,7 @@ def play_week_dg_odin2():
     # 1번 캐릭터
     if odin2 == 21:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(4)
+        week_end = ad.week_dg_entrance(1)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('27')
             # ad.char_change(2) # 1번만 플레이
@@ -506,7 +506,7 @@ while True:
                 ad.char_change(1)
 
         # 체크 주기
-        sleep(1)
+        sleep(240)
     except:
         sleep(5)
         print('오류 발생')

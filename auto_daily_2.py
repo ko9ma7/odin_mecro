@@ -66,6 +66,15 @@ def disable_sleep_mode():
 # 메인화면 돌아가기
 def main_back():
     sleep(1)
+    # 팝업이 뜬다... ㅅㅂ
+    while True:
+        click_x_3 = pyautogui.locateOnScreen('image\\click_x_3.jpg', confidence=0.8, region=(0, 0, 1920, 1080)) 
+        if click_x_3:
+            pyautogui.click(click_x_3)
+            sleep(1)
+        else:
+            break
+
     if odin[0].isActive == True:
         main_back = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         if main_back:
@@ -86,7 +95,7 @@ def main_back():
         click_x_2 = pyautogui.locateOnScreen('image\\click_x_2.jpg', confidence=0.8, region=(0, 0, 960, 540)) 
         if click_x_2:
             pyautogui.click(click_x_2)
-            sleep(1)            
+            sleep(1)
 
     elif odin[1].isActive == True:
         back_click = pyautogui.locateOnScreen('image\\main_back.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
@@ -108,11 +117,12 @@ def main_back():
         click_x_2 = pyautogui.locateOnScreen('image\\click_x_2.jpg', confidence=0.8, region=(960, 0, 960, 540)) 
         if click_x_2:
             pyautogui.click(click_x_2)
-            sleep(1)    
+            sleep(1)
 
 # 물약 구매
 def go_town():
     sleep(1)
+    main_back()
     if odin[0].isActive == True:
         main_back()
         sleep(1)
@@ -722,7 +732,7 @@ def mimir_eat():
                 sleep(1)
                 pyautogui.click(mimir_check)
                 break
-            if i > 5:
+            if i > 8:
                 break
 
 # 물약 소진 시 물약사러 가기
