@@ -51,13 +51,13 @@ def active_mecro_2():
 def disable_sleep_mode():
     sleep(1)
     if odin[0].isActive == True:
-        sleep_mode = pyautogui.locateOnScreen('image\disable_sleep_mode.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(0, 0, 960, 540))
         print(sleep_mode , '절전모드 아님')
         if sleep_mode is not None:
             pyautogui.moveTo(480, 270)
             pyautogui.dragTo(680, 270, 1, button='left')
     elif odin[1].isActive == True:
-        sleep_mode = pyautogui.locateOnScreen('image\disable_sleep_mode.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        sleep_mode = pyautogui.locateOnScreen('image\\disable_sleep_mode.jpg', confidence=0.8, region=(960, 0, 960, 540))
         print(sleep_mode , '절전모드 아님')
         if sleep_mode is not None:
             pyautogui.moveTo(1440, 270)
@@ -126,7 +126,7 @@ def go_town():
     if odin[0].isActive == True:
         main_back()
         sleep(1)
-        pyautogui.click(22, 203)
+        pyautogui.click(18, 172)
         sleep(1)
         gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(0, 0, 960, 540))
         if gotown_click:
@@ -143,7 +143,7 @@ def go_town():
     elif odin[1].isActive == True:
         main_back()
         sleep(1)
-        pyautogui.click(982, 203)
+        pyautogui.click(978, 172)
         sleep(1)
         gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(960, 0, 960, 540))
         if gotown_click:
@@ -1180,7 +1180,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘1 - 머니 던전 확인됨')
-                dg_time = where_dg(2) # 3번 = 머니던전
+                dg_time = where_dg(3)  # 이벤트 던전 생기면 3번
                 if dg_time:
                     print('오딘1 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1210,7 +1210,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘2 - 머니 던전 확인됨')
-                dg_time = where_dg(2) # 3번 = 머니던전
+                dg_time = where_dg(3)  # 이벤트 던전 생기면 3번
                 if dg_time:
                     print('오딘2 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1245,7 +1245,7 @@ def scroll_dg_entrance(dg_level):
             sleep(2)
             if scroll_dg:
                 print('오딘1 - 스크롤 던전 확인됨')
-                dg_time = where_dg(3) # 이벤트 던전 생기면 ~4번
+                dg_time = where_dg(4) # 이벤트 던전 생기면 4번
                 if dg_time:
                     print('오딘1 - 스크롤 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1275,7 +1275,7 @@ def scroll_dg_entrance(dg_level):
             sleep(2)
             if scroll_dg:
                 print('오딘2 - 스크롤 던전 확인됨')
-                dg_time = where_dg(3) # 이벤트 던전 생기면 ~4번
+                dg_time = where_dg(4) # 이벤트 던전 생기면 ~4번
                 if dg_time:
                     print('오딘2 - 스크롤 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1374,10 +1374,10 @@ def field_play():
     if odin[1].isActive == True:
         safe_zone = image_check('safe_zone')
         if safe_zone: # 안전 지역이면 1번 자동사냥 시작
-            print('오딘1 - 마을에서 놀고 있음. 자동사냥 시작')
+            print('오딘2 - 마을에서 놀고 있음. 자동사냥 시작')
             favorite_go() 
         else:
-            print('오딘1 - 열심히 자동사냥 중.. 즐겨찾기 1번.. ')
+            print('오딘2 - 열심히 자동사냥 중.. 즐겨찾기 1번.. ')
             auto_play() # 자동사냥 체크
             pass
 
