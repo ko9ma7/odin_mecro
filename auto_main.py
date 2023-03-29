@@ -226,11 +226,11 @@ def play_odin2():
         if scroll_dg_end == 1:
             odin2_write('5')
             
-    if odin1 == 5:
+    if odin2 == 5:
         ad.active_mecro_2()
         event_dg_end = ad.event_dg_entrance(2)
         if event_dg_end == 1:
-            odin1_write('21')
+            odin2_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이하기로 함
 
     # 2번 캐릭터
@@ -518,7 +518,7 @@ while True:
             ad.char_change(1)
 
     # 체크 주기
-    sleep(240)
+    sleep(120)
     # except:
     #     sleep(5)
     #     print('오류 발생')
