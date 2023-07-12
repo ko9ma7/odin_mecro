@@ -1242,7 +1242,7 @@ def scroll_dg_entrance(dg_level):
             sleep(2)            
             #던전 체크
             pyautogui.moveTo(640, 260)
-            pyautogui.dragTo(340, 260, 4, button='left')
+            pyautogui.dragTo(140, 260, 4, button='left')
             sleep(1)            
             scroll_dg = image_check('scroll_dg')
             sleep(2)
@@ -1274,10 +1274,9 @@ def scroll_dg_entrance(dg_level):
             pyautogui.click(1135, 85) # 정예던전 탭
             sleep(2)            
             #던전 체크
-            #던전 체크
-            pyautogui.moveTo(640, 260)
-            pyautogui.dragTo(340, 260, 4, button='left')
-            sleep(1)                  
+            pyautogui.moveTo(1600, 260)
+            pyautogui.dragTo(1100, 260, 4, button='left')
+            sleep(1)                
             scroll_dg = image_check('scroll_dg')
             sleep(2)
             if scroll_dg:
@@ -1314,7 +1313,7 @@ def week_dg_entrance(dg_level):
             sleep(2)            
             #던전 체크 - 지하감옥은 드래그가 필요(이벤트 던전 때문에)
             pyautogui.moveTo(640, 260)
-            pyautogui.dragTo(340, 260, 4, button='left')
+            pyautogui.dragTo(140, 260, 4, button='left')
             sleep(1)
             week_dg = image_check('week_dg')
             sleep(2)
@@ -1347,7 +1346,7 @@ def week_dg_entrance(dg_level):
             sleep(2)            
             #던전 체크 - 지하감옥은 드래그가 필요(이벤트 던전 때문에)
             pyautogui.moveTo(1600, 260)
-            pyautogui.dragTo(1300, 260, 4, button='left')
+            pyautogui.dragTo(1100, 260, 4, button='left')
             sleep(1)
             week_dg = image_check('week_dg')
             sleep(2)
