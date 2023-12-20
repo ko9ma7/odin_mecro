@@ -50,19 +50,19 @@ def play_odin1():
 
     if odin1 == 3:
         ad.active_mecro_1()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(4)
         if money_dg_end == 1:
             odin1_write('4')
 
     if odin1 == 4:
         ad.active_mecro_1()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(4)
         if scroll_dg_end == 1:
             odin1_write('5')
             
     if odin1 == 5:
         ad.active_mecro_1()
-        event_dg_end = ad.event_dg_entrance(1)
+        event_dg_end = ad.event_dg_entrance(2)
         if event_dg_end == 1:
             odin1_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이하기로 함
@@ -216,19 +216,19 @@ def play_odin2():
 
     if odin2 == 3:
         ad.active_mecro_2()
-        money_dg_end = ad.money_dg_entrance(2)
+        money_dg_end = ad.money_dg_entrance(4)
         if money_dg_end == 1:
             odin2_write('4')
 
     if odin2 == 4:
         ad.active_mecro_2()
-        scroll_dg_end = ad.scroll_dg_entrance(2)
+        scroll_dg_end = ad.scroll_dg_entrance(4)
         if scroll_dg_end == 1:
             odin2_write('5')
             
     if odin2 == 5:
         ad.active_mecro_2()
-        event_dg_end = ad.event_dg_entrance(1)
+        event_dg_end = ad.event_dg_entrance(2)
         if event_dg_end == 1:
             odin2_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이하기로 함
@@ -363,7 +363,7 @@ def play_odin2():
 def play_week_dg_odin1():
     if odin1 == 21:
         ad.active_mecro_1()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(4)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin1_write('27')
             # ad.char_change(2) # 1번만 플레이
@@ -401,7 +401,7 @@ def play_week_dg_odin2():
     # 1번 캐릭터
     if odin2 == 21:
         ad.active_mecro_2()
-        week_end = ad.week_dg_entrance(2)
+        week_end = ad.week_dg_entrance(4)
         if week_end == 1: # 리턴값이 1일 경우 종료
             odin2_write('27')
             # ad.char_change(2) # 1번만 플레이
@@ -500,7 +500,7 @@ while True:
     # 10시 초기화
     find_hour = time.strftime('%H', time.localtime(time.time()))
     print('시간체크 :' + find_hour + '시(10시 초기화)')
-    if find_hour == '33': # 코드 수정하면 10으로 변경
+    if find_hour == '10': # 코드 수정하면 10으로 변경
         if odin1 == 1 or odin1 == 2 or odin1 == 3 or odin1 == 4: # 1, 2번 이면 초기화 안함
             print('1, 2, 3, 4번 진행 시라면 초기화 하지 않음')
             pass
