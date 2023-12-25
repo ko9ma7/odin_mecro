@@ -337,7 +337,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 92)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -355,7 +358,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 134)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -372,7 +378,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 174)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -389,7 +398,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 216)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -406,7 +418,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 263)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -423,7 +438,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 300)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -440,7 +458,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 342)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -457,7 +478,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 384)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -474,7 +498,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(108, 422)
             sleep(2)
             pyautogui.click(880, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(0, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -492,7 +519,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 92)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -509,7 +539,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 134)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -526,7 +559,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 174)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -543,7 +579,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 216)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -560,7 +599,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 263)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -577,7 +619,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 300)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -594,7 +639,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 342)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -611,7 +659,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 384)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -628,7 +679,10 @@ def dg_level_choice(dg_level):
             pyautogui.click(1068, 422)
             sleep(2)
             pyautogui.click(1840, 488)
-            sleep(20)
+            sleep(30)
+            # 팝업 유무
+            ck_popup()
+            sleep(2)
             dg_move = pyautogui.locateOnScreen('image\\elite_dg\\dg_move.jpg', confidence=0.8, region=(960, 0, 960, 540))
             print('던전 입장 여부(None이면 입장, 좌표 나오면 입장시간 0초) : ',dg_move)
             if dg_move:
@@ -761,6 +815,27 @@ def no_potion():
         if get_potion or get_potion_2 or get_potion_3 or get_potion_4 or get_potion_5 or get_potion_6:
             print('오딘2 - 물약 소진 확인 마을 귀환')
             go_town()
+            
+# 팝업 체크
+def ck_popup():
+    sleep(1)
+    if odin[0].isActive == True:
+        print('오딘1 - 팝업 체크')
+        ch_popup = image_check('ch_popup')
+        sleep(1)
+        if ch_popup:
+            pyautogui.click(ch_popup)
+        else:
+            pass
+
+    if odin[1].isActive == True:
+        print('오딘2 - 팝업 체크')
+        ch_popup = image_check('ch_popup')
+        sleep(1)
+        if ch_popup:
+            pyautogui.click(ch_popup)
+        else:
+            pass
 
 # 죽었을 경우 부활하기
 def resurrection():

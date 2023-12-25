@@ -62,7 +62,7 @@ def play_odin1():
             
     if odin1 == 5:
         ad.active_mecro_1()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(3)
         if event_dg_end == 1:
             odin1_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이하기로 함
@@ -228,7 +228,7 @@ def play_odin2():
             
     if odin2 == 5:
         ad.active_mecro_2()
-        event_dg_end = ad.event_dg_entrance(2)
+        event_dg_end = ad.event_dg_entrance(3)
         if event_dg_end == 1:
             odin2_write('21')
             # ad.char_change(2) # 1번 캐릭터만 플레이하기로 함
@@ -476,6 +476,7 @@ while True:
         # 오딘 1 - 물약 및 부활 체크
         ad.no_potion()
         ad.resurrection()
+        ad.ck_popup()
 
         play_odin1()
         play_week_dg_odin1()
@@ -490,6 +491,7 @@ while True:
         # 오딘 2 - 물약 및 부활 체크
         ad.no_potion()
         ad.resurrection()
+        ad.ck_popup()
 
         play_odin2()
         play_week_dg_odin2()
