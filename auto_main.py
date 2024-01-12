@@ -32,9 +32,10 @@ def play_odin1():
     # 1번 캐릭터
     if odin1 == 1:
         ad.active_mecro_1()
+        ad.ck_popup()
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
-            odin1_write('2')
+            odin1_write('3')
             ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
@@ -43,6 +44,7 @@ def play_odin1():
 
     if odin1 == 2:
         ad.active_mecro_1()
+        ad.ck_popup()
         ad.create_party(1) # 파티던전 레벨
         paly_party_dg = ad.paly_party_dg()
         if paly_party_dg == 1:
@@ -50,18 +52,21 @@ def play_odin1():
 
     if odin1 == 3:
         ad.active_mecro_1()
+        ad.ck_popup()
         money_dg_end = ad.money_dg_entrance(4)
         if money_dg_end == 1:
             odin1_write('4')
 
     if odin1 == 4:
         ad.active_mecro_1()
+        ad.ck_popup()
         scroll_dg_end = ad.scroll_dg_entrance(4)
         if scroll_dg_end == 1:
             odin1_write('5')
             
     if odin1 == 5:
         ad.active_mecro_1()
+        ad.ck_popup()
         event_dg_end = ad.event_dg_entrance(3)
         if event_dg_end == 1:
             odin1_write('21')
@@ -198,9 +203,10 @@ def play_odin2():
     # 1번 캐릭터
     if odin2 == 1:
         ad.active_mecro_2()
+        ad.ck_popup()
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
-            odin2_write('2')
+            odin2_write('3')
             ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.daily_gold_item() # 매일 골드 상품 구
             ad.guild_check() # 길드 출석 체크
@@ -209,6 +215,7 @@ def play_odin2():
 
     if odin2 == 2:
         ad.active_mecro_2()
+        ad.ck_popup()        
         ad.create_party(1) # 파티던전 레벨
         paly_party_dg = ad.paly_party_dg()
         if paly_party_dg == 1:
@@ -216,18 +223,21 @@ def play_odin2():
 
     if odin2 == 3:
         ad.active_mecro_2()
+        ad.ck_popup()
         money_dg_end = ad.money_dg_entrance(4)
         if money_dg_end == 1:
             odin2_write('4')
 
     if odin2 == 4:
         ad.active_mecro_2()
+        ad.ck_popup()
         scroll_dg_end = ad.scroll_dg_entrance(4)
         if scroll_dg_end == 1:
             odin2_write('5')
             
     if odin2 == 5:
         ad.active_mecro_2()
+        ad.ck_popup()
         event_dg_end = ad.event_dg_entrance(3)
         if event_dg_end == 1:
             odin2_write('21')
