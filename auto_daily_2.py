@@ -1255,7 +1255,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘1 - 머니 던전 확인됨')
-                dg_time = where_dg(4)  # 이벤트 던전 생기면 4번
+                dg_time = where_dg(4)  # 이벤트 던전 생기면 4번 , 아니면 3번 
                 if dg_time:
                     print('오딘1 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
