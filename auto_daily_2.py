@@ -9,6 +9,7 @@ import pywinauto
 # 메크로 1 = 0, 0 >> 960, 540       메크로2 = 960, 0 >> 960, 540
 
 odin = []
+image = ''
 
 # 오딘 프로그램 찾기 
 # 타이틀이 ODIN으로 같기 때문에 실행 시 계정 순서가 바뀔 수 있음 그래서 하단 메소드에 창위치를 변경해주게끔 수정
@@ -1255,7 +1256,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘1 - 머니 던전 확인됨')
-                dg_time = where_dg(4)  # 이벤트 던전 생기면 4번 , 아니면 3번 
+                dg_time = where_dg(3)  # 이벤트 던전 생기면 4번 , 아니면 3번 
                 if dg_time:
                     print('오딘1 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1285,7 +1286,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘2 - 머니 던전 확인됨')
-                dg_time = where_dg(4)  # 이벤트 던전 생기면 4번
+                dg_time = where_dg(3)  # 이벤트 던전 생기면 4번
                 if dg_time:
                     print('오딘2 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
