@@ -35,7 +35,7 @@ def play_odin1():
         ad.ck_popup()
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
-            odin1_write('3')
+            odin1_write('2')
             ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.daily_gold_item() # 매일 골드 상품 구매
             ad.guild_check() # 길드 출석 체크
@@ -206,7 +206,7 @@ def play_odin2():
         ad.ck_popup()
         tr_end = ad.town_request()
         if tr_end == 1: # 리턴값이 1일 경우 종료
-            odin2_write('3')
+            odin2_write('2')
             ad.get_mimir() # 미미르 받고 못 받으면 포션 먹기
             ad.daily_gold_item() # 매일 골드 상품 구
             ad.guild_check() # 길드 출석 체크

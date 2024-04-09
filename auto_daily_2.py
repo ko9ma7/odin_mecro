@@ -133,7 +133,7 @@ def go_town():
         if gotown_click:
             print('물약 사러 마을로 갑니다~!')
             pyautogui.click(gotown_click)
-            sleep(20)
+            sleep(30)
         else: 
             print('마을이거나 귀환 불가 지역')
         pyautogui.press('4')
@@ -150,7 +150,7 @@ def go_town():
         if gotown_click:
             print('물약 사러 마을로 갑니다~!')
             pyautogui.click(gotown_click)
-            sleep(20)
+            sleep(30)
         else: 
             print('마을이거나 귀환 불가 지역')
         pyautogui.press('4')
@@ -175,6 +175,8 @@ def auto_play():
         auto_9 = pyautogui.locateOnScreen('image\\auto_play\\auto_9.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_10 = pyautogui.locateOnScreen('image\\auto_play\\auto_10.jpg', confidence=0.8, region=(0, 0, 960, 540))
         auto_11 = pyautogui.locateOnScreen('image\\auto_play\\auto_11.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_12 = pyautogui.locateOnScreen('image\\auto_play\\auto_12.jpg', confidence=0.8, region=(0, 0, 960, 540))
+        auto_13 = pyautogui.locateOnScreen('image\\auto_play\\auto_13.jpg', confidence=0.8, region=(0, 0, 960, 540))
         print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8, auto_9, auto_10, auto_11)
         if auto_1:
             pyautogui.click(auto_1)
@@ -208,6 +210,12 @@ def auto_play():
             sleep(1)
         elif auto_11:
             pyautogui.click(auto_11)
+            sleep(1)
+        elif auto_12:
+            pyautogui.click(auto_12)
+            sleep(1)
+        elif auto_13:
+            pyautogui.click(auto_13)
             sleep(1)
         else:
             return 1
@@ -224,6 +232,8 @@ def auto_play():
         auto_9 = pyautogui.locateOnScreen('image\\auto_play\\auto_9.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_10 = pyautogui.locateOnScreen('image\\auto_play\\auto_10.jpg', confidence=0.8, region=(960, 0, 960, 540))
         auto_11 = pyautogui.locateOnScreen('image\\auto_play\\auto_11.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_12 = pyautogui.locateOnScreen('image\\auto_play\\auto_12.jpg', confidence=0.8, region=(960, 0, 960, 540))
+        auto_13 = pyautogui.locateOnScreen('image\\auto_play\\auto_13.jpg', confidence=0.8, region=(960, 0, 960, 540))
         print('자동사냥 체크 :',auto_1, auto_2, auto_3, auto_4, auto_5, auto_6, auto_7, auto_8, auto_9, auto_10, auto_11)
         if auto_1:
             pyautogui.click(auto_1)
@@ -257,6 +267,12 @@ def auto_play():
             sleep(1)
         elif auto_11:
             pyautogui.click(auto_11)
+            sleep(1)
+        elif auto_12:
+            pyautogui.click(auto_12)
+            sleep(1)
+        elif auto_13:
+            pyautogui.click(auto_13)
             sleep(1)
         else:
             return 1
