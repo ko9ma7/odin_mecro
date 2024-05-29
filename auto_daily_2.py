@@ -127,7 +127,7 @@ def go_town():
     if odin[0].isActive == True:
         main_back()
         sleep(1)
-        pyautogui.click(18, 172)
+        pyautogui.click(17, 198)
         sleep(1)
         gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(0, 0, 960, 540))
         if gotown_click:
@@ -144,7 +144,7 @@ def go_town():
     elif odin[1].isActive == True:
         main_back()
         sleep(1)
-        pyautogui.click(978, 172)
+        pyautogui.click(977, 198)
         sleep(1)
         gotown_click = pyautogui.locateOnScreen('image\\gotown_ok.jpg', confidence=0.8, region=(960, 0, 960, 540))
         if gotown_click:
@@ -1272,7 +1272,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘1 - 머니 던전 확인됨')
-                dg_time = where_dg(4)  # 이벤트 던전 생기면 4번 , 아니면 3번 
+                dg_time = where_dg(3)  # 이벤트 던전 생기면 4번 , 아니면 3번 
                 if dg_time:
                     print('오딘1 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1302,7 +1302,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘2 - 머니 던전 확인됨')
-                dg_time = where_dg(4)  # 이벤트 던전 생기면 4번
+                dg_time = where_dg(3)  # 이벤트 던전 생기면 4번
                 if dg_time:
                     print('오딘2 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
