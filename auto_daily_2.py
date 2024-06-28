@@ -1272,7 +1272,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘1 - 머니 던전 확인됨')
-                dg_time = where_dg(3)  # 이벤트 던전 생기면 4번 , 아니면 3번 
+                dg_time = where_dg(4)  # 이벤트 던전 생기면 4번 , 아니면 3번 
                 if dg_time:
                     print('오딘1 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1302,7 +1302,7 @@ def money_dg_entrance(dg_level):
             sleep(2)
             if money_dg:
                 print('오딘2 - 머니 던전 확인됨')
-                dg_time = where_dg(3)  # 이벤트 던전 생기면 4번
+                dg_time = where_dg(4)  # 이벤트 던전 생기면 4번
                 if dg_time:
                     print('오딘2 - 머니 던전 시간 없음, 게임화면으로 이동')
                     main_back()
@@ -1690,7 +1690,7 @@ def elite_dg_entrance(event_dg_level, money_dg_level, scroll_dg_level):
         sleep(2)
         while True:
             #던전 체크
-            event_dg = pyautogui.locateOnScreen('image\\elite_dg\\event_dg.jpg', confidence=0.8, region=(0, 0, 960, 540))
+            event_dg = pyautogui.locateOnScreen('image\\elite_dg\\event_dg.png', confidence=0.8, region=(0, 0, 960, 540))
             print('오딘1 던전 확인 : event_dg : ', event_dg)
             if event_dg:
                 pyautogui.click(event_dg)
@@ -1735,7 +1735,7 @@ def elite_dg_entrance(event_dg_level, money_dg_level, scroll_dg_level):
         sleep(2)
         while True:
             #던전 체크
-            event_dg = pyautogui.locateOnScreen('image\\elite_dg\\event_dg.jpg', confidence=0.8, region=(960, 0, 960, 540))
+            event_dg = pyautogui.locateOnScreen('image\\elite_dg\\event_dg.png', confidence=0.8, region=(960, 0, 960, 540))
             print('오딘2 던전 확인 : event_dg : ', event_dg)
             if event_dg:
                 pyautogui.click(event_dg)
