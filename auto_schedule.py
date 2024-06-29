@@ -89,13 +89,13 @@ def elite_dg_entrance(chioce_dg, choice_level):
         print(e_dg)
         pyautogui.click(e_dg)
         if chioce_dg == 1:
-            e_dg = pyautogui.locateOnScreen('image\event_dg.jpg', confidence=0.8, region=(0, 0, 960, 540))
+            e_dg = pyautogui.locateOnScreen('image\event_dg.png', confidence=0.8, region=(0, 0, 960, 540))
             sleep(1)
             # 던전 못 찾을 경우 옆으로 드레그
             if e_dg is None:
                 pyautogui.moveTo(480, 270)
                 pyautogui.dragTo(280, 270, 2, button='left')
-                e_dg = pyautogui.locateOnScreen('image\event_dg.jpg', confidence=0.8, region=(0, 0, 960, 540))
+                e_dg = pyautogui.locateOnScreen('image\event_dg.png', confidence=0.8, region=(0, 0, 960, 540))
                 sleep(1)
             print(e_dg)
             pyautogui.click(e_dg)
@@ -337,13 +337,13 @@ def elite_dg_entrance(chioce_dg, choice_level):
         print(e_dg)
         pyautogui.click(e_dg)
         if chioce_dg == 1:
-            e_dg = pyautogui.locateOnScreen('image\event_dg.jpg', confidence=0.8, region=(960, 0, 960, 540))
+            e_dg = pyautogui.locateOnScreen('image\event_dg.png', confidence=0.8, region=(960, 0, 960, 540))
             sleep(1)
             # 던전 못 찾을 경우 옆으로 드레그
             if e_dg is None:
                 pyautogui.moveTo(1440, 270)
                 pyautogui.dragTo(1240, 270, 2, button='left')
-                e_dg = pyautogui.locateOnScreen('image\event_dg.jpg', confidence=0.8, region=(960, 0, 960, 540))
+                e_dg = pyautogui.locateOnScreen('image\event_dg.png', confidence=0.8, region=(960, 0, 960, 540))
                 sleep(1)
             print(e_dg)
             pyautogui.click(e_dg)

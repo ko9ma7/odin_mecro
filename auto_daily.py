@@ -592,7 +592,7 @@ def elite_dg_entrance(event_dg_level, money_dg_level, scroll_dg_level):
         sleep(2)
         while True:
             #던전 체크
-            event_dg = pyautogui.locateOnScreen('image\\elite_dg\\event_dg.jpg', confidence=0.8, region=(0, 0, 960, 540))
+            event_dg = pyautogui.locateOnScreen('image\\elite_dg\\event_dg.png', confidence=0.8, region=(0, 0, 960, 540))
             print('오딘1 던전 확인 : event_dg : ', event_dg)
             if event_dg:
                 pyautogui.click(event_dg)
@@ -637,7 +637,7 @@ def elite_dg_entrance(event_dg_level, money_dg_level, scroll_dg_level):
         sleep(2)
         while True:
             #던전 체크
-            event_dg = pyautogui.locateOnScreen('image\\elite_dg\\event_dg.jpg', confidence=0.8, region=(960, 0, 960, 540))
+            event_dg = pyautogui.locateOnScreen('image\\elite_dg\\event_dg.png', confidence=0.8, region=(960, 0, 960, 540))
             print('오딘2 던전 확인 : event_dg : ', event_dg)
             if event_dg:
                 pyautogui.click(event_dg)
